@@ -51,7 +51,17 @@ jobs:
           script: |
             const fs = require('fs');
 
-            // Paginación completa
+            // 1. Cargar eventos actuales para no perder los migrados
+            let existingEvents = [];
+            if (fs.existsSync('events.json')) {
+              try {
+                existingEvents = JSON.parse(fs.readFileSync('events.json', 'utf8'));
+              } catch (e) {
+                console.log('No existing events.json found or invalid format');
+              }
+            }
+
+            // 2. Fetch de issues del repositorio actual
             const issues = await github.paginate(
               github.rest.issues.listForRepo,
               {
@@ -84,33 +94,22 @@ jobs:
                 .trim();
             }
 
-            const events = issues.map(issue => {
+            const currentRepoIssues = issues.map(issue => {
               const body = issue.body || '';
-
               const rawDate = clean(extract(body, 'Fecha'));
               const parsedDate = rawDate ? new Date(rawDate) : null;
 
               return {
                 id: issue.number,
-                title: clean(
-                  extract(body, 'Nombre') ||
-                  issue.title.replace(/\[EVENTO\]\s*/i, '')
-                ),
+                title: clean(extract(body, 'Nombre') || issue.title.replace(/\[EVENTO\]\s*/i, '')),
                 description: clean(extract(body, 'Descripci')),
                 date: rawDate,
                 endDate: clean(extract(body, 'Fecha de fin') || extract(body, 'Término') || extract(body, 'Fin')),
                 time: clean(extract(body, 'Hora')),
                 location: clean(extract(body, 'Ubicaci')),
-                type: clean(
-                  (extract(body, 'Tipo') || 'meetup')
-                    .toLowerCase()
-                    .replace(/[^a-z]/g, '')
-                ),
+                type: clean((extract(body, 'Tipo') || 'meetup').toLowerCase().replace(/[^a-z]/g, '')),
                 link: clean(extract(body, 'Link')),
-                tags: (clean(extract(body, 'Tags')) || '')
-                  .split(',')
-                  .map(t => t.trim().toLowerCase())
-                  .filter(Boolean),
+                tags: (clean(extract(body, 'Tags')) || '').split(',').map(t => t.trim().toLowerCase()).filter(Boolean),
                 image: (body.match(/!\[.*?\]\((.*?)\)/) || body.match(/<img.*?src=["'](.*?)["']/) || [])[1] || '',
                 organizer: clean(extract(body, 'Organizador')),
                 issueUrl: issue.html_url,
@@ -121,22 +120,31 @@ jobs:
               };
             });
 
-            // Orden robusto
-            events.sort((a, b) => {
-              if (!a._sortDate) return 1;
-              if (!b._sortDate) return -1;
-              return a._sortDate - b._sortDate;
+            // 3. Fusión: Mantener eventos migrados (de otros repos) + Actualizar los de este repo
+            const currentRepoBaseUrl = `github.com/${context.repo.owner}/${context.repo.repo}/issues/`.toLowerCase();
+            
+            // Filtramos los existentes para quedarnos solo con los que NO son de este repositorio (los migrados)
+            const legacyEvents = existingEvents.filter(e => {
+              const url = (e.issueUrl || '').toLowerCase();
+              return !url.includes(currentRepoBaseUrl);
             });
 
-            // Remover campo interno
-            const finalEvents = events.map(({ _sortDate, ...rest }) => rest);
+            // Combinamos legacy + nuevos
+            const allEvents = [...legacyEvents, ...currentRepoIssues];
 
-            fs.writeFileSync(
-              'events.json',
-              JSON.stringify(finalEvents, null, 2)
-            );
+            // 4. Ordenar por fecha
+            allEvents.sort((a, b) => {
+              const dateA = a._sortDate || (a.date ? new Date(a.date) : new Date(0));
+              const dateB = b._sortDate || (b.date ? new Date(b.date) : new Date(0));
+              return dateA - dateB;
+            });
 
-            console.log(`✅ Generados ${finalEvents.length} eventos`);
+            // Remover campo temporal y guardar
+            const finalEvents = allEvents.map(({ _sortDate, ...rest }) => rest);
+
+            fs.writeFileSync('events.json', JSON.stringify(finalEvents, null, 2));
+            console.log(`✅ Total: ${finalEvents.length} eventos (${legacyEvents.length} migrados, ${currentRepoIssues.length} locales)`);
+
 
       - name: Commit & Push
         run: |
