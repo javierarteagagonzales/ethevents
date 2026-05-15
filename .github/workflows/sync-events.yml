@@ -100,7 +100,7 @@ jobs:
               const parsedDate = rawDate ? new Date(rawDate) : null;
 
               return {
-                id: issue.number,
+                id: issue.number + 48,
                 title: clean(extract(body, 'Nombre') || issue.title.replace(/\[EVENTO\]\s*/i, '')),
                 description: clean(extract(body, 'Descripci')),
                 date: rawDate,
