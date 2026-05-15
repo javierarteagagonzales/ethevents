@@ -17,7 +17,7 @@ export default async function handler(req, res) {
   } = req.body;
 
   const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
-  const REPO = 'ethlima/eth-events';
+  const REPO = 'javierarteagagonzales/ethevents';
 
   // Construct the issue body exactly as the template expects
   const issueBody = `### 📌 Nombre del Evento
