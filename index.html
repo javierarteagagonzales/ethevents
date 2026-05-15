@@ -2279,10 +2279,8 @@
 
       // Render Community events
       window._communityUpcoming = communityUpcoming;
-      renderGrid(communityUpcoming.slice(0, 16), events);
-      if (communityUpcoming.length > 16) {
-        document.getElementById('community-more-container').style.display = 'flex';
-      }
+      renderGrid(communityUpcoming, events);
+      document.getElementById('community-more-container').style.display = 'none';
 
       // Render past events
       window._pastEvents = past;
@@ -2321,14 +2319,14 @@
       });
       // Filtrar por tipo y excluir eventos oficiales de ETH Lima en la grilla de comunidad
       const filtered = filter === 'all' 
-        ? allEvents.filter(e => !e._isEthLima)
-        : allEvents.filter(e => e.type === filter && !e._isEthLima);
+        ? allEvents
+        : allEvents.filter(e => e.type === filter);
 
       const upcoming = filtered
         .filter(e => !e._isPast)
         .sort((a, b) => a._dateObj - b._dateObj);
 
-      renderGrid(upcoming.slice(0, 16), allEvents);
+      renderGrid(upcoming, allEvents);
       
       const moreCont = document.getElementById('community-more-container');
       if (upcoming.length > 16) {
