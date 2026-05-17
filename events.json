@@ -658,6 +658,26 @@
     "createdAt": "2026-05-17T04:02:47Z"
   },
   {
+    "id": 52,
+    "title": "ARBITRUM Open House",
+    "description": "Top teams get early access, real support, and the tools to launch fast.",
+    "date": "2026-05-25",
+    "endDate": "2026-06-14",
+    "time": "",
+    "location": "Online",
+    "type": "cohorte",
+    "link": "https://openhouse.arbitrum.io/",
+    "tags": [
+      "arbitrum"
+    ],
+    "image": "",
+    "organizer": "Arbitrum",
+    "issueUrl": "https://github.com/javierarteagagonzales/ethevents/issues/4",
+    "issueNum": 4,
+    "state": "open",
+    "createdAt": "2026-05-17T05:14:01Z"
+  },
+  {
     "id": 38,
     "title": "Bootcamp Ethereum Lima 2026",
     "description": "Gratuito. Aprende Proyectos en web3, Lenguajes de programación, Arbitrum y Arbitrum Stylus.",
