@@ -638,6 +638,26 @@
     "createdAt": "2026-05-15T15:32:04Z"
   },
   {
+    "id": 51,
+    "title": "NFT y propuestas artísticas híbridas en el crypto arte",
+    "description": "Una charla centrada en la intersección entre arte contemporáneo, tecnologías emergentes y ecosistemas Web3, abordando cómo los NFT han expandido las posibilidades de producción, circulación y conceptualización artística.",
+    "date": "2026-05-23",
+    "endDate": "",
+    "time": "17:00",
+    "location": "Online",
+    "type": "workshop",
+    "link": "https://luma.com/t6g6wa05",
+    "tags": [
+      "ethlima"
+    ],
+    "image": "https://github.com/user-attachments/assets/9d7367a2-4d15-400e-b358-93c0d0d4cc64",
+    "organizer": "Ethereum Lima",
+    "issueUrl": "https://github.com/javierarteagagonzales/ethevents/issues/3",
+    "issueNum": 3,
+    "state": "open",
+    "createdAt": "2026-05-17T04:02:47Z"
+  },
+  {
     "id": 38,
     "title": "Bootcamp Ethereum Lima 2026",
     "description": "Gratuito. Aprende Proyectos en web3, Lenguajes de programación, Arbitrum y Arbitrum Stylus.",
