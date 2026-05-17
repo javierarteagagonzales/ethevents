@@ -638,6 +638,27 @@
     "createdAt": "2026-05-15T15:32:04Z"
   },
   {
+    "id": 53,
+    "title": "Resultados Ruta de Puqi -  Ideathon",
+    "description": "Lanzamos los ganadores por la red social X.",
+    "date": "2026-05-21",
+    "endDate": "",
+    "time": "12:00",
+    "location": "Online",
+    "type": "conference",
+    "link": "https://ethlima.org/",
+    "tags": [
+      "ethlima"
+    ],
+    "image": "https://github.com/user-attachments/assets/c7bc3746-e7c7-48a8-a5ed-16e5456df257",
+    "organizer": "Ethereum Lima",
+    "parentId": null,
+    "issueUrl": "https://github.com/javierarteagagonzales/ethevents/issues/5",
+    "issueNum": 5,
+    "state": "open",
+    "createdAt": "2026-05-17T06:26:23Z"
+  },
+  {
     "id": 51,
     "title": "NFT y propuestas artísticas híbridas en el crypto arte",
     "description": "Una charla centrada en la intersección entre arte contemporáneo, tecnologías emergentes y ecosistemas Web3, abordando cómo los NFT han expandido las posibilidades de producción, circulación y conceptualización artística.",
@@ -652,6 +673,7 @@
     ],
     "image": "https://github.com/user-attachments/assets/9d7367a2-4d15-400e-b358-93c0d0d4cc64",
     "organizer": "Ethereum Lima",
+    "parentId": null,
     "issueUrl": "https://github.com/javierarteagagonzales/ethevents/issues/3",
     "issueNum": 3,
     "state": "open",
@@ -672,6 +694,7 @@
     ],
     "image": "",
     "organizer": "Arbitrum",
+    "parentId": null,
     "issueUrl": "https://github.com/javierarteagagonzales/ethevents/issues/4",
     "issueNum": 4,
     "state": "open",
@@ -696,62 +719,6 @@
     "issueNum": 38,
     "state": "open",
     "createdAt": "2026-05-06T04:10:57Z"
-  },
-  {
-    "id": 39,
-    "title": "GitHub Community Day",
-    "description": "La comunidad de GitHub llega a la UTP para un evento único que reunirá a estudiantes, developers y apasionados por la tecnología en una experiencia diseñada para potenciar tu forma de crear y colaborar en proyectos.",
-    "date": "2026-06-06",
-    "endDate": "",
-    "time": "",
-    "location": "UTP Torre Arequipa, Lima",
-    "type": "conference",
-    "link": "https://www.eventbrite.com/e/github-community-day-peru-tickets-1988461462763",
-    "tags": [],
-    "image": "",
-    "organizer": "Developer Student Clubs UTP",
-    "issueUrl": "https://github.com/ethlima/eth-events/issues/39",
-    "issueNum": 39,
-    "state": "open",
-    "createdAt": "2026-05-08T23:05:07Z"
-  },
-  {
-    "id": 4,
-    "title": "Founder School",
-    "description": "A 10-week, cohort-based, virtual, and equity-free program designed to help you go from zero to one.",
-    "date": "2026-06-12",
-    "endDate": "",
-    "time": "",
-    "location": "Online",
-    "type": "meetup",
-    "link": "https://docs.google.com/forms/d/e/1FAIpQLSeC55SDLg9ZH8uwP1l2nJjeEFFr-IwZNTz5wQAfC37bxNe3vw/viewform",
-    "tags": [],
-    "image": "",
-    "organizer": "",
-    "issueUrl": "https://github.com/ethlima/eth-events/issues/4",
-    "issueNum": 4,
-    "state": "open",
-    "createdAt": "2026-03-26T06:02:41Z"
-  },
-  {
-    "id": 50,
-    "title": "DEVCON 8",
-    "description": "An open door for explorers,\na common ground for builders",
-    "date": "2026-11-03",
-    "endDate": "2026-11-06",
-    "time": "",
-    "location": "India",
-    "type": "conference",
-    "link": "https://devcon.org/en/",
-    "tags": [
-      "ethereum"
-    ],
-    "image": "",
-    "organizer": "Ethereum",
-    "issueUrl": "https://github.com/javierarteagagonzales/ethevents/issues/2",
-    "issueNum": 2,
-    "state": "open",
-    "createdAt": "2026-05-15T18:19:44Z"
   },
   {
     "id": 101,
@@ -805,6 +772,24 @@
     "parentId": 38
   },
   {
+    "id": 39,
+    "title": "GitHub Community Day",
+    "description": "La comunidad de GitHub llega a la UTP para un evento único que reunirá a estudiantes, developers y apasionados por la tecnología en una experiencia diseñada para potenciar tu forma de crear y colaborar en proyectos.",
+    "date": "2026-06-06",
+    "endDate": "",
+    "time": "",
+    "location": "UTP Torre Arequipa, Lima",
+    "type": "conference",
+    "link": "https://www.eventbrite.com/e/github-community-day-peru-tickets-1988461462763",
+    "tags": [],
+    "image": "",
+    "organizer": "Developer Student Clubs UTP",
+    "issueUrl": "https://github.com/ethlima/eth-events/issues/39",
+    "issueNum": 39,
+    "state": "open",
+    "createdAt": "2026-05-08T23:05:07Z"
+  },
+  {
     "id": 104,
     "title": "UX en Blockchain (Módulo 1: Blockchain y Proyectos)",
     "description": "Fundamentos y buenas prácticas del diseño de experiencia de usuario en aplicaciones descentralizadas (dApps).",
@@ -854,6 +839,24 @@
     "image": "",
     "organizer": "Ethereum Lima",
     "parentId": 38
+  },
+  {
+    "id": 4,
+    "title": "Founder School",
+    "description": "A 10-week, cohort-based, virtual, and equity-free program designed to help you go from zero to one.",
+    "date": "2026-06-12",
+    "endDate": "",
+    "time": "",
+    "location": "Online",
+    "type": "meetup",
+    "link": "https://docs.google.com/forms/d/e/1FAIpQLSeC55SDLg9ZH8uwP1l2nJjeEFFr-IwZNTz5wQAfC37bxNe3vw/viewform",
+    "tags": [],
+    "image": "",
+    "organizer": "",
+    "issueUrl": "https://github.com/ethlima/eth-events/issues/4",
+    "issueNum": 4,
+    "state": "open",
+    "createdAt": "2026-03-26T06:02:41Z"
   },
   {
     "id": 107,
@@ -1007,5 +1010,26 @@
     "image": "",
     "organizer": "Ethereum Lima",
     "parentId": 38
+  },
+  {
+    "id": 50,
+    "title": "DEVCON 8",
+    "description": "An open door for explorers,\na common ground for builders",
+    "date": "2026-11-03",
+    "endDate": "2026-11-06",
+    "time": "",
+    "location": "India",
+    "type": "conference",
+    "link": "https://devcon.org/en/",
+    "tags": [
+      "ethereum"
+    ],
+    "image": "",
+    "organizer": "Ethereum",
+    "parentId": null,
+    "issueUrl": "https://github.com/javierarteagagonzales/ethevents/issues/2",
+    "issueNum": 2,
+    "state": "open",
+    "createdAt": "2026-05-15T18:19:44Z"
   }
 ]
