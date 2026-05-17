@@ -407,6 +407,14 @@
         </div>
       </div>
 
+      <div class="form-row" id="parent-event-container" style="display: none; transition: all 0.3s ease;">
+        <div class="form-group" style="grid-column: span 2;">
+          <label for="parentId">🔗 ID del Evento Padre (Solo para Ethereum Lima)</label>
+          <input type="number" id="parentId" name="parentId" placeholder="Ej: 38">
+          <p class="form-hint">Si este evento es parte de otro evento principal (subevento), ingresa su ID aquí. Dejar en blanco si es independiente.</p>
+        </div>
+      </div>
+
       <!-- CONFIRMACIONES -->
       <div class="checkbox-group">
         <label class="checkbox-item">
@@ -478,6 +486,29 @@
         submitBtn.innerHTML = btnText;
       }
     });
+
+    // Show/hide parentId field based on organizer or tags containing ethlima
+    const organizerInput = document.getElementById('organizador');
+    const tagsInput = document.getElementById('tags');
+    const parentContainer = document.getElementById('parent-event-container');
+    const parentIdInput = document.getElementById('parentId');
+
+    function updateParentFieldVisibility() {
+      const orgValue = (organizerInput.value || '').toLowerCase();
+      const tagsValue = (tagsInput.value || '').toLowerCase();
+      const isEthLima = orgValue.includes('ethlima') || orgValue.includes('eth-lima') || orgValue.includes('eth lima') || orgValue.includes('ethereum lima') ||
+                        tagsValue.includes('ethlima') || tagsValue.includes('eth-lima') || tagsValue.includes('eth lima') || tagsValue.includes('ethereum lima');
+      
+      if (isEthLima) {
+        parentContainer.style.display = 'block';
+      } else {
+        parentContainer.style.display = 'none';
+        parentIdInput.value = ''; // clear value if hidden
+      }
+    }
+
+    organizerInput.addEventListener('input', updateParentFieldVisibility);
+    tagsInput.addEventListener('input', updateParentFieldVisibility);
   </script>
 
   <style>

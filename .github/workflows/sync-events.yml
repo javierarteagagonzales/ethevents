@@ -98,6 +98,8 @@ jobs:
               const body = issue.body || '';
               const rawDate = clean(extract(body, 'Fecha'));
               const parsedDate = rawDate ? new Date(rawDate) : null;
+              const rawParentId = clean(extract(body, 'Evento Padre ID'));
+              const parentId = rawParentId && !isNaN(parseInt(rawParentId, 10)) ? parseInt(rawParentId, 10) : null;
 
               return {
                 id: issue.number + 48,
@@ -112,6 +114,7 @@ jobs:
                 tags: (clean(extract(body, 'Tags')) || '').split(',').map(t => t.trim().toLowerCase()).filter(Boolean),
                 image: (body.match(/!\[.*?\]\((.*?)\)/) || body.match(/<img.*?src=["'](.*?)["']/) || [])[1] || '',
                 organizer: clean(extract(body, 'Organizador')),
+                parentId: parentId,
                 issueUrl: issue.html_url,
                 issueNum: issue.number,
                 state: issue.state,

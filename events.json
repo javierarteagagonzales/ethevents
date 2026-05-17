@@ -752,5 +752,260 @@
     "issueNum": 2,
     "state": "open",
     "createdAt": "2026-05-15T18:19:44Z"
+  },
+  {
+    "id": 101,
+    "title": "BOOTCAMP ETH LIMA Kick Off - Introducción a Blockchain (Módulo 1: Blockchain y Proyectos)",
+    "description": "Sesión inaugural del Bootcamp Ethereum Lima 2026. Introducción y bienvenida.",
+    "date": "2026-05-30",
+    "endDate": "",
+    "time": "19:00",
+    "location": "Online",
+    "type": "workshop",
+    "link": "https://bootcamp.ethlima.org/",
+    "tags": [
+      "ethlima"
+    ],
+    "image": "",
+    "organizer": "Ethereum Lima",
+    "parentId": 38
+  },
+  {
+    "id": 102,
+    "title": "Casos de Uso II (Módulo 1: Blockchain y Proyectos)",
+    "description": "Casos prácticos de uso y aplicaciones de tecnología Blockchain en el mundo real.",
+    "date": "2026-05-30",
+    "endDate": "",
+    "time": "20:00",
+    "location": "Online",
+    "type": "workshop",
+    "link": "https://bootcamp.ethlima.org/",
+    "tags": [
+      "ethlima"
+    ],
+    "image": "",
+    "organizer": "Ethereum Lima",
+    "parentId": 38
+  },
+  {
+    "id": 103,
+    "title": "Casos de Uso I (Módulo 1: Blockchain y Proyectos)",
+    "description": "Casos prácticos de uso y aplicaciones de tecnología Blockchain en el mundo real.",
+    "date": "2026-05-30",
+    "endDate": "",
+    "time": "21:00",
+    "location": "Online",
+    "type": "workshop",
+    "link": "https://bootcamp.ethlima.org/",
+    "tags": [
+      "ethlima"
+    ],
+    "image": "",
+    "organizer": "Ethereum Lima",
+    "parentId": 38
+  },
+  {
+    "id": 104,
+    "title": "UX en Blockchain (Módulo 1: Blockchain y Proyectos)",
+    "description": "Fundamentos y buenas prácticas del diseño de experiencia de usuario en aplicaciones descentralizadas (dApps).",
+    "date": "2026-06-06",
+    "endDate": "",
+    "time": "18:00",
+    "location": "Online",
+    "type": "workshop",
+    "link": "https://bootcamp.ethlima.org/",
+    "tags": [
+      "ethlima"
+    ],
+    "image": "",
+    "organizer": "Ethereum Lima",
+    "parentId": 38
+  },
+  {
+    "id": 105,
+    "title": "Fundamentos de Solidity (Módulo 2: Solidity)",
+    "description": "Conceptos fundamentales para programar contratos inteligentes con Solidity.",
+    "date": "2026-06-06",
+    "endDate": "",
+    "time": "19:00",
+    "location": "Online",
+    "type": "workshop",
+    "link": "https://bootcamp.ethlima.org/",
+    "tags": [
+      "ethlima"
+    ],
+    "image": "",
+    "organizer": "Ethereum Lima",
+    "parentId": 38
+  },
+  {
+    "id": 106,
+    "title": "Fundamentos de Rust (Módulo 3: Rust)",
+    "description": "Fundamentos básicos de la programación en Rust.",
+    "date": "2026-06-06",
+    "endDate": "",
+    "time": "20:00",
+    "location": "Online",
+    "type": "workshop",
+    "link": "https://bootcamp.ethlima.org/",
+    "tags": [
+      "ethlima"
+    ],
+    "image": "",
+    "organizer": "Ethereum Lima",
+    "parentId": 38
+  },
+  {
+    "id": 107,
+    "title": "Fundamentos de Rust (Módulo 3: Rust)",
+    "description": "Temas avanzados y estructura de Rust.",
+    "date": "2026-06-13",
+    "endDate": "",
+    "time": "18:00",
+    "location": "Online",
+    "type": "workshop",
+    "link": "https://bootcamp.ethlima.org/",
+    "tags": [
+      "ethlima"
+    ],
+    "image": "",
+    "organizer": "Ethereum Lima",
+    "parentId": 38
+  },
+  {
+    "id": 108,
+    "title": "Fundamentos de Solidity (Módulo 2: Solidity)",
+    "description": "Solidity desde cero y buenas prácticas.",
+    "date": "2026-06-13",
+    "endDate": "",
+    "time": "19:00",
+    "location": "Online",
+    "type": "workshop",
+    "link": "https://bootcamp.ethlima.org/",
+    "tags": [
+      "ethlima"
+    ],
+    "image": "",
+    "organizer": "Ethereum Lima",
+    "parentId": 38
+  },
+  {
+    "id": 109,
+    "title": "Introducción a Blockchain y Layers 2 (Módulo 4: Arbitrum Stylus)",
+    "description": "Entendiendo las segundas capas y la arquitectura de Arbitrum Stylus.",
+    "date": "2026-06-20",
+    "endDate": "",
+    "time": "19:00",
+    "location": "Online",
+    "type": "workshop",
+    "link": "https://bootcamp.ethlima.org/",
+    "tags": [
+      "ethlima"
+    ],
+    "image": "",
+    "organizer": "Ethereum Lima",
+    "parentId": 38
+  },
+  {
+    "id": 110,
+    "title": "Scaffold-Eth: Solidity smart contracts y Deployment en Ethereum (Módulo 4: Arbitrum Stylus)",
+    "description": "Escritura de contratos inteligentes con Solidity usando Scaffold-Eth y su despliegue en Ethereum.",
+    "date": "2026-06-20",
+    "endDate": "",
+    "time": "20:00",
+    "location": "Online",
+    "type": "workshop",
+    "link": "https://bootcamp.ethlima.org/",
+    "tags": [
+      "ethlima"
+    ],
+    "image": "",
+    "organizer": "Ethereum Lima",
+    "parentId": 38
+  },
+  {
+    "id": 111,
+    "title": "Intro al Ecosistema de Arbitrum, y Deployment de smart contracts en Arbitrium One (Módulo 4: Arbitrum Stylus)",
+    "description": "Aprende el funcionamiento del ecosistema de Arbitrum y despliega tus primeros contratos inteligentes en Arbitrum One.",
+    "date": "2026-06-27",
+    "endDate": "",
+    "time": "19:00",
+    "location": "Online",
+    "type": "workshop",
+    "link": "https://bootcamp.ethlima.org/",
+    "tags": [
+      "ethlima"
+    ],
+    "image": "",
+    "organizer": "Ethereum Lima",
+    "parentId": 38
+  },
+  {
+    "id": 112,
+    "title": "Stylus/Rust smart contracts y Deployment en Arbitrium One (Módulo 4: Arbitrum Stylus)",
+    "description": "Escribe contratos inteligentes ultrarrápidos usando Rust y Arbitrum Stylus, y despliégalos.",
+    "date": "2026-06-27",
+    "endDate": "",
+    "time": "20:00",
+    "location": "Online",
+    "type": "workshop",
+    "link": "https://bootcamp.ethlima.org/",
+    "tags": [
+      "ethlima"
+    ],
+    "image": "",
+    "organizer": "Ethereum Lima",
+    "parentId": 38
+  },
+  {
+    "id": 113,
+    "title": "Front end with Scaffold-stylus (Módulo 4: Arbitrum Stylus)",
+    "description": "Desarrollo de interfaces de usuario (Frontend) y conexión con Scaffold-stylus.",
+    "date": "2026-07-04",
+    "endDate": "",
+    "time": "19:00",
+    "location": "Online",
+    "type": "workshop",
+    "link": "https://bootcamp.ethlima.org/",
+    "tags": [
+      "ethlima"
+    ],
+    "image": "",
+    "organizer": "Ethereum Lima",
+    "parentId": 38
+  },
+  {
+    "id": 114,
+    "title": "Construye Full Dapps con ARBuilder (Módulo 4: Arbitrum Stylus)",
+    "description": "Crea aplicaciones descentralizadas completas utilizando la herramienta ARBuilder.",
+    "date": "2026-07-04",
+    "endDate": "",
+    "time": "20:00",
+    "location": "Online",
+    "type": "workshop",
+    "link": "https://bootcamp.ethlima.org/",
+    "tags": [
+      "ethlima"
+    ],
+    "image": "",
+    "organizer": "Ethereum Lima",
+    "parentId": 38
+  },
+  {
+    "id": 115,
+    "title": "ENTREGA DE CERTIFICADOS (GENERAL)",
+    "description": "Clausura del Bootcamp Ethereum Lima 2026 y entrega oficial de certificados de participación.",
+    "date": "2026-07-05",
+    "endDate": "",
+    "time": "19:00",
+    "location": "Online",
+    "type": "conference",
+    "link": "https://bootcamp.ethlima.org/",
+    "tags": [
+      "ethlima"
+    ],
+    "image": "",
+    "organizer": "Ethereum Lima",
+    "parentId": 38
   }
 ]

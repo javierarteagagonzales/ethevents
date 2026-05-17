@@ -13,7 +13,8 @@ export default async function handler(req, res) {
     ubicacion,
     link,
     organizador,
-    tags
+    tags,
+    parentId
   } = req.body;
 
   const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
@@ -49,6 +50,9 @@ ${tags || '_No response_'}
 
 ### 👤 Organizador / Contacto
 ${organizador || '_No response_'}
+
+### 🔗 Evento Padre ID (opcional)
+${parentId || '_No response_'}
 
 ### ✅ Confirmación
 - [x] El evento es real y tiene fecha confirmada.
