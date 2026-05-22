@@ -244,7 +244,7 @@
   {
     "id": 6,
     "name": "Jenniffer Gabriela",
-    "role": "Lead del Proyecto",
+    "role": "Voluntario",
     "photo": "",
     "social": {
       "x": "",
@@ -253,6 +253,25 @@
     },
     "eventIds": [
       41
+    ],
+    "area": "General",
+    "events": [
+      {
+        "eventId": 16,
+        "role": "Lead del Proyecto"
+      },
+      {
+        "eventId": 19,
+        "role": "Voluntario"
+      },
+      {
+        "eventId": 34,
+        "role": "Voluntario"
+      },
+      {
+        "eventId": 51,
+        "role": "Voluntario"
+      }
     ]
   },
   {
@@ -292,7 +311,7 @@
   {
     "id": 9,
     "name": "Mariana",
-    "role": "Lead del Proyecto",
+    "role": "Voluntario",
     "photo": "",
     "social": {
       "x": "",
@@ -303,6 +322,25 @@
       19,
       34,
       51
+    ],
+    "area": "General",
+    "events": [
+      {
+        "eventId": 16,
+        "role": "Voluntario"
+      },
+      {
+        "eventId": 19,
+        "role": "Lead del Proyecto"
+      },
+      {
+        "eventId": 34,
+        "role": "Lead del Proyecto"
+      },
+      {
+        "eventId": 51,
+        "role": "Lead del Proyecto"
+      }
     ]
   },
   {
