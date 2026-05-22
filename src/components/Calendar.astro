@@ -1,0 +1,44 @@
+---
+---
+
+<div class="calendar-container hidden w-full" id="calendar-container">
+  <div class="flex items-center justify-between gap-4 mb-6">
+    <h3 class="font-mono text-sm text-muted tracking-widest font-bold uppercase">
+      CALENDARIO MENSUAL
+    </h3>
+    <div class="relative flex items-center gap-2" id="month-select-container">
+      <select
+        class="month-select appearance-none bg-surface-2 border border-border text-white font-mono text-xs px-4 py-2.5 pr-8 rounded-lg cursor-pointer outline-none focus:border-accent"
+        id="month-select"
+      >
+        <!-- Options populated dynamically via javascript -->
+      </select>
+      <div class="absolute right-3 pointer-events-none text-muted">
+        <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <polyline points="6 9 12 15 18 9" />
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="calendar-grid grid grid-cols-7 gap-[1px] bg-border border border-border rounded-2xl overflow-hidden shadow-2xl"
+    id="calendar-grid"
+  >
+    <!-- Dynamic Days and Cells populated dynamically via javascript -->
+  </div>
+</div>
+
+<style>
+  /* Custom select arrow styling */
+  .month-select {
+    background-image: none;
+  }
+  
+  /* Media query matching the original styles for mobile layout */
+  @media (max-width: 1024px) {
+    .calendar-grid {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+</style>

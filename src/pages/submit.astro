@@ -1,0 +1,282 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+---
+
+<Layout title="Proponer Evento — ETH Events" description="Comparte tu evento Web3 / Ethereum con la comunidad. Completa el formulario para enviarlo a revisión de los maintainers.">
+  <Header />
+
+  <main class="w-full max-w-4xl mx-auto px-6 py-12 flex-1 flex flex-col items-center justify-center relative z-10">
+    
+    <div class="w-full max-w-2xl bg-surface border border-white/5 rounded-3xl p-6 md:p-12 backdrop-blur-xl shadow-2xl relative overflow-hidden my-6">
+      
+      <!-- SUCCESS OVERLAY -->
+      <div class="absolute inset-0 bg-[#030407] hidden flex-col items-center justify-center text-center p-8 z-50 animate-modal-fade" id="success-overlay">
+        <div class="w-20 h-20 bg-success/10 border border-success rounded-full flex items-center justify-center text-success mb-6 shadow-[0_0_30px_rgba(16,185,129,0.2)]">
+          <svg class="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+            <polyline points="20 6 9 17 4 12" />
+          </svg>
+        </div>
+        <h2 class="text-3xl font-extrabold text-white mb-3" data-i18n="form_success_title">¡Propuesta Recibida!</h2>
+        <p class="text-muted text-sm leading-relaxed max-w-md mb-8" id="success-description">
+          Tu evento ha sido enviado correctamente. Un maintainer lo revisará pronto para su publicación.
+        </p>
+        <a href="/" class="px-8 py-3 bg-accent hover:bg-accent-2 text-white font-mono text-sm font-bold rounded-xl shadow-lg transition-all text-center">
+          VOLVER AL INICIO
+        </a>
+      </div>
+
+      <!-- FORM CONTENT -->
+      <div id="form-content" class="transition-opacity duration-300">
+        <div class="text-center mb-10">
+          <h1 class="text-3xl font-extrabold text-white mb-3">Propón tu Evento</h1>
+          <p class="text-muted text-sm leading-relaxed max-w-lg mx-auto">
+            Completa los detalles para que la comunidad pueda descubrir tu evento. Será revisado por los maintainers.
+          </p>
+        </div>
+
+        <form id="event-form" class="space-y-6">
+          
+          <!-- INFO BÁSICA -->
+          <div class="space-y-2">
+            <label for="nombre" class="block font-mono text-[10px] text-muted tracking-wider uppercase font-bold">
+              📌 Nombre del Evento *
+            </label>
+            <input
+              type="text"
+              id="nombre"
+              name="nombre"
+              placeholder="Ej: ETHLima Meetup — Julio 2026"
+              required
+              class="w-full bg-surface-2 border border-white/5 rounded-xl px-4 py-3 text-white placeholder-muted/50 focus:border-accent focus:bg-accent/5 focus:ring-1 focus:ring-accent outline-none transition-all"
+            />
+          </div>
+
+          <div class="space-y-2">
+            <label for="descripcion" class="block font-mono text-[10px] text-muted tracking-wider uppercase font-bold">
+              📝 Descripción *
+            </label>
+            <textarea
+              id="descripcion"
+              name="descripcion"
+              placeholder="Describe el evento en 2-3 líneas..."
+              required
+              class="w-full bg-surface-2 border border-white/5 rounded-xl px-4 py-3 text-white placeholder-muted/50 focus:border-accent focus:bg-accent/5 focus:ring-1 focus:ring-accent outline-none min-h-[100px] resize-y transition-all"
+            ></textarea>
+          </div>
+
+          <!-- FECHAS -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="space-y-2">
+              <label for="fecha" class="block font-mono text-[10px] text-muted tracking-wider uppercase font-bold">
+                🗓️ Fecha de Inicio *
+              </label>
+              <input
+                type="date"
+                id="fecha"
+                name="fecha"
+                required
+                class="w-full bg-surface-2 border border-white/5 rounded-xl px-4 py-3 text-white focus:border-accent focus:bg-accent/5 focus:ring-1 focus:ring-accent outline-none transition-all"
+              />
+            </div>
+            <div class="space-y-2">
+              <label for="fecha-fin" class="block font-mono text-[10px] text-muted tracking-wider uppercase font-bold">
+                🗓️ Fecha de Fin (opcional)
+              </label>
+              <input
+                type="date"
+                id="fecha-fin"
+                name="fecha-fin"
+                class="w-full bg-surface-2 border border-white/5 rounded-xl px-4 py-3 text-white focus:border-accent focus:bg-accent/5 focus:ring-1 focus:ring-accent outline-none transition-all"
+              />
+            </div>
+          </div>
+
+          <!-- TIME AND TYPE -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="space-y-2">
+              <label for="hora" class="block font-mono text-[10px] text-muted tracking-wider uppercase font-bold">
+                ⏰ Hora
+              </label>
+              <input
+                type="text"
+                id="hora"
+                name="hora"
+                placeholder="Ej: 19:00 (UTC-5)"
+                class="w-full bg-surface-2 border border-white/5 rounded-xl px-4 py-3 text-white placeholder-muted/50 focus:border-accent focus:bg-accent/5 focus:ring-1 focus:ring-accent outline-none transition-all"
+              />
+            </div>
+            <div class="space-y-2 relative">
+              <label for="tipo" class="block font-mono text-[10px] text-muted tracking-wider uppercase font-bold">
+                🏷️ Tipo de evento *
+              </label>
+              <select
+                id="tipo"
+                name="tipo"
+                required
+                class="w-full bg-surface-2 border border-white/5 rounded-xl px-4 py-3 pr-10 text-white focus:border-accent focus:bg-accent/5 focus:ring-1 focus:ring-accent outline-none transition-all appearance-none"
+              >
+                <option value="" disabled selected>Selecciona una categoría</option>
+                <option value="meetup">Meetup</option>
+                <option value="conference">Conference</option>
+                <option value="workshop">Workshop</option>
+                <option value="hackathon">Hackathon</option>
+                <option value="bootcamp">Bootcamp</option>
+                <option value="buildathon">Buildathon</option>
+                <option value="cohorte">Cohorte</option>
+              </select>
+              <div class="absolute right-3 bottom-3.5 pointer-events-none text-muted">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- UBICACIÓN Y LINK -->
+          <div class="space-y-2">
+            <label for="ubicacion" class="block font-mono text-[10px] text-muted tracking-wider uppercase font-bold">
+              📍 Ubicación *
+            </label>
+            <input
+              type="text"
+              id="ubicacion"
+              name="ubicacion"
+              placeholder="Ej: Lima, Perú o Online"
+              required
+              class="w-full bg-surface-2 border border-white/5 rounded-xl px-4 py-3 text-white placeholder-muted/50 focus:border-accent focus:bg-accent/5 focus:ring-1 focus:ring-accent outline-none transition-all"
+            />
+          </div>
+
+          <div class="space-y-2">
+            <label for="link" class="block font-mono text-[10px] text-muted tracking-wider uppercase font-bold">
+              🔗 Link de registro / más info
+            </label>
+            <input
+              type="url"
+              id="link"
+              name="link"
+              placeholder="https://luma.com/..."
+              class="w-full bg-surface-2 border border-white/5 rounded-xl px-4 py-3 text-white placeholder-muted/50 focus:border-accent focus:bg-accent/5 focus:ring-1 focus:ring-accent outline-none transition-all"
+            />
+          </div>
+
+          <!-- METADATA -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="space-y-2">
+              <label for="organizador" class="block font-mono text-[10px] text-muted tracking-wider uppercase font-bold">
+                👤 Organizador
+              </label>
+              <input
+                type="text"
+                id="organizador"
+                name="organizador"
+                placeholder="Nombre u organización"
+                class="w-full bg-surface-2 border border-white/5 rounded-xl px-4 py-3 text-white placeholder-muted/50 focus:border-accent focus:bg-accent/5 focus:ring-1 focus:ring-accent outline-none transition-all"
+              />
+            </div>
+            <div class="space-y-2">
+              <label for="tags" class="block font-mono text-[10px] text-muted tracking-wider uppercase font-bold">
+                🏷️ Tags
+              </label>
+              <input
+                type="text"
+                id="tags"
+                name="tags"
+                placeholder="ethereum, solidity, defi"
+                class="w-full bg-surface-2 border border-white/5 rounded-xl px-4 py-3 text-white placeholder-muted/50 focus:border-accent focus:bg-accent/5 focus:ring-1 focus:ring-accent outline-none transition-all"
+              />
+              <p class="font-mono text-[10px] text-muted italic mt-1">// Separados por comas</p>
+            </div>
+          </div>
+
+          <!-- CONFIRMACIONES -->
+          <div class="pt-6 border-t border-white/5 space-y-4">
+            <label class="flex items-start gap-3 cursor-pointer">
+              <input type="checkbox" name="confirm-real" required class="w-4 h-4 rounded border-white/10 bg-surface-2 text-accent focus:ring-accent accent-accent mt-0.5" />
+              <span class="text-xs text-muted leading-relaxed select-none">El evento es real y tiene fecha confirmada.</span>
+            </label>
+            <label class="flex items-start gap-3 cursor-pointer">
+              <input type="checkbox" name="confirm-web3" required class="w-4 h-4 rounded border-white/10 bg-surface-2 text-accent focus:ring-accent accent-accent mt-0.5" />
+              <span class="text-xs text-muted leading-relaxed select-none">El evento está relacionado con Web3 / Ethereum / Blockchain.</span>
+            </label>
+            <label class="flex items-start gap-3 cursor-pointer">
+              <input type="checkbox" name="confirm-edit" required class="w-4 h-4 rounded border-white/10 bg-surface-2 text-accent focus:ring-accent accent-accent mt-0.5" />
+              <span class="text-xs text-muted leading-relaxed select-none">Acepto que los maintainers pueden editar o rechazar el evento.</span>
+            </label>
+          </div>
+
+          <!-- SUBMIT BUTTON -->
+          <button
+            type="submit"
+            class="btn-submit w-full py-4 bg-accent hover:bg-accent-2 text-white font-mono text-sm font-bold rounded-xl shadow-[0_10px_30px_rgba(98,126,234,0.3)] hover:shadow-[0_15px_40px_rgba(98,126,234,0.4)] hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-2"
+          >
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
+            </svg>
+            ENVIAR PROPUESTA
+          </button>
+        </form>
+      </div>
+
+    </div>
+
+  </main>
+</Layout>
+
+<script>
+  const form = document.getElementById('event-form') as HTMLFormElement;
+  const submitBtn = form?.querySelector('.btn-submit') as HTMLButtonElement;
+  const btnText = submitBtn?.innerHTML || '';
+
+  form?.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    // Loading state
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = `<svg class="w-4 h-4 animate-spin text-white" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg> ENVIANDO...`;
+    }
+    
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
+
+    try {
+      const response = await fetch('/api/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        // Success Overlay
+        const overlay = document.getElementById('success-overlay');
+        const content = document.getElementById('form-content');
+        const desc = document.getElementById('success-description');
+
+        if (content) {
+          content.style.opacity = '0';
+          content.style.pointerEvents = 'none';
+        }
+        if (overlay) {
+          overlay.style.display = 'flex';
+        }
+        if (desc) {
+          desc.innerHTML = `Tu evento ha sido enviado correctamente. Un maintainer lo revisará pronto para su publicación.<br><br><a href="${result.url}" target="_blank" class="text-accent hover:text-accent-2 transition-colors font-mono text-xs font-bold underline">Ver seguimiento en GitHub #${result.number}</a>`;
+        }
+        
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        throw new Error(result.error || 'Error al enviar');
+      }
+    } catch (error: any) {
+      alert('Hubo un problema al enviar tu propuesta: ' + error.message);
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = btnText;
+      }
+    }
+  });
+</script>

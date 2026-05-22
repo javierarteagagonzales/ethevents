@@ -1,0 +1,32 @@
+---
+const categories = [
+  { id: 'all', label: 'TODOS', i18n: 'filter_all' },
+  { id: 'meetup', label: 'MEETUP', i18n: 'type_meetup' },
+  { id: 'conference', label: 'CONFERENCE', i18n: 'type_conference' },
+  { id: 'workshop', label: 'WORKSHOP', i18n: 'type_workshop' },
+  { id: 'hackathon', label: 'HACKATHON', i18n: 'type_hackathon' },
+  { id: 'bootcamp', label: 'BOOTCAMP', i18n: 'type_bootcamp' },
+  { id: 'buildathon', label: 'BUILDATHON', i18n: 'type_buildathon' },
+  { id: 'cohorte', label: 'COHORTE', i18n: 'type_cohorte' },
+];
+---
+
+<div class="filter-bar flex gap-2 flex-wrap items-center justify-start py-4" id="filter-bar">
+  {categories.map((cat, idx) => (
+    <button
+      class={`filter-btn font-mono text-[11px] px-4 py-2 border border-white/10 rounded-full text-muted tracking-wider hover:border-accent hover:text-accent hover:bg-accent/10 transition-all ${idx === 0 ? 'active border-accent text-accent bg-accent/15' : ''}`}
+      data-filter={cat.id}
+      data-i18n={cat.i18n}
+    >
+      {cat.label}
+    </button>
+  ))}
+</div>
+
+<style>
+  .filter-btn.active {
+    border-color: var(--accent);
+    color: var(--accent);
+    background-color: var(--accent-glow);
+  }
+</style>

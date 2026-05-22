@@ -1,0 +1,38 @@
+---
+interface Props {
+  total: number;
+  upcoming: number;
+  categories: number;
+}
+
+const { total = 0, upcoming = 0, categories = 0 } = Astro.props;
+---
+
+<div class="stats flex justify-center gap-8 md:gap-16 py-10 px-6 max-w-4xl mx-auto border-y border-white/5 bg-white/[0.01] backdrop-blur-sm rounded-[32px] my-10" id="stats">
+  <div class="stat text-center flex-1">
+    <span class="stat-value font-mono text-3xl md:text-4xl font-bold text-accent mb-1.5 block" id="stat-total">
+      {total || '—'}
+    </span>
+    <span class="stat-label text-[10px] md:text-xs text-muted tracking-[0.15em] font-mono" data-i18n="stat_events">
+      EVENTOS
+    </span>
+  </div>
+  
+  <div class="stat text-center flex-1 border-x border-white/5">
+    <span class="stat-value font-mono text-3xl md:text-4xl font-bold text-accent mb-1.5 block" id="stat-upcoming">
+      {upcoming || '—'}
+    </span>
+    <span class="stat-label text-[10px] md:text-xs text-muted tracking-[0.15em] font-mono" data-i18n="stat_upcoming">
+      PRÓXIMOS
+    </span>
+  </div>
+
+  <div class="stat text-center flex-1">
+    <span class="stat-value font-mono text-3xl md:text-4xl font-bold text-accent mb-1.5 block" id="stat-types">
+      {categories || '—'}
+    </span>
+    <span class="stat-label text-[10px] md:text-xs text-muted tracking-[0.15em] font-mono" data-i18n="stat_types">
+      CATEGORÍAS
+    </span>
+  </div>
+</div>

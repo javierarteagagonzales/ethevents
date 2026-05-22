@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg: #030407;
+    --surface: rgba(13, 16, 23, 0.7);
+    --surface2: rgba(22, 27, 34, 0.9);
+    --border: rgba(255, 255, 255, 0.08);
+    --border-bright: rgba(255, 255, 255, 0.15);
+    --accent: #627eea;
+    --accent2: #8a9ff5;
+    --accent-glow: rgba(98, 126, 234, 0.15);
+    --text: #f8fafc;
+    --muted: #94a3b8;
+    --success: #10b981;
+    --warning: #f59e0b;
+    --card-bg-gradient: linear-gradient(180deg, rgba(22, 27, 34, 0.4) 0%, rgba(13, 16, 23, 0.8) 100%);
+    --mono: 'Space Mono', monospace;
+    --sans: 'Inter', sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--bg);
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    min-height: 100vh;
+    overflow-x: hidden;
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'><g transform='rotate(15 16 16)'><polygon points='16,4 24,14 16,18 8,14' fill='%23627eea' opacity='0.9'/><polygon points='16,28 24,18 16,14 8,18' fill='%23627eea' opacity='0.7'/><polygon points='16,4 16,18 24,14' fill='%234559b4' opacity='0.8'/><polygon points='16,28 16,18 24,18' fill='%234559b4' opacity='0.6'/></g></svg>") 16 16, auto;
+  }
+
+  /* Ensure interactive tags show the premium custom cursor */
+  a, button, select, input, textarea, [role="button"] {
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'><g transform='rotate(15 16 16)'><polygon points='16,4 24,14 16,18 8,14' fill='%238899f7' opacity='1'/><polygon points='16,28 24,18 16,14 8,18' fill='%238899f7' opacity='0.8'/><polygon points='16,4 16,18 24,14' fill='%236779d7' opacity='0.9'/><polygon points='16,28 16,18 24,18' fill='%236779d7' opacity='0.7'/></g></svg>") 16 16, pointer;
+  }
+}
+
+/* Custom Grid Background */
+.grid-bg::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(98, 126, 234, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(98, 126, 234, 0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Glow Orb */
+.glow-orb::after {
+  content: '';
+  position: fixed;
+  top: -200px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px;
+  height: 500px;
+  background: radial-gradient(ellipse at center, rgba(98, 126, 234, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #030407;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(98, 126, 234, 0.3);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(98, 126, 234, 0.5);
+}
+
+/* Swiper overrides */
+.swiper-pagination-bullet {
+  background: var(--muted) !important;
+  opacity: 0.5;
+}
+.swiper-pagination-bullet-active {
+  background: var(--accent) !important;
+  opacity: 1 !important;
+  width: 20px !important;
+  border-radius: 10px !important;
+  transition: width 0.3s ease;
+}
+
+/* Calendar transitions */
+.calendar-day-active {
+  background: var(--accent-glow);
+  border-color: rgba(98, 126, 234, 0.4);
+}
