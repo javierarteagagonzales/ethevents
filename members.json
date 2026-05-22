@@ -262,11 +262,11 @@
     "id": 4,
     "name": "André Neyra",
     "role": "Voluntario",
-    "photo": "",
+    "photo": "https://raw.githubusercontent.com/javierarteagagonzales/ethevents/main/public/images/andré.webp",
     "social": {
-      "x": "",
+      "x": "https://x.com/AndrNeyra",
       "instagram": "",
-      "linkedin": ""
+      "linkedin": "https://www.linkedin.com/in/andreneyra/"
     },
     "eventIds": [
       38
@@ -285,9 +285,9 @@
     "role": "Voluntario",
     "photo": "https://raw.githubusercontent.com/javierarteagagonzales/ethevents/main/public/images/miguel.webp",
     "social": {
-      "x": "",
+      "x": "https://x.com/midelacc",
       "instagram": "",
-      "linkedin": ""
+      "linkedin": "https://www.linkedin.com/in/miguel-de-la-cruz-chara-3a5a37332/"
     },
     "eventIds": [
       12,
@@ -396,11 +396,11 @@
     "id": 8,
     "name": "Javier Damiani",
     "role": "Voluntario",
-    "photo": "",
+    "photo": "https://raw.githubusercontent.com/javierarteagagonzales/ethevents/main/public/images/damiani.webp",
     "social": {
-      "x": "",
+      "x": "https://x.com/nerdcoder95",
       "instagram": "",
-      "linkedin": ""
+      "linkedin": "https://www.linkedin.com/in/javierluisdamianiarellano/"
     },
     "eventIds": [
       13,
@@ -435,7 +435,8 @@
         "eventId": 38,
         "role": "Voluntario"
       }
-    ]
+    ],
+    "area": "General"
   },
   {
     "id": 9,
@@ -443,9 +444,9 @@
     "role": "Voluntario",
     "photo": "https://raw.githubusercontent.com/javierarteagagonzales/ethevents/main/public/images/mariana.webp",
     "social": {
-      "x": "",
+      "x": "https://x.com/sochologa",
       "instagram": "",
-      "linkedin": ""
+      "linkedin": "https://www.linkedin.com/in/malinoliv/"
     },
     "eventIds": [
       19,
@@ -539,7 +540,7 @@
     "social": {
       "x": "",
       "instagram": "",
-      "linkedin": ""
+      "linkedin": "https://www.linkedin.com/in/analyts-tm/"
     },
     "events": [
       {
