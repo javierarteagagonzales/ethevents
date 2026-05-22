@@ -176,5 +176,19 @@
       34,
       51
     ]
+  },
+  {
+    "id": 10,
+    "name": "Ángel Chavez",
+    "role": "Lead del Proyecto",
+    "photo": "",
+    "social": {
+      "x": "",
+      "instagram": "",
+      "linkedin": ""
+    },
+    "eventIds": [
+      16
+    ]
   }
 ]
