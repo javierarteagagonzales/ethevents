@@ -30,7 +30,7 @@ export const ROLE_ORDER: string[] = [
   'Coordinador de Tecnología',
   'Coordinador de Logística',
   'Coordinador de Alianzas',
-  'Coordinador de Comunicaciones',
+  'Coordinadora de Comunicaciones',
   'Lead del Proyecto',
   'Voluntario',
 ];

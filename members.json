@@ -577,7 +577,7 @@
   {
     "id": 14,
     "name": "Audi",
-    "role": "Coordinador de Comunicaciones",
+    "role": "Coordinadora de Comunicaciones",
     "area": "Comunicaciones",
     "photo": "https://raw.githubusercontent.com/javierarteagagonzales/ethevents/main/public/images/audi.webp",
     "social": {
@@ -588,55 +588,55 @@
     "events": [
       {
         "eventId": 12,
-        "role": "Coordinador de Comunicaciones"
+        "role": "Coordinadora de Comunicaciones"
       },
       {
         "eventId": 13,
-        "role": "Coordinador de Comunicaciones"
+        "role": "Coordinadora de Comunicaciones"
       },
       {
         "eventId": 16,
-        "role": "Coordinador de Comunicaciones"
+        "role": "Coordinadora de Comunicaciones"
       },
       {
         "eventId": 14,
-        "role": "Coordinador de Comunicaciones"
+        "role": "Coordinadora de Comunicaciones"
       },
       {
         "eventId": 15,
-        "role": "Coordinador de Comunicaciones"
+        "role": "Coordinadora de Comunicaciones"
       },
       {
         "eventId": 20,
-        "role": "Coordinador de Comunicaciones"
+        "role": "Coordinadora de Comunicaciones"
       },
       {
         "eventId": 34,
-        "role": "Coordinador de Comunicaciones"
+        "role": "Coordinadora de Comunicaciones"
       },
       {
         "eventId": 31,
-        "role": "Coordinador de Comunicaciones"
+        "role": "Coordinadora de Comunicaciones"
       },
       {
         "eventId": 40,
-        "role": "Coordinador de Comunicaciones"
+        "role": "Coordinadora de Comunicaciones"
       },
       {
         "eventId": 41,
-        "role": "Coordinador de Comunicaciones"
+        "role": "Coordinadora de Comunicaciones"
       },
       {
         "eventId": 53,
-        "role": "Coordinador de Comunicaciones"
+        "role": "Lead del Proyecto"
       },
       {
         "eventId": 51,
-        "role": "Coordinador de Comunicaciones"
+        "role": "Coordinadora de Comunicaciones"
       },
       {
         "eventId": 38,
-        "role": "Coordinador de Comunicaciones"
+        "role": "Coordinadora de Comunicaciones"
       }
     ]
   }
