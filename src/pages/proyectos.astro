@@ -289,10 +289,10 @@ const projectsJSON = JSON.stringify(projectsData.map(p => ({
       teamContent.innerHTML = `
         <div class="rounded-3xl border border-white/5 bg-surface backdrop-blur-xl p-8">
           <div class="flex items-center gap-3 mb-6">
-            ${proj.image ? `<img src="${proj.image}" alt="" class="w-10 h-10 rounded-xl object-cover"/>` : ''}
-            <div>
-              <h2 class="text-lg font-extrabold text-white">${proj.title}</h2>
-              <p class="font-mono text-[10px] text-muted">${proj.date || 'TBD'}</p>
+            ${proj.image ? `<img src="${proj.image}" alt="" class="w-10 h-10 rounded-xl object-cover flex-shrink-0"/>` : ''}
+            <div class="min-w-0">
+              <h2 class="text-base sm:text-lg font-extrabold text-white truncate">${proj.title}</h2>
+              <p class="font-mono text-[10px] text-muted truncate">${proj.date || 'TBD'}</p>
             </div>
           </div>
           <div class="flex items-center justify-center p-12 rounded-2xl border border-white/5 bg-black/20">
@@ -332,14 +332,18 @@ const projectsJSON = JSON.stringify(projectsData.map(p => ({
     }).join('');
 
     teamContent.innerHTML = `
-      <div class="rounded-3xl border border-white/5 bg-surface backdrop-blur-xl p-6 md:p-8">
-        <div class="flex items-center gap-4 mb-6 pb-4 border-b border-white/5">
-          ${proj.image ? `<img src="${proj.image}" alt="" class="w-12 h-12 rounded-xl object-cover border border-white/10"/>` : ''}
-          <div class="flex-1">
-            <h2 class="text-lg font-extrabold text-white">${proj.title}</h2>
-            <p class="font-mono text-[10px] text-muted mt-0.5">${proj.location || 'Online'} · ${proj.date || 'TBD'}</p>
+      <div class="rounded-3xl border border-white/5 bg-surface backdrop-blur-xl p-5 sm:p-6 md:p-8">
+        <div class="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 mb-6 pb-4 border-b border-white/5">
+          <div class="flex items-center gap-3 flex-1 min-w-0">
+            ${proj.image ? `<img src="${proj.image}" alt="" class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl object-cover border border-white/10 flex-shrink-0"/>` : ''}
+            <div class="min-w-0">
+              <h2 class="text-base sm:text-lg font-extrabold text-white leading-tight truncate">${proj.title}</h2>
+              <p class="font-mono text-[9px] sm:text-[10px] text-muted mt-0.5 truncate">${proj.location || 'Online'} · ${proj.date || 'TBD'}</p>
+            </div>
           </div>
-          <span class="font-mono text-[10px] text-accent-2 font-bold bg-accent/10 border border-accent/25 px-3 py-1 rounded-full">${proj.members.length} miembros</span>
+          <div class="flex-shrink-0 self-start sm:self-auto">
+            <span class="font-mono text-[9px] sm:text-[10px] text-accent-2 font-bold bg-accent/10 border border-accent/25 px-3 py-1.5 rounded-full inline-block">${proj.members.length} miembros</span>
+          </div>
         </div>
         <p class="text-xs text-muted mb-6 leading-relaxed line-clamp-3">${(proj.description || '').substring(0, 200)}</p>
         <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4">
