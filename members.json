@@ -160,5 +160,21 @@
       40,
       38
     ]
+  },
+  {
+    "id": 9,
+    "name": "Mariana",
+    "role": "Lead del Proyecto",
+    "photo": "",
+    "social": {
+      "x": "",
+      "instagram": "",
+      "linkedin": ""
+    },
+    "eventIds": [
+      19,
+      34,
+      51
+    ]
   }
 ]
