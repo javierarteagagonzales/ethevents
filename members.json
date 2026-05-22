@@ -138,7 +138,7 @@
       114,
       115
     ],
-    "area": "General",
+    "area": "Tecnología",
     "events": [
       {
         "eventId": 12,
@@ -573,5 +573,71 @@
       "linkedin": ""
     },
     "events": []
+  },
+  {
+    "id": 14,
+    "name": "Audi",
+    "role": "Coordinador de Comunicaciones",
+    "area": "Comunicaciones",
+    "photo": "https://raw.githubusercontent.com/javierarteagagonzales/ethevents/main/public/images/audi.webp",
+    "social": {
+      "x": "https://x.com/casi_audi",
+      "instagram": "",
+      "linkedin": ""
+    },
+    "events": [
+      {
+        "eventId": 12,
+        "role": "Voluntario"
+      },
+      {
+        "eventId": 13,
+        "role": "Voluntario"
+      },
+      {
+        "eventId": 16,
+        "role": "Voluntario"
+      },
+      {
+        "eventId": 14,
+        "role": "Voluntario"
+      },
+      {
+        "eventId": 15,
+        "role": "Voluntario"
+      },
+      {
+        "eventId": 20,
+        "role": "Voluntario"
+      },
+      {
+        "eventId": 34,
+        "role": "Voluntario"
+      },
+      {
+        "eventId": 31,
+        "role": "Voluntario"
+      },
+      {
+        "eventId": 40,
+        "role": "Voluntario"
+      },
+      {
+        "eventId": 41,
+        "role": "Voluntario"
+      },
+      {
+        "eventId": 53,
+        "role": "Voluntario"
+      },
+      {
+        "eventId": 51,
+        "role": "Voluntario"
+      },
+      {
+        "eventId": 38,
+        "role": "Voluntario"
+      }
+    ]
   }
 ]
