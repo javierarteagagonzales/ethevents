@@ -283,7 +283,7 @@
     "id": 5,
     "name": "Miguel Jesús",
     "role": "Voluntario",
-    "photo": "",
+    "photo": "https://raw.githubusercontent.com/javierarteagagonzales/ethevents/main/public/images/miguel.webp",
     "social": {
       "x": "",
       "instagram": "",
@@ -497,7 +497,7 @@
     "name": "Gianella Coronel",
     "role": "Voluntario",
     "area": "General",
-    "photo": "",
+    "photo": "https://raw.githubusercontent.com/javierarteagagonzales/ethevents/main/public/images/gianella-coronel.webp",
     "social": {
       "x": "",
       "instagram": "",
