@@ -239,6 +239,37 @@
       15,
       20,
       40
+    ],
+    "area": "General",
+    "events": [
+      {
+        "eventId": 12,
+        "role": "Lead del Proyecto"
+      },
+      {
+        "eventId": 13,
+        "role": "Lead del Proyecto"
+      },
+      {
+        "eventId": 14,
+        "role": "Lead del Proyecto"
+      },
+      {
+        "eventId": 15,
+        "role": "Lead del Proyecto"
+      },
+      {
+        "eventId": 20,
+        "role": "Lead del Proyecto"
+      },
+      {
+        "eventId": 40,
+        "role": "Lead del Proyecto"
+      },
+      {
+        "eventId": 53,
+        "role": "Voluntario"
+      }
     ]
   },
   {
@@ -269,6 +300,10 @@
         "role": "Voluntario"
       },
       {
+        "eventId": 31,
+        "role": "Lead del Proyecto"
+      },
+      {
         "eventId": 51,
         "role": "Voluntario"
       }
@@ -287,6 +322,17 @@
     "eventIds": [
       16,
       38
+    ],
+    "area": "General",
+    "events": [
+      {
+        "eventId": 16,
+        "role": "Voluntario"
+      },
+      {
+        "eventId": 38,
+        "role": "Voluntario"
+      }
     ]
   },
   {
@@ -355,6 +401,44 @@
     },
     "eventIds": [
       16
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Gianella Coronel",
+    "role": "Voluntario",
+    "area": "General",
+    "photo": "",
+    "social": {
+      "x": "",
+      "instagram": "",
+      "linkedin": ""
+    },
+    "events": [
+      {
+        "eventId": 12,
+        "role": "Voluntario"
+      },
+      {
+        "eventId": 13,
+        "role": "Voluntario"
+      },
+      {
+        "eventId": 14,
+        "role": "Voluntario"
+      },
+      {
+        "eventId": 15,
+        "role": "Voluntario"
+      },
+      {
+        "eventId": 20,
+        "role": "Voluntario"
+      },
+      {
+        "eventId": 40,
+        "role": "Voluntario"
+      }
     ]
   }
 ]
