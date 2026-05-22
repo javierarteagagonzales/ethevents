@@ -140,7 +140,33 @@ const projectsJSON = JSON.stringify(projectsData.map(p => ({
 
 <script>
   const dataEl = document.getElementById('projects-data');
-  const projects = JSON.parse(dataEl?.getAttribute('data-projects') || '[]');
+  let projects = JSON.parse(dataEl?.getAttribute('data-projects') || '[]');
+
+  // LOCAL PREVIEW PARA ADMIN:
+  // Si hay miembros en localStorage (del dashboard), sobreescribir para visualizar en tiempo real
+  const localMembersStr = localStorage.getItem('eth_members_admin_list');
+  if (localMembersStr) {
+    try {
+      const localMembers = JSON.parse(localMembersStr);
+      const roleOrder = [
+        'Lead de Eth Lima', 'Core Team', 'Coordinador de Tecnología', 
+        'Coordinador de Logística', 'Coordinador de Alianzas', 
+        'Coordinador de Comunicaciones', 'Lead del Proyecto', 'Voluntario'
+      ];
+      
+      projects.forEach((proj: any) => {
+        proj.members = localMembers
+          .filter((m: any) => m.eventIds && m.eventIds.includes(proj.id))
+          .sort((a: any, b: any) => {
+            const ai = roleOrder.indexOf(a.role);
+            const bi = roleOrder.indexOf(b.role);
+            return (ai === -1 ? 99 : ai) - (bi === -1 ? 99 : bi);
+          });
+      });
+    } catch(e) {
+      console.error("Error parsing local members data", e);
+    }
+  }
 
   const accordionList = document.getElementById('accordion-list');
   const teamPlaceholder = document.getElementById('team-placeholder');
