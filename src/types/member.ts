@@ -4,13 +4,24 @@ export interface MemberSocial {
   linkedin?: string;
 }
 
+export type MemberArea = 'Tecnología' | 'Logística' | 'Proyectos' | 'Comunicaciones' | 'General';
+
+export interface MemberEventAssignment {
+  eventId: number;
+  role: string;
+}
+
 export interface MemberItem {
   id: number;
   name: string;
+  /** Rol general dentro de Ethereum Lima */
   role: string;
+  /** Área de pertenencia dentro de Ethereum Lima */
+  area: MemberArea;
   photo: string;
   social: MemberSocial;
-  eventIds: number[];
+  /** Asignaciones a eventos con rol específico por evento */
+  events: MemberEventAssignment[];
 }
 
 export const ROLE_ORDER: string[] = [
@@ -22,4 +33,12 @@ export const ROLE_ORDER: string[] = [
   'Coordinador de Comunicaciones',
   'Lead del Proyecto',
   'Voluntario',
+];
+
+export const MEMBER_AREAS: MemberArea[] = [
+  'Tecnología',
+  'Logística',
+  'Proyectos',
+  'Comunicaciones',
+  'General',
 ];

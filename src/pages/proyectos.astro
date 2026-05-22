@@ -26,10 +26,14 @@ const ethLimaEvents = events.filter(e => {
 // Build project data with members
 const projectsData = ethLimaEvents.map(event => {
   const eventMembers = members
-    .filter(m => m.eventIds.includes(event.id))
+    .filter(m => m.events && m.events.some(e => e.eventId === event.id))
+    .map(m => {
+      const assignment = m.events.find(e => e.eventId === event.id);
+      return { ...m, eventRole: assignment ? assignment.role : m.role };
+    })
     .sort((a, b) => {
-      const ai = ROLE_ORDER.indexOf(a.role);
-      const bi = ROLE_ORDER.indexOf(b.role);
+      const ai = ROLE_ORDER.indexOf(a.eventRole);
+      const bi = ROLE_ORDER.indexOf(b.eventRole);
       return (ai === -1 ? 99 : ai) - (bi === -1 ? 99 : bi);
     });
   return { event, members: eventMembers };
@@ -48,6 +52,8 @@ const projectsJSON = JSON.stringify(projectsData.map(p => ({
     id: m.id,
     name: m.name,
     role: m.role,
+    area: m.area || 'General',
+    eventRole: m.eventRole,
     photo: m.photo,
     social: m.social
   }))
@@ -156,10 +162,14 @@ const projectsJSON = JSON.stringify(projectsData.map(p => ({
       
       projects.forEach((proj: any) => {
         proj.members = localMembers
-          .filter((m: any) => m.eventIds && m.eventIds.includes(proj.id))
+          .filter((m: any) => m.events && m.events.some((e: any) => e.eventId === proj.id))
+          .map((m: any) => {
+            const assignment = m.events.find((e: any) => e.eventId === proj.id);
+            return { ...m, eventRole: assignment ? assignment.role : m.role };
+          })
           .sort((a: any, b: any) => {
-            const ai = roleOrder.indexOf(a.role);
-            const bi = roleOrder.indexOf(b.role);
+            const ai = roleOrder.indexOf(a.eventRole);
+            const bi = roleOrder.indexOf(b.eventRole);
             return (ai === -1 ? 99 : ai) - (bi === -1 ? 99 : bi);
           });
       });
@@ -282,7 +292,7 @@ const projectsJSON = JSON.stringify(projectsData.map(p => ({
     }
 
     const membersHTML = proj.members.map((m: any, i: number) => {
-      const roleColor = roleColors[m.role] || 'text-muted';
+      const roleColor = roleColors[m.eventRole || m.role] || 'text-muted';
       const socialLinks = Object.entries(m.social || {})
         .filter(([_, url]) => url && (url as string).trim() !== '')
         .map(([type, url]) => `<a href="${url}" target="_blank" rel="noopener" class="hover:scale-110 transition-transform text-sm" title="${type}">${socialIcon(type)}</a>`)
@@ -294,12 +304,15 @@ const projectsJSON = JSON.stringify(projectsData.map(p => ({
 
       return `
         <div class="member-card rounded-2xl border border-white/5 bg-surface backdrop-blur-xl p-4 flex flex-col items-center text-center gap-3 hover:border-accent/30 transition-all" style="animation-delay: ${i * 80}ms">
-          <div class="w-24 h-24 rounded-xl overflow-hidden">
+          <div class="w-24 h-24 rounded-xl overflow-hidden relative group">
             ${photoHTML}
+            <div class="absolute inset-x-0 bottom-0 bg-black/60 backdrop-blur-sm p-1 text-[8px] font-mono font-bold uppercase tracking-widest text-white/90 translate-y-full group-hover:translate-y-0 transition-transform">
+              Área: ${m.area || 'General'}
+            </div>
           </div>
           <div class="flex flex-col gap-0.5">
             <span class="font-bold text-white text-sm">${m.name}</span>
-            <span class="font-mono text-[10px] ${roleColor} font-bold uppercase tracking-wider">${m.role}</span>
+            <span class="font-mono text-[10px] ${roleColor} font-bold uppercase tracking-wider">${m.eventRole || m.role}</span>
           </div>
           ${socialLinks ? `<div class="flex items-center gap-2.5">${socialLinks}</div>` : ''}
         </div>

@@ -36,7 +36,9 @@
       53,
       51,
       38
-    ]
+    ],
+    "area": "General",
+    "events": []
   },
   {
     "id": 3,
@@ -78,12 +80,131 @@
       113,
       114,
       115
+    ],
+    "area": "General",
+    "events": [
+      {
+        "eventId": 12,
+        "role": "Coordinador de Tecnología"
+      },
+      {
+        "eventId": 13,
+        "role": "Coordinador de Tecnología"
+      },
+      {
+        "eventId": 16,
+        "role": "Coordinador de Tecnología"
+      },
+      {
+        "eventId": 14,
+        "role": "Coordinador de Tecnología"
+      },
+      {
+        "eventId": 19,
+        "role": "Coordinador de Tecnología"
+      },
+      {
+        "eventId": 15,
+        "role": "Coordinador de Tecnología"
+      },
+      {
+        "eventId": 20,
+        "role": "Coordinador de Tecnología"
+      },
+      {
+        "eventId": 34,
+        "role": "Coordinador de Tecnología"
+      },
+      {
+        "eventId": 31,
+        "role": "Coordinador de Tecnología"
+      },
+      {
+        "eventId": 40,
+        "role": "Coordinador de Tecnología"
+      },
+      {
+        "eventId": 41,
+        "role": "Coordinador de Tecnología"
+      },
+      {
+        "eventId": 53,
+        "role": "Coordinador de Tecnología"
+      },
+      {
+        "eventId": 51,
+        "role": "Coordinador de Tecnología"
+      },
+      {
+        "eventId": 38,
+        "role": "Coordinador de Tecnología"
+      },
+      {
+        "eventId": 101,
+        "role": "Coordinador de Tecnología"
+      },
+      {
+        "eventId": 102,
+        "role": "Coordinador de Tecnología"
+      },
+      {
+        "eventId": 103,
+        "role": "Coordinador de Tecnología"
+      },
+      {
+        "eventId": 104,
+        "role": "Coordinador de Tecnología"
+      },
+      {
+        "eventId": 105,
+        "role": "Coordinador de Tecnología"
+      },
+      {
+        "eventId": 106,
+        "role": "Coordinador de Tecnología"
+      },
+      {
+        "eventId": 107,
+        "role": "Coordinador de Tecnología"
+      },
+      {
+        "eventId": 108,
+        "role": "Coordinador de Tecnología"
+      },
+      {
+        "eventId": 109,
+        "role": "Coordinador de Tecnología"
+      },
+      {
+        "eventId": 110,
+        "role": "Coordinador de Tecnología"
+      },
+      {
+        "eventId": 111,
+        "role": "Coordinador de Tecnología"
+      },
+      {
+        "eventId": 112,
+        "role": "Coordinador de Tecnología"
+      },
+      {
+        "eventId": 113,
+        "role": "Coordinador de Tecnología"
+      },
+      {
+        "eventId": 114,
+        "role": "Coordinador de Tecnología"
+      },
+      {
+        "eventId": 115,
+        "role": "Coordinador de Tecnología"
+      }
     ]
   },
   {
     "id": 4,
     "name": "André Neyra",
-    "role": "Lead del Proyecto",
+    "role": "Voluntario",
     "photo": "",
     "social": {
       "x": "",
@@ -92,6 +213,13 @@
     },
     "eventIds": [
       38
+    ],
+    "area": "General",
+    "events": [
+      {
+        "eventId": 38,
+        "role": "Lead del Proyecto"
+      }
     ]
   },
   {
