@@ -37,5 +37,128 @@
       51,
       38
     ]
+  },
+  {
+    "id": 3,
+    "name": "Javier Arteaga",
+    "role": "Coordinador de Tecnología",
+    "photo": "",
+    "social": {
+      "x": "https://x.com/home",
+      "instagram": "",
+      "linkedin": ""
+    },
+    "eventIds": [
+      12,
+      13,
+      16,
+      14,
+      19,
+      15,
+      20,
+      34,
+      31,
+      40,
+      41,
+      53,
+      51,
+      38,
+      101,
+      102,
+      103,
+      104,
+      105,
+      106,
+      107,
+      108,
+      109,
+      110,
+      111,
+      112,
+      113,
+      114,
+      115
+    ]
+  },
+  {
+    "id": 4,
+    "name": "André Neyra",
+    "role": "Lead del Proyecto",
+    "photo": "",
+    "social": {
+      "x": "",
+      "instagram": "",
+      "linkedin": ""
+    },
+    "eventIds": [
+      38
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Miguel Jesús",
+    "role": "Voluntario",
+    "photo": "",
+    "social": {
+      "x": "",
+      "instagram": "",
+      "linkedin": ""
+    },
+    "eventIds": [
+      12,
+      13,
+      14,
+      15,
+      20,
+      40
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Jenniffer Gabriela",
+    "role": "Lead del Proyecto",
+    "photo": "",
+    "social": {
+      "x": "",
+      "instagram": "",
+      "linkedin": ""
+    },
+    "eventIds": [
+      41
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Sara Díaz",
+    "role": "Voluntario",
+    "photo": "",
+    "social": {
+      "x": "",
+      "instagram": "",
+      "linkedin": ""
+    },
+    "eventIds": [
+      16,
+      38
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Javier Damiani",
+    "role": "Voluntario",
+    "photo": "",
+    "social": {
+      "x": "",
+      "instagram": "",
+      "linkedin": ""
+    },
+    "eventIds": [
+      13,
+      14,
+      15,
+      20,
+      40,
+      38
+    ]
   }
 ]
