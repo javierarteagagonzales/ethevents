@@ -91,7 +91,7 @@ const projectsJSON = JSON.stringify(projectsData.map(p => ({
 
       <!-- RIGHT: TEAM PANEL -->
       <div class="flex-1 min-h-[400px] min-w-0" id="team-panel">
-        <div id="team-placeholder" class="h-full flex items-center justify-center rounded-3xl border border-white/5 bg-surface backdrop-blur-xl">
+        <div id="team-placeholder" class="h-full flex items-center justify-center rounded-3xl border border-accent/20 bg-gradient-to-br from-[#0c1020]/90 to-[#07090e]/90 backdrop-blur-xl">
           <div class="text-center p-8">
             <div class="text-4xl mb-4">👈</div>
             <p class="font-mono text-xs text-muted tracking-wider uppercase">Selecciona un proyecto para ver su equipo</p>
@@ -292,12 +292,12 @@ const projectsJSON = JSON.stringify(projectsData.map(p => ({
 
     if (proj.members.length === 0) {
       teamContent.innerHTML = `
-        <div class="rounded-3xl border border-white/5 bg-surface backdrop-blur-xl p-8">
+        <div class="rounded-3xl border border-accent/20 bg-gradient-to-br from-[#0c1020]/90 to-[#07090e]/90 backdrop-blur-xl p-6 sm:p-8 shadow-[0_8px_32px_rgba(98,126,234,0.05)] animate-fade-in">
           <div class="flex items-center gap-3 mb-6">
-            ${proj.image ? `<img src="${proj.image}" alt="" class="w-10 h-10 rounded-xl object-cover flex-shrink-0"/>` : ''}
+            ${proj.image ? `<img src="${proj.image}" alt="" class="w-10 h-10 rounded-xl object-cover flex-shrink-0 border border-white/10"/>` : ''}
             <div class="min-w-0">
-              <h2 class="text-base sm:text-lg font-extrabold text-white truncate">${proj.title}</h2>
-              <p class="font-mono text-[10px] text-muted truncate">${proj.date || 'TBD'}</p>
+              <h2 class="text-base sm:text-lg font-extrabold text-white leading-tight">${proj.title}</h2>
+              <p class="font-mono text-[10px] text-muted mt-1">${proj.date || 'TBD'}</p>
             </div>
           </div>
           <div class="flex items-center justify-center p-12 rounded-2xl border border-white/5 bg-black/20">
@@ -328,7 +328,7 @@ const projectsJSON = JSON.stringify(projectsData.map(p => ({
             </div>
           </div>
           <div class="flex flex-col gap-0.5 min-w-0 w-full">
-            <span class="font-bold text-white text-[11px] sm:text-sm truncate">${m.name}</span>
+            <span class="font-bold text-white text-[11px] sm:text-sm">${m.name}</span>
             <span class="font-mono text-[9px] sm:text-[10px] ${roleColor} font-bold uppercase tracking-wider line-clamp-2">${m.eventRole || m.role}</span>
           </div>
           ${socialLinks ? `<div class="flex items-center gap-2">${socialLinks}</div>` : ''}
@@ -337,13 +337,13 @@ const projectsJSON = JSON.stringify(projectsData.map(p => ({
     }).join('');
 
     teamContent.innerHTML = `
-      <div class="rounded-3xl border border-white/5 bg-surface backdrop-blur-xl p-5 sm:p-6 md:p-8">
+      <div class="rounded-3xl border border-accent/20 bg-gradient-to-br from-[#0c1020]/90 to-[#07090e]/90 backdrop-blur-xl p-5 sm:p-6 md:p-8 shadow-[0_8px_32px_rgba(98,126,234,0.08)]">
         <div class="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 mb-6 pb-4 border-b border-white/5">
           <div class="flex items-center gap-3 flex-1 min-w-0">
             ${proj.image ? `<img src="${proj.image}" alt="" class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl object-cover border border-white/10 flex-shrink-0"/>` : ''}
             <div class="min-w-0">
-              <h2 class="text-base sm:text-lg font-extrabold text-white leading-tight truncate">${proj.title}</h2>
-              <p class="font-mono text-[9px] sm:text-[10px] text-muted mt-0.5 truncate">${proj.location || 'Online'} · ${proj.date || 'TBD'}</p>
+              <h2 class="text-base sm:text-lg font-extrabold text-white leading-tight">${proj.title}</h2>
+              <p class="font-mono text-[9px] sm:text-[10px] text-muted mt-0.5">${proj.location || 'Online'} · ${proj.date || 'TBD'}</p>
             </div>
           </div>
           <div class="flex-shrink-0 self-start sm:self-auto">
