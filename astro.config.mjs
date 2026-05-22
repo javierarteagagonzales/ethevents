@@ -7,18 +7,18 @@ function localFileApiPlugin() {
   return {
     name: 'local-file-api',
     configureServer(server) {
-      server.middlewares.use('/api/save-json', (req, res, next) => {
-        if (req.method === 'POST') {
+      server.middlewares.use((req, res, next) => {
+        if (req.method === 'POST' && req.url === '/api/save-json') {
           let body = '';
           req.on('data', chunk => { body += chunk; });
           req.on('end', () => {
             try {
               const data = JSON.parse(body);
               const { filename, content } = data;
-              // Safe resolve to workspace root only for members.json and events.json
               if (filename === 'members.json' || filename === 'events.json') {
                 const filePath = path.resolve(process.cwd(), filename);
-                fs.writeFileSync(filePath, JSON.stringify(content, null, 2));
+                fs.writeFileSync(filePath, JSON.stringify(content, null, 2) + '\n');
+                res.setHeader('Content-Type', 'application/json');
                 res.statusCode = 200;
                 res.end(JSON.stringify({ success: true }));
               } else {
