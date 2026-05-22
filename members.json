@@ -15,9 +15,9 @@
     "id": 2,
     "name": "Yamille Celis",
     "role": "Lead de Eth Lima",
-    "photo": "",
+    "photo": "https://raw.githubusercontent.com/javierarteagagonzales/ethevents/main/public/images/yami.webp",
     "social": {
-      "x": "",
+      "x": "https://x.com/yamiyami_eth",
       "instagram": "",
       "linkedin": ""
     },
@@ -41,59 +41,59 @@
     "events": [
       {
         "eventId": 12,
-        "role": "Lead de Eth Lima"
+        "role": "Lead del Proyecto"
       },
       {
         "eventId": 13,
-        "role": "Lead de Eth Lima"
+        "role": "Lead del Proyecto"
       },
       {
         "eventId": 16,
-        "role": "Lead de Eth Lima"
+        "role": "Lead del Proyecto"
       },
       {
         "eventId": 14,
-        "role": "Lead de Eth Lima"
+        "role": "Lead del Proyecto"
       },
       {
         "eventId": 19,
-        "role": "Lead de Eth Lima"
+        "role": "Lead del Proyecto"
       },
       {
         "eventId": 15,
-        "role": "Lead de Eth Lima"
+        "role": "Lead del Proyecto"
       },
       {
         "eventId": 20,
-        "role": "Lead de Eth Lima"
+        "role": "Lead del Proyecto"
       },
       {
         "eventId": 34,
-        "role": "Lead de Eth Lima"
+        "role": "Lead del Proyecto"
       },
       {
         "eventId": 31,
-        "role": "Lead de Eth Lima"
+        "role": "Lead del Proyecto"
       },
       {
         "eventId": 40,
-        "role": "Lead de Eth Lima"
+        "role": "Lead del Proyecto"
       },
       {
         "eventId": 41,
-        "role": "Lead de Eth Lima"
+        "role": "Lead del Proyecto"
       },
       {
         "eventId": 53,
-        "role": "Lead de Eth Lima"
+        "role": "Lead del Proyecto"
       },
       {
         "eventId": 51,
-        "role": "Lead de Eth Lima"
+        "role": "Lead del Proyecto"
       },
       {
         "eventId": 38,
-        "role": "Lead de Eth Lima"
+        "role": "Lead del Proyecto"
       }
     ]
   },
@@ -333,9 +333,9 @@
     "id": 6,
     "name": "Jenniffer Gabriela",
     "role": "Voluntario",
-    "photo": "",
+    "photo": "https://raw.githubusercontent.com/javierarteagagonzales/ethevents/main/public/images/gabriela.webp",
     "social": {
-      "x": "",
+      "x": "https://x.com/gabrululu",
       "instagram": "",
       "linkedin": ""
     },
