@@ -6,29 +6,31 @@ interface Props {
 const { showViewToggle = false } = Astro.props;
 ---
 
-<nav class="sticky top-0 z-50 flex items-center justify-between px-6 md:px-10 h-16 bg-[#0a0b0f]/85 backdrop-blur-md border-b border-white/10">
-  <a class="flex items-center gap-2.5 hover:opacity-90 transition-opacity" href="/">
+<nav id="main-nav" class="sticky top-0 z-50 flex items-center justify-between px-4 sm:px-6 md:px-10 h-16 bg-[#0a0b0f]/85 backdrop-blur-md border-b border-white/10 transition-all duration-300">
+  <!-- Logo -->
+  <a class="flex items-center gap-2.5 hover:opacity-90 transition-opacity relative z-50" href="/">
     <img src="/EthLimalogo.svg" alt="Ethereum Lima Logo" class="h-8 w-auto block" />
   </a>
 
-  <ul class="flex items-center gap-8 list-none">
+  <!-- Desktop Navigation -->
+  <ul class="hidden md:flex items-center gap-8 list-none">
     <li>
-      <a href="/#events" class="font-mono text-xs text-muted hover:text-white tracking-[0.1em] transition-colors" data-i18n="nav_events">
+      <a href="/#events" class="nav-link font-mono text-xs text-muted hover:text-white tracking-[0.1em] transition-colors relative" data-i18n="nav_events">
         EVENTOS
       </a>
     </li>
     <li>
-      <a href="/#how" class="font-mono text-xs text-muted hover:text-white tracking-[0.1em] transition-colors" data-i18n="nav_how">
+      <a href="/#how" class="nav-link font-mono text-xs text-muted hover:text-white tracking-[0.1em] transition-colors relative" data-i18n="nav_how">
         CÓMO FUNCIONA
       </a>
     </li>
     <li>
-      <a href="/proyectos" class="font-mono text-xs text-muted hover:text-white tracking-[0.1em] transition-colors">
+      <a href="/proyectos" class="nav-link font-mono text-xs text-muted hover:text-white tracking-[0.1em] transition-colors relative">
         PROYECTOS
       </a>
     </li>
     {showViewToggle && (
-      <li id="view-toggle-nav" class="hidden md:block">
+      <li id="view-toggle-nav">
         <div class="flex bg-surface border border-border rounded-lg p-1">
           <button class="toggle-btn flex items-center gap-1.5 px-3 py-1.5 rounded-md font-mono text-[11px] text-muted active transition-all active:bg-accent active:text-white" id="btn-list">
             <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -53,8 +55,9 @@ const { showViewToggle = false } = Astro.props;
     )}
   </ul>
 
-  <div class="flex items-center gap-3">
-    <a class="hidden sm:inline-block font-mono text-xs px-5 py-2 border border-accent text-accent hover:bg-accent hover:text-white rounded transition-all tracking-[0.08em]" href="/submit" data-i18n="nav_new">
+  <!-- Desktop Right Actions -->
+  <div class="hidden md:flex items-center gap-3">
+    <a class="font-mono text-xs px-5 py-2 border border-accent text-accent hover:bg-accent hover:text-white rounded-lg transition-all tracking-[0.08em] hover:shadow-[0_0_20px_rgba(98,126,234,0.3)]" href="/submit" data-i18n="nav_new">
       + NUEVO EVENTO
     </a>
     <div class="flex gap-1 p-1 bg-surface border border-border rounded-md">
@@ -66,15 +69,274 @@ const { showViewToggle = false } = Astro.props;
       </button>
     </div>
   </div>
+
+  <!-- Mobile Hamburger Button -->
+  <button id="mobile-menu-btn" class="md:hidden relative z-50 w-10 h-10 flex flex-col items-center justify-center gap-[5px] rounded-lg bg-surface border border-border hover:border-accent/40 transition-all group" aria-label="Menú">
+    <span class="hamburger-line w-5 h-[2px] bg-muted group-hover:bg-accent-2 rounded-full transition-all duration-300 origin-center"></span>
+    <span class="hamburger-line w-5 h-[2px] bg-muted group-hover:bg-accent-2 rounded-full transition-all duration-300 origin-center"></span>
+    <span class="hamburger-line w-3.5 h-[2px] bg-muted group-hover:bg-accent-2 rounded-full transition-all duration-300 origin-center self-start ml-[7px]"></span>
+  </button>
 </nav>
+
+<!-- Mobile Full-Screen Overlay Menu -->
+<div id="mobile-menu" class="mobile-menu-overlay fixed inset-0 z-40 hidden">
+  <!-- Backdrop -->
+  <div class="absolute inset-0 bg-[#030407]/95 backdrop-blur-xl"></div>
+  
+  <!-- Grid pattern overlay -->
+  <div class="absolute inset-0 opacity-30" style="background-image: linear-gradient(rgba(98,126,234,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(98,126,234,0.05) 1px, transparent 1px); background-size: 48px 48px;"></div>
+  
+  <!-- Glow orbs -->
+  <div class="absolute top-20 left-1/2 -translate-x-1/2 w-[400px] h-[300px] bg-accent/10 rounded-full blur-[120px] pointer-events-none"></div>
+  <div class="absolute bottom-20 right-0 w-[250px] h-[250px] bg-accent-2/8 rounded-full blur-[100px] pointer-events-none"></div>
+
+  <!-- Menu Content -->
+  <div class="relative z-10 flex flex-col items-center justify-center h-full px-6">
+    <!-- Logo in menu -->
+    <div class="absolute top-5 left-4 sm:left-6">
+      <img src="/EthLimalogo.svg" alt="Ethereum Lima Logo" class="h-8 w-auto opacity-50" />
+    </div>
+
+    <!-- Navigation Links -->
+    <ul class="flex flex-col items-center gap-2 list-none w-full max-w-sm">
+      <li class="mobile-menu-item w-full opacity-0 translate-y-4">
+        <a href="/#events" class="mobile-nav-link group flex items-center gap-4 w-full px-6 py-4 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-accent/30 hover:bg-accent/5 transition-all duration-300" data-i18n="nav_events">
+          <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-accent/10 border border-accent/20 text-accent group-hover:bg-accent group-hover:text-white transition-all duration-300">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+              <line x1="16" y1="2" x2="16" y2="6" />
+              <line x1="8" y1="2" x2="8" y2="6" />
+              <line x1="3" y1="10" x2="21" y2="10" />
+            </svg>
+          </span>
+          <div>
+            <span class="block font-mono text-sm font-bold text-white tracking-wider">EVENTOS</span>
+            <span class="block font-mono text-[10px] text-muted mt-0.5">// Calendario de actividades</span>
+          </div>
+          <svg class="w-4 h-4 text-muted ml-auto group-hover:text-accent group-hover:translate-x-1 transition-all" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="9 18 15 12 9 6" />
+          </svg>
+        </a>
+      </li>
+
+      <li class="mobile-menu-item w-full opacity-0 translate-y-4">
+        <a href="/#how" class="mobile-nav-link group flex items-center gap-4 w-full px-6 py-4 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-accent/30 hover:bg-accent/5 transition-all duration-300" data-i18n="nav_how">
+          <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-accent/10 border border-accent/20 text-accent group-hover:bg-accent group-hover:text-white transition-all duration-300">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="12" cy="12" r="10" />
+              <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+              <line x1="12" y1="17" x2="12.01" y2="17" />
+            </svg>
+          </span>
+          <div>
+            <span class="block font-mono text-sm font-bold text-white tracking-wider">CÓMO FUNCIONA</span>
+            <span class="block font-mono text-[10px] text-muted mt-0.5">// Descubre el proceso</span>
+          </div>
+          <svg class="w-4 h-4 text-muted ml-auto group-hover:text-accent group-hover:translate-x-1 transition-all" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="9 18 15 12 9 6" />
+          </svg>
+        </a>
+      </li>
+
+      <li class="mobile-menu-item w-full opacity-0 translate-y-4">
+        <a href="/proyectos" class="mobile-nav-link group flex items-center gap-4 w-full px-6 py-4 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-accent/30 hover:bg-accent/5 transition-all duration-300">
+          <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-accent/10 border border-accent/20 text-accent group-hover:bg-accent group-hover:text-white transition-all duration-300">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+              <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+            </svg>
+          </span>
+          <div>
+            <span class="block font-mono text-sm font-bold text-white tracking-wider">PROYECTOS</span>
+            <span class="block font-mono text-[10px] text-muted mt-0.5">// Nuestras iniciativas</span>
+          </div>
+          <svg class="w-4 h-4 text-muted ml-auto group-hover:text-accent group-hover:translate-x-1 transition-all" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="9 18 15 12 9 6" />
+          </svg>
+        </a>
+      </li>
+
+      <!-- Divider -->
+      <li class="w-full px-6 my-2">
+        <div class="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+      </li>
+
+      <!-- CTA: Nuevo Evento -->
+      <li class="mobile-menu-item w-full opacity-0 translate-y-4">
+        <a href="/submit" class="mobile-nav-link group flex items-center gap-4 w-full px-6 py-4 rounded-2xl bg-accent/10 border border-accent/25 hover:bg-accent/20 transition-all duration-300" data-i18n="nav_new">
+          <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-accent border border-accent/40 text-white shadow-[0_0_15px_rgba(98,126,234,0.3)]">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="12" y1="5" x2="12" y2="19" />
+              <line x1="5" y1="12" x2="19" y2="12" />
+            </svg>
+          </span>
+          <div>
+            <span class="block font-mono text-sm font-bold text-accent-2 tracking-wider">NUEVO EVENTO</span>
+            <span class="block font-mono text-[10px] text-muted mt-0.5">// Propón una actividad</span>
+          </div>
+          <svg class="w-4 h-4 text-accent/50 ml-auto group-hover:text-accent group-hover:translate-x-1 transition-all" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="9 18 15 12 9 6" />
+          </svg>
+        </a>
+      </li>
+    </ul>
+
+    <!-- Language Selector in Mobile -->
+    <div class="mobile-menu-item opacity-0 translate-y-4 mt-8 flex items-center gap-3">
+      <span class="font-mono text-[10px] text-muted tracking-wider uppercase">IDIOMA</span>
+      <div class="flex gap-1 p-1 bg-surface-2 border border-border rounded-lg">
+        <button class="lang-btn-mobile font-mono text-xs px-3 py-1.5 rounded-md text-muted font-bold transition-all hover:bg-white/5" id="lang-es-mobile" data-lang="es">
+          ES
+        </button>
+        <button class="lang-btn-mobile font-mono text-xs px-3 py-1.5 rounded-md text-muted font-bold transition-all hover:bg-white/5" id="lang-en-mobile" data-lang="en">
+          EN
+        </button>
+      </div>
+    </div>
+
+    <!-- Bottom decoration -->
+    <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-2 opacity-30">
+      <div class="w-1.5 h-1.5 rounded-full bg-accent animate-pulse"></div>
+      <span class="font-mono text-[9px] text-muted tracking-[0.3em]">ETHEREUM LIMA</span>
+      <div class="w-1.5 h-1.5 rounded-full bg-accent animate-pulse"></div>
+    </div>
+  </div>
+</div>
 
 <style>
   .toggle-btn.active {
     background-color: var(--accent);
     color: #fff;
   }
-  .lang-btn.active {
+  .lang-btn.active,
+  .lang-btn-mobile.active {
     background-color: var(--accent);
     color: #fff;
   }
+
+  /* Hamburger animation */
+  .menu-open .hamburger-line:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .menu-open .hamburger-line:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  .menu-open .hamburger-line:nth-child(3) {
+    width: 1.25rem;
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  /* Mobile menu items stagger animation */
+  .mobile-menu-item.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+  .mobile-menu-item:nth-child(1) { transition-delay: 0.05s; }
+  .mobile-menu-item:nth-child(2) { transition-delay: 0.1s; }
+  .mobile-menu-item:nth-child(3) { transition-delay: 0.15s; }
+  .mobile-menu-item:nth-child(4) { transition-delay: 0.2s; }
+  .mobile-menu-item:nth-child(5) { transition-delay: 0.25s; }
+
+  /* Scanline effect */
+  .mobile-menu-overlay::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(98, 126, 234, 0.015) 2px,
+      rgba(98, 126, 234, 0.015) 4px
+    );
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* Nav link hover glow */
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    transition: width 0.3s ease;
+  }
+  .nav-link:hover::after {
+    width: 100%;
+  }
 </style>
+
+<script>
+  const menuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuItems = document.querySelectorAll('.mobile-menu-item');
+  const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+  let isMenuOpen = false;
+
+  function openMenu() {
+    isMenuOpen = true;
+    menuBtn?.classList.add('menu-open');
+    mobileMenu?.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+    
+    // Stagger animate items
+    requestAnimationFrame(() => {
+      menuItems.forEach(item => item.classList.add('animate-in'));
+    });
+  }
+
+  function closeMenu() {
+    isMenuOpen = false;
+    menuBtn?.classList.remove('menu-open');
+    menuItems.forEach(item => item.classList.remove('animate-in'));
+    
+    setTimeout(() => {
+      mobileMenu?.classList.add('hidden');
+      document.body.style.overflow = '';
+    }, 300);
+  }
+
+  menuBtn?.addEventListener('click', () => {
+    isMenuOpen ? closeMenu() : openMenu();
+  });
+
+  // Close on link click
+  mobileNavLinks.forEach(link => {
+    link.addEventListener('click', () => closeMenu());
+  });
+
+  // Sync mobile lang buttons with desktop ones
+  const langEsMobile = document.getElementById('lang-es-mobile');
+  const langEnMobile = document.getElementById('lang-en-mobile');
+  const langEs = document.getElementById('lang-es');
+  const langEn = document.getElementById('lang-en');
+
+  langEsMobile?.addEventListener('click', () => {
+    langEs?.click();
+    langEsMobile.classList.add('active');
+    langEnMobile?.classList.remove('active');
+  });
+
+  langEnMobile?.addEventListener('click', () => {
+    langEn?.click();
+    langEnMobile.classList.add('active');
+    langEsMobile?.classList.remove('active');
+  });
+
+  // Sync initial state
+  if (langEs?.classList.contains('active')) {
+    langEsMobile?.classList.add('active');
+  } else if (langEn?.classList.contains('active')) {
+    langEnMobile?.classList.add('active');
+  }
+
+  // Close on Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && isMenuOpen) closeMenu();
+  });
+</script>
