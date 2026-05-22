@@ -38,7 +38,64 @@
       38
     ],
     "area": "General",
-    "events": []
+    "events": [
+      {
+        "eventId": 12,
+        "role": "Lead de Eth Lima"
+      },
+      {
+        "eventId": 13,
+        "role": "Lead de Eth Lima"
+      },
+      {
+        "eventId": 16,
+        "role": "Lead de Eth Lima"
+      },
+      {
+        "eventId": 14,
+        "role": "Lead de Eth Lima"
+      },
+      {
+        "eventId": 19,
+        "role": "Lead de Eth Lima"
+      },
+      {
+        "eventId": 15,
+        "role": "Lead de Eth Lima"
+      },
+      {
+        "eventId": 20,
+        "role": "Lead de Eth Lima"
+      },
+      {
+        "eventId": 34,
+        "role": "Lead de Eth Lima"
+      },
+      {
+        "eventId": 31,
+        "role": "Lead de Eth Lima"
+      },
+      {
+        "eventId": 40,
+        "role": "Lead de Eth Lima"
+      },
+      {
+        "eventId": 41,
+        "role": "Lead de Eth Lima"
+      },
+      {
+        "eventId": 53,
+        "role": "Lead de Eth Lima"
+      },
+      {
+        "eventId": 51,
+        "role": "Lead de Eth Lima"
+      },
+      {
+        "eventId": 38,
+        "role": "Lead de Eth Lima"
+      }
+    ]
   },
   {
     "id": 3,
@@ -352,6 +409,32 @@
       20,
       40,
       38
+    ],
+    "events": [
+      {
+        "eventId": 13,
+        "role": "Voluntario"
+      },
+      {
+        "eventId": 14,
+        "role": "Voluntario"
+      },
+      {
+        "eventId": 15,
+        "role": "Voluntario"
+      },
+      {
+        "eventId": 20,
+        "role": "Voluntario"
+      },
+      {
+        "eventId": 40,
+        "role": "Voluntario"
+      },
+      {
+        "eventId": 38,
+        "role": "Voluntario"
+      }
     ]
   },
   {
@@ -401,6 +484,12 @@
     },
     "eventIds": [
       16
+    ],
+    "events": [
+      {
+        "eventId": 16,
+        "role": "Lead del Proyecto"
+      }
     ]
   },
   {

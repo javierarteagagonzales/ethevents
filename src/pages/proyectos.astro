@@ -8,7 +8,18 @@ import type { MemberItem, MemberSocial } from '../types/member';
 import { ROLE_ORDER } from '../types/member';
 
 const events = eventsRaw as EventItem[];
-const members = membersRaw as MemberItem[];
+const rawMembers = membersRaw as MemberItem[];
+
+// Migrate old eventIds format to events array format on the fly for build-time safety
+const members = rawMembers.map(m => {
+  if (m.eventIds && m.eventIds.length > 0 && (!m.events || m.events.length === 0)) {
+    return {
+      ...m,
+      events: m.eventIds.map(id => ({ eventId: id, role: m.role || 'Voluntario' }))
+    };
+  }
+  return m;
+});
 
 // Filter only Ethereum Lima events
 const ethLimaEvents = events.filter(e => {
@@ -164,11 +175,19 @@ const projectsJSON = JSON.stringify(projectsData.map(p => ({
   let projects = JSON.parse(dataEl?.getAttribute('data-projects') || '[]');
 
   // LOCAL PREVIEW PARA ADMIN:
-  // Si hay miembros en localStorage (del dashboard), sobreescribir para visualizar en tiempo real
-  const localMembersStr = localStorage.getItem('eth_members_admin_list');
+  // Si hay miembros en localStorage (del dashboard) Y el administrador está autenticado, sobreescribir para visualizar en tiempo real
+  const isAdminLogged = sessionStorage.getItem('eth_admin_logged') === 'true';
+  const localMembersStr = isAdminLogged ? localStorage.getItem('eth_members_admin_list') : null;
   if (localMembersStr) {
     try {
       const localMembers = JSON.parse(localMembersStr);
+      // Migrate old format if exists for local preview robustness
+      localMembers.forEach((m: any) => {
+        if (m.eventIds && !m.events) {
+          m.events = m.eventIds.map((id: number) => ({ eventId: id, role: m.role || 'Voluntario' }));
+        }
+      });
+
       const roleOrder = [
         'Lead de Eth Lima', 'Core Team', 'Coordinador de Tecnología', 
         'Coordinador de Logística', 'Coordinador de Alianzas', 
