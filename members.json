@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "name": "Miembro Ejemplo",
+    "role": "Lead de Eth Lima",
+    "photo": "",
+    "social": {
+      "x": "",
+      "instagram": "",
+      "linkedin": ""
+    },
+    "eventIds": []
+  }
+]
