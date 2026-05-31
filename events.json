@@ -914,6 +914,27 @@
     "parentId": 38
   },
   {
+    "id": 54,
+    "title": "Solana Summer School",
+    "description": "​Welcome to Solana Summer School. Spend your summer getting smart on the greatest blockchain on earth.\n\nOpen to all current college students (must register with school email).",
+    "date": "2026-06-15",
+    "endDate": "",
+    "time": "",
+    "location": "Online",
+    "type": "cohorte",
+    "link": "https://luma.com/g8b5fy9s",
+    "tags": [
+      "solana"
+    ],
+    "image": "",
+    "organizer": "Solana",
+    "parentId": null,
+    "issueUrl": "https://github.com/javierarteagagonzales/ethevents/issues/6",
+    "issueNum": 6,
+    "state": "open",
+    "createdAt": "2026-05-22T03:42:40Z"
+  },
+  {
     "id": 109,
     "title": "Introducción a Blockchain y Layers 2 (Módulo 4: Arbitrum Stylus)",
     "description": "Entendiendo las segundas capas y la arquitectura de Arbitrum Stylus.",
