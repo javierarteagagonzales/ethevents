@@ -215,7 +215,7 @@
     "eventIds": [
       38
     ],
-    "area": "General",
+    "area": "Tecnología",
     "events": [
       {
         "eventId": 38,
@@ -241,7 +241,7 @@
       20,
       40
     ],
-    "area": "General",
+    "area": "Tecnología",
     "events": [
       {
         "eventId": 12,
@@ -286,7 +286,7 @@
     "eventIds": [
       41
     ],
-    "area": "General",
+    "area": "Tecnología",
     "events": [
       {
         "eventId": 16,
@@ -328,7 +328,7 @@
       16,
       38
     ],
-    "area": "General",
+    "area": "Proyectos",
     "events": [
       {
         "eventId": 16,
@@ -384,7 +384,7 @@
         "role": "Voluntario"
       }
     ],
-    "area": "General"
+    "area": "Tecnología"
   },
   {
     "id": 9,
@@ -401,7 +401,7 @@
       34,
       51
     ],
-    "area": "General",
+    "area": "Tecnología",
     "events": [
       {
         "eventId": 16,
@@ -443,13 +443,14 @@
         "eventId": 16,
         "role": "Lead del Proyecto"
       }
-    ]
+    ],
+    "area": "Logística"
   },
   {
     "id": 11,
     "name": "Gianella Coronel",
     "role": "Voluntario",
-    "area": "General",
+    "area": "Proyectos",
     "photo": "https://raw.githubusercontent.com/javierarteagagonzales/ethevents/main/public/images/gianella-coronel.webp",
     "social": {
       "x": "https://x.com/GianeWM",
@@ -487,7 +488,7 @@
     "id": 12,
     "name": "Valerio",
     "role": "Voluntario",
-    "area": "General",
+    "area": "Tecnología",
     "photo": "",
     "social": {
       "x": "",
@@ -517,7 +518,7 @@
     "id": 13,
     "name": "Marcelo Vizcarra",
     "role": "Voluntario",
-    "area": "General",
+    "area": "Tecnología",
     "photo": "https://raw.githubusercontent.com/javierarteagagonzales/ethevents/main/public/images/marcelo.webp",
     "social": {
       "x": "",
