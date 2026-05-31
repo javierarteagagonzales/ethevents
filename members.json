@@ -197,63 +197,7 @@
         "role": "Coordinador de Tecnología"
       },
       {
-        "eventId": 101,
-        "role": "Coordinador de Tecnología"
-      },
-      {
-        "eventId": 102,
-        "role": "Coordinador de Tecnología"
-      },
-      {
-        "eventId": 103,
-        "role": "Coordinador de Tecnología"
-      },
-      {
-        "eventId": 104,
-        "role": "Coordinador de Tecnología"
-      },
-      {
-        "eventId": 105,
-        "role": "Coordinador de Tecnología"
-      },
-      {
-        "eventId": 106,
-        "role": "Coordinador de Tecnología"
-      },
-      {
-        "eventId": 107,
-        "role": "Coordinador de Tecnología"
-      },
-      {
-        "eventId": 108,
-        "role": "Coordinador de Tecnología"
-      },
-      {
-        "eventId": 109,
-        "role": "Coordinador de Tecnología"
-      },
-      {
-        "eventId": 110,
-        "role": "Coordinador de Tecnología"
-      },
-      {
-        "eventId": 111,
-        "role": "Coordinador de Tecnología"
-      },
-      {
-        "eventId": 112,
-        "role": "Coordinador de Tecnología"
-      },
-      {
-        "eventId": 113,
-        "role": "Coordinador de Tecnología"
-      },
-      {
-        "eventId": 114,
-        "role": "Coordinador de Tecnología"
-      },
-      {
-        "eventId": 115,
+        "eventId": 55,
         "role": "Coordinador de Tecnología"
       }
     ]
@@ -363,6 +307,10 @@
       {
         "eventId": 51,
         "role": "Voluntario"
+      },
+      {
+        "eventId": 55,
+        "role": "Voluntario"
       }
     ]
   },
@@ -440,7 +388,7 @@
   },
   {
     "id": 9,
-    "name": "Mariana",
+    "name": "Mariana Linares",
     "role": "Voluntario",
     "photo": "https://raw.githubusercontent.com/javierarteagagonzales/ethevents/main/public/images/mariana.webp",
     "social": {
@@ -469,6 +417,10 @@
       },
       {
         "eventId": 51,
+        "role": "Lead del Proyecto"
+      },
+      {
+        "eventId": 55,
         "role": "Lead del Proyecto"
       }
     ]
