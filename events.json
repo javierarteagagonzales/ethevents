@@ -772,6 +772,27 @@
     "parentId": 38
   },
   {
+    "id": 55,
+    "title": "Everything Tokenization: Blockchain es el nuevo internet de la confianza",
+    "description": "Builder Series",
+    "date": "2026-06-04",
+    "endDate": "",
+    "time": "19:00",
+    "location": "Online",
+    "type": "conference",
+    "link": "https://luma.com/hjgs60lh",
+    "tags": [
+      "ethlima"
+    ],
+    "image": "https://github.com/user-attachments/assets/3bc0cea1-a678-449c-abb8-06ccafad08bc",
+    "organizer": "Ethereum Lima",
+    "parentId": null,
+    "issueUrl": "https://github.com/javierarteagagonzales/ethevents/issues/7",
+    "issueNum": 7,
+    "state": "open",
+    "createdAt": "2026-05-31T04:52:38Z"
+  },
+  {
     "id": 39,
     "title": "GitHub Community Day",
     "description": "La comunidad de GitHub llega a la UTP para un evento único que reunirá a estudiantes, developers y apasionados por la tecnología en una experiencia diseñada para potenciar tu forma de crear y colaborar en proyectos.",
