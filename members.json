@@ -8,8 +8,7 @@
       "x": "",
       "instagram": "",
       "linkedin": ""
-    },
-    "eventIds": []
+    }
   },
   {
     "id": 2,
@@ -21,22 +20,6 @@
       "instagram": "",
       "linkedin": ""
     },
-    "eventIds": [
-      12,
-      13,
-      16,
-      14,
-      19,
-      15,
-      20,
-      34,
-      31,
-      40,
-      41,
-      53,
-      51,
-      38
-    ],
     "area": "General",
     "events": [
       {
@@ -107,37 +90,6 @@
       "instagram": "",
       "linkedin": "https://www.linkedin.com/in/javierargo/"
     },
-    "eventIds": [
-      12,
-      13,
-      16,
-      14,
-      19,
-      15,
-      20,
-      34,
-      31,
-      40,
-      41,
-      53,
-      51,
-      38,
-      101,
-      102,
-      103,
-      104,
-      105,
-      106,
-      107,
-      108,
-      109,
-      110,
-      111,
-      112,
-      113,
-      114,
-      115
-    ],
     "area": "Tecnología",
     "events": [
       {
@@ -212,9 +164,6 @@
       "instagram": "",
       "linkedin": "https://www.linkedin.com/in/andreneyra/"
     },
-    "eventIds": [
-      38
-    ],
     "area": "Tecnología",
     "events": [
       {
@@ -233,14 +182,6 @@
       "instagram": "",
       "linkedin": "https://www.linkedin.com/in/miguel-de-la-cruz-chara-3a5a37332/"
     },
-    "eventIds": [
-      12,
-      13,
-      14,
-      15,
-      20,
-      40
-    ],
     "area": "Tecnología",
     "events": [
       {
@@ -283,9 +224,6 @@
       "instagram": "",
       "linkedin": ""
     },
-    "eventIds": [
-      41
-    ],
     "area": "Tecnología",
     "events": [
       {
@@ -324,10 +262,6 @@
       "instagram": "",
       "linkedin": ""
     },
-    "eventIds": [
-      16,
-      38
-    ],
     "area": "Proyectos",
     "events": [
       {
@@ -350,14 +284,6 @@
       "instagram": "",
       "linkedin": "https://www.linkedin.com/in/javierluisdamianiarellano/"
     },
-    "eventIds": [
-      13,
-      14,
-      15,
-      20,
-      40,
-      38
-    ],
     "events": [
       {
         "eventId": 13,
@@ -396,11 +322,6 @@
       "instagram": "",
       "linkedin": "https://www.linkedin.com/in/malinoliv/"
     },
-    "eventIds": [
-      19,
-      34,
-      51
-    ],
     "area": "Tecnología",
     "events": [
       {
@@ -435,9 +356,6 @@
       "instagram": "",
       "linkedin": ""
     },
-    "eventIds": [
-      16
-    ],
     "events": [
       {
         "eventId": 16,

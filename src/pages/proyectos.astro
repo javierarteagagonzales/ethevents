@@ -8,25 +8,8 @@ import type { MemberItem, MemberSocial } from "../types/member";
 import { ROLE_ORDER } from "../types/member";
 
 const events = eventsRaw as EventItem[];
-const rawMembers = membersRaw as MemberItem[];
+const members = membersRaw as MemberItem[];
 
-// Migrate old eventIds format to events array format on the fly for build-time safety
-const members = rawMembers.map((m) => {
-  if (
-    m.eventIds &&
-    m.eventIds.length > 0 &&
-    (!m.events || m.events.length === 0)
-  ) {
-    return {
-      ...m,
-      events: m.eventIds.map((id) => ({
-        eventId: id,
-        role: m.role || "Voluntario",
-      })),
-    };
-  }
-  return m;
-});
 
 // Filter only Ethereum Lima events
 const ethLimaEvents = events
@@ -106,16 +89,15 @@ const projectsJSON = JSON.stringify(
       <h1
         class="text-3xl md:text-5xl font-extrabold text-white mb-4 tracking-tight"
       >
-        Nuestros <span
+        <span data-i18n="proj_title_main">Nuestros</span> <span
           class="bg-gradient-to-r from-accent via-[#a78bfa] to-accent bg-[length:200%_auto] bg-clip-text text-transparent animate-shimmer"
-          >Proyectos</span
+          data-i18n="proj_title_span">Proyectos</span
         >
       </h1>
       <p
-        class="text-sm md:text-base text-muted max-w-xl mx-auto leading-relaxed"
+        class="text-sm md:text-base text-muted max-w-xl mx-auto leading-relaxed" data-i18n="proj_desc"
       >
-        Explora cada evento organizado por Ethereum Lima y conoce al equipo que
-        lo hace posible.
+        Explora cada evento organizado por Ethereum Lima y conoce al equipo que lo hace posible.
       </p>
     </div>
 
@@ -127,7 +109,7 @@ const projectsJSON = JSON.stringify(
         id="project-selector-panel"
       >
         <div
-          class="font-mono text-[10px] text-muted tracking-wider uppercase font-bold mb-2 px-1"
+          class="font-mono text-[10px] text-muted tracking-wider uppercase font-bold mb-2 px-1" data-i18n="proj_select"
         >
           // SELECCIONA UN PROYECTO
         </div>
@@ -147,7 +129,7 @@ const projectsJSON = JSON.stringify(
         >
           <div class="text-center p-8">
             <div class="text-4xl mb-4">👈</div>
-            <p class="font-mono text-xs text-muted tracking-wider uppercase">
+            <p class="font-mono text-xs text-muted tracking-wider uppercase" data-i18n="proj_select_team">
               Selecciona un proyecto para ver su equipo
             </p>
           </div>
@@ -275,6 +257,65 @@ const projectsJSON = JSON.stringify(
     }
   }
 
+  // I18N DICTIONARY
+  const TRANSLATIONS: Record<string, Record<string, string>> = {
+    es: {
+      proj_title_main: "Nuestros",
+      proj_title_span: "Proyectos",
+      proj_desc: "Explora cada evento organizado por Ethereum Lima y conoce al equipo que lo hace posible.",
+      proj_select: "// SELECCIONA UN PROYECTO",
+      proj_select_team: "Selecciona un proyecto para ver su equipo",
+      proj_members: "miembros",
+      proj_no_team: "// Equipo aún no asignado para este proyecto.",
+      proj_area: "Área:",
+      nav_events: "EVENTOS",
+      nav_how: "CÓMO FUNCIONA",
+      nav_projects: "PROYECTOS",
+      nav_projects_sub: "// Nuestras iniciativas",
+      nav_new: "+ NUEVO EVENTO"
+    },
+    en: {
+      proj_title_main: "Our",
+      proj_title_span: "Projects",
+      proj_desc: "Explore every event organized by Ethereum Lima and meet the team that makes it possible.",
+      proj_select: "// SELECT A PROJECT",
+      proj_select_team: "Select a project to see its team",
+      proj_members: "members",
+      proj_no_team: "// Team not yet assigned for this project.",
+      proj_area: "Area:",
+      nav_events: "EVENTS",
+      nav_how: "HOW IT WORKS",
+      nav_projects: "PROJECTS",
+      nav_projects_sub: "// Our initiatives",
+      nav_new: "+ NEW EVENT"
+    }
+  };
+
+  let currentLang = localStorage.getItem('eth_events_lang') || 'es';
+
+  function applyI18n() {
+    const t = TRANSLATIONS[currentLang];
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (key && t[key]) {
+        el.innerHTML = t[key];
+      }
+    });
+  }
+
+  // Escuchar cambios de idioma del header si es posible
+  window.addEventListener('storage', (e) => {
+    if (e.key === 'eth_events_lang') {
+      currentLang = e.newValue || 'es';
+      applyI18n();
+      renderProjectList();
+      if (activeProjectId) {
+        const p = projects.find((x:any) => x.id === activeProjectId);
+        if (p) renderTeam(p);
+      }
+    }
+  });
+
   const projectList = document.getElementById("project-list");
   const teamPlaceholder = document.getElementById("team-placeholder");
   const teamContent = document.getElementById("team-content");
@@ -355,7 +396,7 @@ const projectsJSON = JSON.stringify(
           <div class="flex items-center justify-between mt-2 pt-3 border-t border-white/5">
             <span class="font-mono text-[10px] text-muted flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-accent/50"></span> ${
               proj.members.length
-            } miembros</span>
+            } ${TRANSLATIONS[currentLang].proj_members}</span>
             <div class="arrow-icon w-6 h-6 rounded-full bg-white/5 flex items-center justify-center text-muted transition-all duration-300">
               <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
             </div>
@@ -410,7 +451,7 @@ const projectsJSON = JSON.stringify(
             </div>
           </div>
           <div class="flex items-center justify-center p-12 rounded-2xl border border-white/5 bg-black/20">
-            <p class="font-mono text-xs text-muted">// Equipo aún no asignado para este proyecto.</p>
+            <p class="font-mono text-xs text-muted">${TRANSLATIONS[currentLang].proj_no_team}</p>
           </div>
         </div>
       `;
@@ -443,7 +484,7 @@ const projectsJSON = JSON.stringify(
           <div class="w-16 h-16 sm:w-24 sm:h-24 rounded-xl overflow-hidden relative group flex-shrink-0">
             ${photoHTML}
             <div class="absolute inset-x-0 bottom-0 bg-black/60 backdrop-blur-sm p-1 text-[8px] font-mono font-bold uppercase tracking-widest text-white/90 translate-y-full group-hover:translate-y-0 transition-transform">
-              Área: ${m.area || "General"}
+              ${TRANSLATIONS[currentLang].proj_area} ${m.area || "General"}
             </div>
           </div>
           <div class="flex flex-col gap-0.5 min-w-0 w-full">
@@ -485,7 +526,7 @@ const projectsJSON = JSON.stringify(
           <div class="flex-shrink-0 self-start sm:self-auto">
             <span class="font-mono text-[9px] sm:text-[10px] text-accent-2 font-bold bg-accent/10 border border-accent/25 px-3 py-1.5 rounded-full inline-block">${
               proj.members.length
-            } miembros</span>
+            } ${TRANSLATIONS[currentLang].proj_members}</span>
           </div>
         </div>
         <p class="text-xs text-muted mb-6 leading-relaxed line-clamp-3">${(
@@ -499,6 +540,7 @@ const projectsJSON = JSON.stringify(
   }
 
   // Init
+  applyI18n();
   renderProjectList();
   if (projects.length > 0) {
     activeProjectId = projects[0].id;

@@ -1,0 +1,67 @@
+---
+// AdminEvents.astro
+---
+
+<div
+  id="events-section"
+  class="dashboard-section hidden bg-surface border border-white/5 rounded-3xl p-6 md:p-8 backdrop-blur-xl flex flex-col gap-6"
+>
+  <!-- TABLE TOP CONTROLS -->
+  <div
+    class="flex flex-col sm:flex-row justify-between items-center gap-4"
+  >
+    <div class="w-full sm:max-w-xs relative">
+      <input
+        type="text"
+        id="search-input"
+        placeholder="Buscar por título, ubicación..."
+        class="w-full bg-surface-2 border border-white/5 rounded-xl pl-10 pr-4 py-2.5 text-xs text-white placeholder-muted/50 focus:border-accent focus:bg-accent/5 focus:ring-1 focus:ring-accent outline-none transition-all"
+      />
+      <div class="absolute left-3 top-3 text-muted">
+        <svg
+          class="w-4 h-4"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+        </svg>
+      </div>
+    </div>
+
+    <button
+      id="btn-new-event"
+      class="w-full sm:w-auto px-6 py-2.5 bg-accent hover:bg-accent-2 text-white font-mono text-xs font-bold rounded-xl shadow-md transition-all flex items-center justify-center gap-2"
+    >
+      ➕ AGREGAR EVENTO
+    </button>
+  </div>
+
+  <!-- TABLE -->
+  <div
+    class="overflow-x-auto rounded-2xl border border-white/5 bg-black/20"
+  >
+    <table class="w-full border-collapse text-left text-xs text-muted">
+      <thead
+        class="bg-surface-2 font-mono text-[10px] tracking-wider uppercase text-muted font-bold border-b border-white/5"
+      >
+        <tr>
+          <th class="p-4">ID</th>
+          <th class="p-4">Título</th>
+          <th class="p-4">Categoría</th>
+          <th class="p-4">Fecha</th>
+          <th class="p-4">Ubicación</th>
+          <th class="p-4">Organiza</th>
+          <th class="p-4 text-right">Acciones</th>
+        </tr>
+      </thead>
+      <tbody id="events-table-body" class="divide-y divide-white/5">
+        <!-- Dynamically populated rows -->
+      </tbody>
+    </table>
+  </div>
+</div>

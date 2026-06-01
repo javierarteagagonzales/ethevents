@@ -71,7 +71,7 @@ const organizerGradients = [
       </div>
       
       <h1 class="text-4xl md:text-7xl font-extrabold tracking-tight mb-6 leading-none text-white max-w-3xl">
-        Súmate a la <span class="bg-gradient-to-r from-accent via-[#a78bfa] to-accent bg-[length:200%_auto] bg-clip-text text-transparent animate-shimmer" data-i18n="hero_title_span">Comunidad</span>
+        <span data-i18n="hero_title_main">Súmate a la</span> <span class="bg-gradient-to-r from-accent via-[#a78bfa] to-accent bg-[length:200%_auto] bg-clip-text text-transparent animate-shimmer" data-i18n="hero_title_span">Comunidad</span>
       </h1>
       <p class="text-base md:text-lg text-muted max-w-xl mx-auto mb-10 leading-relaxed font-sans" data-i18n="hero_subtitle">
         La plataforma oficial para descubrir y publicar eventos de la comunidad Web3 en el Perú.
@@ -213,7 +213,7 @@ const organizerGradients = [
             <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
           </div>
           <h3 class="font-sans font-bold text-base text-white mb-2" data-i18n="how_s1_title">Click en nuevo evento</h3>
-          <p class="font-sans text-xs text-muted leading-relaxed" data-i18n="how_s1_desc">Presiona el botón "+ NUEVO EVENTO" para iniciar el proceso a través de un issue en GitHub.</p>
+          <p class="font-sans text-xs text-muted leading-relaxed" data-i18n="how_s1_desc">Presiona el botón "+ NUEVO EVENTO" para iniciar el proceso a través de un formulario sencillo.</p>
         </div>
 
         <div class="bg-white/[0.01] border border-white/5 rounded-2xl p-6 flex flex-col items-center text-center relative group hover:border-accent/30 hover:bg-white/[0.02] transition-all duration-300">
@@ -222,7 +222,7 @@ const organizerGradients = [
             <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M9 12h6M9 16h6M9 8h6M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
           </div>
           <h3 class="font-sans font-bold text-base text-white mb-2" data-i18n="how_s2_title">Llena el formulario</h3>
-          <p class="font-sans text-xs text-muted leading-relaxed" data-i18n="how_s2_desc">Completa el formulario del issue con los detalles del evento (nombre, fecha, ubicación, etc.).</p>
+          <p class="font-sans text-xs text-muted leading-relaxed" data-i18n="how_s2_desc">Completa el formulario web con los detalles del evento (nombre, fecha, ubicación, etc.).</p>
         </div>
 
         <div class="bg-white/[0.01] border border-white/5 rounded-2xl p-6 flex flex-col items-center text-center relative group hover:border-accent/30 hover:bg-white/[0.02] transition-all duration-300">
@@ -278,6 +278,8 @@ const organizerGradients = [
     es: {
       nav_events: "EVENTOS",
       nav_how: "CÓMO FUNCIONA",
+      nav_projects: "PROYECTOS",
+      nav_projects_sub: "// Nuestras iniciativas",
       nav_new: "+ NUEVO EVENTO",
       sec_eth_lima: "Eventos <span>ETH Lima</span>",
       sec_community: "Eventos de la <span>Comunidad</span>",
@@ -288,6 +290,7 @@ const organizerGradients = [
       stat_events: "EVENTOS",
       stat_upcoming: "PRÓXIMOS",
       stat_types: "CATEGORÍAS",
+      hero_title_main: "Súmate a la",
       hero_title_span: "Comunidad",
       hero_subtitle: "La plataforma oficial para descubrir y publicar eventos de la comunidad Web3 en el Perú.",
       btn_propose: "PROPONER EVENTO",
@@ -295,10 +298,10 @@ const organizerGradients = [
       how_title: "¿Cómo agregar un evento?",
       how_s1_step: "PASO 01",
       how_s1_title: "Click en nuevo evento",
-      how_s1_desc: "Presiona el botón '+ NUEVO EVENTO' para iniciar el proceso a través de un issue en GitHub.",
+      how_s1_desc: "Presiona el botón '+ NUEVO EVENTO' para iniciar el proceso mediante un formulario.",
       how_s2_step: "PASO 02",
       how_s2_title: "Llena el formulario",
-      how_s2_desc: "Completa el formulario del issue con los detalles del evento (nombre, fecha, ubicación, etc.).",
+      how_s2_desc: "Completa la información con los detalles del evento (nombre, fecha, ubicación, etc.).",
       how_s3_step: "PASO 03",
       how_s3_title: "Espera la aprobación",
       how_s3_desc: "El equipo de Ethereum Lima revisará tu propuesta. Una vez aprobado, se publicará automáticamente.",
@@ -327,6 +330,8 @@ const organizerGradients = [
     en: {
       nav_events: "EVENTS",
       nav_how: "HOW IT WORKS",
+      nav_projects: "PROJECTS",
+      nav_projects_sub: "// Our initiatives",
       nav_new: "+ NEW EVENT",
       sec_eth_lima: "<span>ETH Lima</span> Events",
       sec_community: "<span>Community</span> Events",
@@ -337,6 +342,7 @@ const organizerGradients = [
       stat_events: "EVENTS",
       stat_upcoming: "UPCOMING",
       stat_types: "CATEGORIES",
+      hero_title_main: "Join the",
       hero_title_span: "Community",
       hero_subtitle: "The official platform to discover and publish Web3 community events in Peru.",
       btn_propose: "PROPOSE EVENT",
@@ -344,10 +350,10 @@ const organizerGradients = [
       how_title: "How to add an event?",
       how_s1_step: "STEP 01",
       how_s1_title: "Click new event",
-      how_s1_desc: "Press the '+ NEW EVENT' button to start the process via a GitHub issue.",
+      how_s1_desc: "Press the '+ NEW EVENT' button to start the process via a simple form.",
       how_s2_step: "STEP 02",
       how_s2_title: "Fill the form",
-      how_s2_desc: "Complete the issue form with event details (name, date, location, etc.).",
+      how_s2_desc: "Complete the form with event details (name, date, location, etc.).",
       how_s3_step: "STEP 03",
       how_s3_title: "Wait for approval",
       how_s3_desc: "The Ethereum Lima team will review your proposal. Once approved, it will be published automatically.",

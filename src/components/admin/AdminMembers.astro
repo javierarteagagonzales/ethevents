@@ -1,0 +1,57 @@
+---
+// AdminMembers.astro
+---
+
+<div
+  id="members-section"
+  class="dashboard-section hidden bg-surface border border-white/5 rounded-3xl p-6 md:p-8 backdrop-blur-xl flex flex-col gap-6"
+>
+  <!-- TABLE TOP CONTROLS -->
+  <div
+    class="flex flex-col sm:flex-row justify-between items-center gap-4"
+  >
+    <div class="w-full sm:max-w-xs relative">
+      <h2 class="text-xl font-extrabold text-white">
+        Miembros del Equipo
+      </h2>
+    </div>
+
+    <div class="flex flex-wrap gap-3 w-full sm:w-auto">
+      <button
+        id="btn-download-members-json"
+        class="flex-1 sm:flex-none px-6 py-2.5 bg-accent/25 border border-accent/40 hover:bg-accent/35 text-accent-2 font-mono text-xs font-bold rounded-xl transition-all shadow-[0_0_20px_rgba(98,126,234,0.1)] flex items-center justify-center gap-2"
+      >
+        📥 MEMBERS.JSON
+      </button>
+      <button
+        id="btn-new-member"
+        class="flex-1 sm:flex-none px-6 py-2.5 bg-accent hover:bg-accent-2 text-white font-mono text-xs font-bold rounded-xl shadow-md transition-all flex items-center justify-center gap-2"
+      >
+        ➕ AGREGAR MIEMBRO
+      </button>
+    </div>
+  </div>
+
+  <!-- TABLE -->
+  <div
+    class="overflow-x-auto rounded-2xl border border-white/5 bg-black/20"
+  >
+    <table class="w-full border-collapse text-left text-xs text-muted">
+      <thead
+        class="bg-surface-2 font-mono text-[10px] tracking-wider uppercase text-muted font-bold border-b border-white/5"
+      >
+        <tr>
+          <th class="p-4">ID</th>
+          <th class="p-4">Foto</th>
+          <th class="p-4">Nombre</th>
+          <th class="p-4">Cargo</th>
+          <th class="p-4">Eventos</th>
+          <th class="p-4 text-right">Acciones</th>
+        </tr>
+      </thead>
+      <tbody id="members-table-body" class="divide-y divide-white/5">
+        <!-- Dynamically populated rows -->
+      </tbody>
+    </table>
+  </div>
+</div>

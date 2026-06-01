@@ -1,0 +1,153 @@
+---
+// AdminMemberModal.astro
+---
+
+<div
+  id="member-crud-modal"
+  class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-[#030407]/90 backdrop-blur-md animate-modal-fade"
+>
+  <div
+    class="w-full max-w-2xl bg-surface border border-white/5 rounded-3xl p-6 md:p-8 relative shadow-2xl overflow-y-auto max-h-[90vh] no-scrollbar"
+  >
+    <h2
+      id="member-modal-title"
+      class="text-xl font-extrabold text-white mb-6"
+    >
+      Editar Miembro
+    </h2>
+
+    <form id="member-crud-form" class="space-y-4">
+      <input type="hidden" id="member-id" />
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="space-y-1">
+          <label
+            class="block font-mono text-[9px] text-muted tracking-wider uppercase font-bold"
+            >Nombre *</label
+          >
+          <input
+            type="text"
+            id="member-name"
+            required
+            class="w-full bg-surface-2 border border-white/5 rounded-xl px-4 py-2.5 text-xs text-white focus:border-accent outline-none"
+          />
+        </div>
+        <div class="space-y-1">
+          <label
+            class="block font-mono text-[9px] text-muted tracking-wider uppercase font-bold"
+            >Foto (URL)</label
+          >
+          <input
+            type="text"
+            id="member-photo"
+            class="w-full bg-surface-2 border border-white/5 rounded-xl px-4 py-2.5 text-xs text-white focus:border-accent outline-none"
+          />
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="space-y-1">
+          <label
+            class="block font-mono text-[9px] text-muted tracking-wider uppercase font-bold"
+            >Rol General *</label
+          >
+          <select
+            id="member-role"
+            required
+            class="w-full bg-surface-2 border border-white/5 rounded-xl px-4 py-2.5 text-xs text-white focus:border-accent outline-none"
+          >
+            <option value="Lead de Eth Lima">Lead de Eth Lima</option>
+            <option value="Core Team">Core Team</option>
+            <option value="Coordinador de Tecnología"
+              >Coordinador de Tecnología</option
+            >
+            <option value="Coordinador de Logística"
+              >Coordinador de Logística</option
+            >
+            <option value="Coordinador de Alianzas"
+              >Coordinador de Alianzas</option
+            >
+            <option value="Coordinadora de Comunicaciones"
+              >Coordinadora de Comunicaciones</option
+            >
+            <option value="Lead del Proyecto">Lead del Proyecto</option>
+            <option value="Voluntario">Voluntario</option>
+          </select>
+        </div>
+        <div class="space-y-1">
+          <label
+            class="block font-mono text-[9px] text-muted tracking-wider uppercase font-bold"
+            >Área *</label
+          >
+          <select
+            id="member-area"
+            required
+            class="w-full bg-surface-2 border border-white/5 rounded-xl px-4 py-2.5 text-xs text-white focus:border-accent outline-none"
+          >
+            <option value="Tecnología">Tecnología</option>
+            <option value="Logística">Logística</option>
+            <option value="Proyectos">Proyectos</option>
+            <option value="Comunicaciones">Comunicaciones</option>
+            <option value="General">General</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="space-y-1">
+        <label
+          class="block font-mono text-[9px] text-muted tracking-wider uppercase font-bold"
+          >Redes Sociales</label
+        >
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+          <input
+            type="text"
+            id="member-x"
+            placeholder="X (Twitter) URL"
+            class="w-full bg-surface-2 border border-white/5 rounded-xl px-4 py-2.5 text-xs text-white focus:border-accent outline-none"
+          />
+          <input
+            type="text"
+            id="member-instagram"
+            placeholder="Instagram URL"
+            class="w-full bg-surface-2 border border-white/5 rounded-xl px-4 py-2.5 text-xs text-white focus:border-accent outline-none"
+          />
+          <input
+            type="text"
+            id="member-linkedin"
+            placeholder="LinkedIn URL"
+            class="w-full bg-surface-2 border border-white/5 rounded-xl px-4 py-2.5 text-xs text-white focus:border-accent outline-none"
+          />
+        </div>
+      </div>
+
+      <div class="space-y-1">
+        <label
+          class="block font-mono text-[9px] text-muted tracking-wider uppercase font-bold"
+          >Eventos Asignados y Rol</label
+        >
+        <div
+          id="member-events-container"
+          class="flex flex-col gap-2 max-h-48 overflow-y-auto p-3 bg-surface-2 border border-white/5 rounded-xl"
+        >
+          <!-- Checkboxes generados por JS -->
+        </div>
+      </div>
+
+      <div class="flex justify-end gap-3 pt-6 border-t border-white/5">
+        <button
+          type="button"
+          id="btn-close-member-modal"
+          class="px-5 py-2.5 bg-surface-2 hover:bg-white/5 border border-white/5 text-muted hover:text-white font-mono text-xs font-bold rounded-xl transition-all"
+        >
+          CANCELAR
+        </button>
+        <button
+          type="submit"
+          class="px-6 py-2.5 bg-accent hover:bg-accent-2 text-white font-mono text-xs font-bold rounded-xl transition-all shadow-md"
+        >
+          GUARDAR MIEMBRO
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

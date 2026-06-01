@@ -1,5 +1,6 @@
 export interface EventItem {
   id: number;
+  parentId?: number;
   title: string;
   description: string;
   date: string;

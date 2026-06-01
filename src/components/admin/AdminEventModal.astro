@@ -1,0 +1,214 @@
+---
+// AdminEventModal.astro
+---
+
+<div
+  id="crud-modal"
+  class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-[#030407]/90 backdrop-blur-md animate-modal-fade"
+>
+  <div
+    class="w-full max-w-2xl bg-surface border border-white/5 rounded-3xl p-6 md:p-8 relative shadow-2xl overflow-y-auto max-h-[90vh] no-scrollbar"
+  >
+    <h2 id="modal-title" class="text-xl font-extrabold text-white mb-6">
+      Editar Evento
+    </h2>
+
+    <form id="crud-form" class="space-y-4">
+      <input type="hidden" id="event-id" />
+
+      <div class="space-y-1">
+        <label
+          for="form-title"
+          class="block font-mono text-[9px] text-muted tracking-wider uppercase font-bold"
+          >Título *</label
+        >
+        <input
+          type="text"
+          id="form-title"
+          required
+          class="w-full bg-surface-2 border border-white/5 rounded-xl px-4 py-2.5 text-xs text-white focus:border-accent outline-none"
+        />
+      </div>
+
+      <div class="space-y-1">
+        <label
+          for="form-desc"
+          class="block font-mono text-[9px] text-muted tracking-wider uppercase font-bold"
+          >Descripción *</label
+        >
+        <textarea
+          id="form-desc"
+          required
+          rows="3"
+          class="w-full bg-surface-2 border border-white/5 rounded-xl px-4 py-2.5 text-xs text-white focus:border-accent outline-none min-h-[80px] resize-y"
+        ></textarea>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="space-y-1">
+          <label
+            for="form-date"
+            class="block font-mono text-[9px] text-muted tracking-wider uppercase font-bold"
+            >Fecha Inicio *</label
+          >
+          <input
+            type="date"
+            id="form-date"
+            required
+            class="w-full bg-surface-2 border border-white/5 rounded-xl px-4 py-2.5 text-xs text-white focus:border-accent outline-none"
+          />
+        </div>
+        <div class="space-y-1">
+          <label
+            for="form-end-date"
+            class="block font-mono text-[9px] text-muted tracking-wider uppercase font-bold"
+            >Fecha Fin</label
+          >
+          <input
+            type="date"
+            id="form-end-date"
+            class="w-full bg-surface-2 border border-white/5 rounded-xl px-4 py-2.5 text-xs text-white focus:border-accent outline-none"
+          />
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="space-y-1">
+          <label
+            for="form-time"
+            class="block font-mono text-[9px] text-muted tracking-wider uppercase font-bold"
+            >Hora</label
+          >
+          <input
+            type="text"
+            id="form-time"
+            placeholder="Ej: 19:00"
+            class="w-full bg-surface-2 border border-white/5 rounded-xl px-4 py-2.5 text-xs text-white focus:border-accent outline-none"
+          />
+        </div>
+        <div class="space-y-1">
+          <label
+            for="form-type"
+            class="block font-mono text-[9px] text-muted tracking-wider uppercase font-bold"
+            >Categoría *</label
+          >
+          <select
+            id="form-type"
+            required
+            class="w-full bg-surface-2 border border-white/5 rounded-xl px-4 py-2.5 text-xs text-white focus:border-accent outline-none"
+          >
+            <option value="meetup">Meetup</option>
+            <option value="conference">Conference</option>
+            <option value="workshop">Workshop</option>
+            <option value="hackathon">Hackathon</option>
+            <option value="bootcamp">Bootcamp</option>
+            <option value="cohorte">Cohorte</option>
+            <option value="buildathon">Buildathon</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="space-y-1">
+          <label
+            for="form-location"
+            class="block font-mono text-[9px] text-muted tracking-wider uppercase font-bold"
+            >Ubicación *</label
+          >
+          <input
+            type="text"
+            id="form-location"
+            required
+            class="w-full bg-surface-2 border border-white/5 rounded-xl px-4 py-2.5 text-xs text-white focus:border-accent outline-none"
+          />
+        </div>
+        <div class="space-y-1">
+          <label
+            for="form-organizer"
+            class="block font-mono text-[9px] text-muted tracking-wider uppercase font-bold"
+            >Organizador *</label
+          >
+          <input
+            type="text"
+            id="form-organizer"
+            required
+            class="w-full bg-surface-2 border border-white/5 rounded-xl px-4 py-2.5 text-xs text-white focus:border-accent outline-none"
+          />
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="space-y-1">
+          <label
+            for="form-link"
+            class="block font-mono text-[9px] text-muted tracking-wider uppercase font-bold"
+            >Link de registro</label
+          >
+          <input
+            type="url"
+            id="form-link"
+            class="w-full bg-surface-2 border border-white/5 rounded-xl px-4 py-2.5 text-xs text-white focus:border-accent outline-none"
+          />
+        </div>
+        <div class="space-y-1">
+          <label
+            for="form-tags"
+            class="block font-mono text-[9px] text-muted tracking-wider uppercase font-bold"
+            >Tags</label
+          >
+          <input
+            type="text"
+            id="form-tags"
+            placeholder="ethereum, solidity"
+            class="w-full bg-surface-2 border border-white/5 rounded-xl px-4 py-2.5 text-xs text-white focus:border-accent outline-none"
+          />
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="space-y-1">
+          <label
+            for="form-parent-id"
+            class="block font-mono text-[9px] text-muted tracking-wider uppercase font-bold"
+            >Evento Padre ID (Subevento)</label
+          >
+          <input
+            type="number"
+            id="form-parent-id"
+            placeholder="Ej: 38"
+            class="w-full bg-surface-2 border border-white/5 rounded-xl px-4 py-2.5 text-xs text-white focus:border-accent outline-none"
+          />
+        </div>
+        <div class="space-y-1">
+          <label
+            for="form-image"
+            class="block font-mono text-[9px] text-muted tracking-wider uppercase font-bold"
+            >URL Imagen</label
+          >
+          <input
+            type="url"
+            id="form-image"
+            placeholder="https://..."
+            class="w-full bg-surface-2 border border-white/5 rounded-xl px-4 py-2.5 text-xs text-white focus:border-accent outline-none"
+          />
+        </div>
+      </div>
+
+      <div class="flex justify-end gap-3 pt-6 border-t border-white/5">
+        <button
+          type="button"
+          id="btn-close-modal"
+          class="px-5 py-2.5 bg-surface-2 hover:bg-white/5 border border-white/5 text-muted hover:text-white font-mono text-xs font-bold rounded-xl transition-all"
+        >
+          CANCELAR
+        </button>
+        <button
+          type="submit"
+          class="px-6 py-2.5 bg-accent hover:bg-accent-2 text-white font-mono text-xs font-bold rounded-xl transition-all shadow-md"
+        >
+          GUARDAR EVENTO
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

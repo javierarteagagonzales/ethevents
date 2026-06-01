@@ -17,11 +17,11 @@ import Header from '../components/Header.astro';
             <polyline points="20 6 9 17 4 12" />
           </svg>
         </div>
-        <h2 class="text-3xl font-extrabold text-white mb-3" data-i18n="form_success_title">¡Propuesta Recibida!</h2>
+        <h2 class="text-3xl font-extrabold text-white mb-3" data-i18n="sub_success_title">¡Propuesta Recibida!</h2>
         <p class="text-muted text-sm leading-relaxed max-w-md mb-8" id="success-description">
           Tu evento ha sido enviado correctamente. Un maintainer lo revisará pronto para su publicación.
         </p>
-        <a href="/" class="px-8 py-3 bg-accent hover:bg-accent-2 text-white font-mono text-sm font-bold rounded-xl shadow-lg transition-all text-center">
+        <a href="/" class="px-8 py-3 bg-accent hover:bg-accent-2 text-white font-mono text-sm font-bold rounded-xl shadow-lg transition-all text-center" data-i18n="sub_back_home">
           VOLVER AL INICIO
         </a>
       </div>
@@ -29,8 +29,8 @@ import Header from '../components/Header.astro';
       <!-- FORM CONTENT -->
       <div id="form-content" class="transition-opacity duration-300">
         <div class="text-center mb-10">
-          <h1 class="text-3xl font-extrabold text-white mb-3">Propón tu Evento</h1>
-          <p class="text-muted text-sm leading-relaxed max-w-lg mx-auto">
+          <h1 class="text-3xl font-extrabold text-white mb-3" data-i18n="sub_title">Propón tu Evento</h1>
+          <p class="text-muted text-sm leading-relaxed max-w-lg mx-auto" data-i18n="sub_desc">
             Completa los detalles para que la comunidad pueda descubrir tu evento. Será revisado por los maintainers.
           </p>
         </div>
@@ -39,7 +39,7 @@ import Header from '../components/Header.astro';
           
           <!-- INFO BÁSICA -->
           <div class="space-y-2">
-            <label for="nombre" class="block font-mono text-[10px] text-muted tracking-wider uppercase font-bold">
+            <label for="nombre" class="block font-mono text-[10px] text-muted tracking-wider uppercase font-bold" data-i18n="sub_label_name">
               📌 Nombre del Evento *
             </label>
             <input
@@ -53,7 +53,7 @@ import Header from '../components/Header.astro';
           </div>
 
           <div class="space-y-2">
-            <label for="descripcion" class="block font-mono text-[10px] text-muted tracking-wider uppercase font-bold">
+            <label for="descripcion" class="block font-mono text-[10px] text-muted tracking-wider uppercase font-bold" data-i18n="sub_label_desc">
               📝 Descripción *
             </label>
             <textarea
@@ -68,7 +68,7 @@ import Header from '../components/Header.astro';
           <!-- FECHAS -->
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div class="space-y-2">
-              <label for="fecha" class="block font-mono text-[10px] text-muted tracking-wider uppercase font-bold">
+              <label for="fecha" class="block font-mono text-[10px] text-muted tracking-wider uppercase font-bold" data-i18n="sub_label_date">
                 🗓️ Fecha de Inicio *
               </label>
               <input
@@ -80,7 +80,7 @@ import Header from '../components/Header.astro';
               />
             </div>
             <div class="space-y-2">
-              <label for="fecha-fin" class="block font-mono text-[10px] text-muted tracking-wider uppercase font-bold">
+              <label for="fecha-fin" class="block font-mono text-[10px] text-muted tracking-wider uppercase font-bold" data-i18n="sub_label_end">
                 🗓️ Fecha de Fin (opcional)
               </label>
               <input
@@ -95,7 +95,7 @@ import Header from '../components/Header.astro';
           <!-- TIME AND TYPE -->
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div class="space-y-2">
-              <label for="hora" class="block font-mono text-[10px] text-muted tracking-wider uppercase font-bold">
+              <label for="hora" class="block font-mono text-[10px] text-muted tracking-wider uppercase font-bold" data-i18n="sub_label_time">
                 ⏰ Hora
               </label>
               <input
@@ -107,7 +107,7 @@ import Header from '../components/Header.astro';
               />
             </div>
             <div class="space-y-2 relative">
-              <label for="tipo" class="block font-mono text-[10px] text-muted tracking-wider uppercase font-bold">
+              <label for="tipo" class="block font-mono text-[10px] text-muted tracking-wider uppercase font-bold" data-i18n="sub_label_type">
                 🏷️ Tipo de evento *
               </label>
               <select
@@ -135,7 +135,7 @@ import Header from '../components/Header.astro';
 
           <!-- UBICACIÓN Y LINK -->
           <div class="space-y-2">
-            <label for="ubicacion" class="block font-mono text-[10px] text-muted tracking-wider uppercase font-bold">
+            <label for="ubicacion" class="block font-mono text-[10px] text-muted tracking-wider uppercase font-bold" data-i18n="sub_label_location">
               📍 Ubicación *
             </label>
             <input
@@ -149,7 +149,7 @@ import Header from '../components/Header.astro';
           </div>
 
           <div class="space-y-2">
-            <label for="link" class="block font-mono text-[10px] text-muted tracking-wider uppercase font-bold">
+            <label for="link" class="block font-mono text-[10px] text-muted tracking-wider uppercase font-bold" data-i18n="sub_label_link">
               🔗 Link de registro / más info
             </label>
             <input
@@ -164,7 +164,7 @@ import Header from '../components/Header.astro';
           <!-- METADATA -->
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div class="space-y-2">
-              <label for="organizador" class="block font-mono text-[10px] text-muted tracking-wider uppercase font-bold">
+              <label for="organizador" class="block font-mono text-[10px] text-muted tracking-wider uppercase font-bold" data-i18n="sub_label_org">
                 👤 Organizador
               </label>
               <input
@@ -176,7 +176,7 @@ import Header from '../components/Header.astro';
               />
             </div>
             <div class="space-y-2">
-              <label for="tags" class="block font-mono text-[10px] text-muted tracking-wider uppercase font-bold">
+              <label for="tags" class="block font-mono text-[10px] text-muted tracking-wider uppercase font-bold" data-i18n="sub_label_tags">
                 🏷️ Tags
               </label>
               <input
@@ -194,15 +194,15 @@ import Header from '../components/Header.astro';
           <div class="pt-6 border-t border-white/5 space-y-4">
             <label class="flex items-start gap-3 cursor-pointer">
               <input type="checkbox" name="confirm-real" required class="w-4 h-4 rounded border-white/10 bg-surface-2 text-accent focus:ring-accent accent-accent mt-0.5" />
-              <span class="text-xs text-muted leading-relaxed select-none">El evento es real y tiene fecha confirmada.</span>
+              <span class="text-xs text-muted leading-relaxed select-none" data-i18n="sub_conf1">El evento es real y tiene fecha confirmada.</span>
             </label>
             <label class="flex items-start gap-3 cursor-pointer">
               <input type="checkbox" name="confirm-web3" required class="w-4 h-4 rounded border-white/10 bg-surface-2 text-accent focus:ring-accent accent-accent mt-0.5" />
-              <span class="text-xs text-muted leading-relaxed select-none">El evento está relacionado con Web3 / Ethereum / Blockchain.</span>
+              <span class="text-xs text-muted leading-relaxed select-none" data-i18n="sub_conf2">El evento está relacionado con Web3 / Ethereum / Blockchain.</span>
             </label>
             <label class="flex items-start gap-3 cursor-pointer">
               <input type="checkbox" name="confirm-edit" required class="w-4 h-4 rounded border-white/10 bg-surface-2 text-accent focus:ring-accent accent-accent mt-0.5" />
-              <span class="text-xs text-muted leading-relaxed select-none">Acepto que los maintainers pueden editar o rechazar el evento.</span>
+              <span class="text-xs text-muted leading-relaxed select-none" data-i18n="sub_conf3">Acepto que los maintainers pueden editar o rechazar el evento.</span>
             </label>
           </div>
 
@@ -214,7 +214,7 @@ import Header from '../components/Header.astro';
             <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
               <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
             </svg>
-            ENVIAR PROPUESTA
+            <span data-i18n="sub_submit">ENVIAR PROPUESTA</span>
           </button>
         </form>
       </div>
@@ -235,7 +235,7 @@ import Header from '../components/Header.astro';
     // Loading state
     if (submitBtn) {
       submitBtn.disabled = true;
-      submitBtn.innerHTML = `<svg class="w-4 h-4 animate-spin text-white" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg> ENVIANDO...`;
+      submitBtn.innerHTML = `<svg class="w-4 h-4 animate-spin text-white" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg> <span data-i18n="sub_submitting">${TRANSLATIONS[currentLang]?.sub_submitting || 'ENVIANDO...'}</span>`;
     }
     
     const formData = new FormData(form);
@@ -279,4 +279,71 @@ import Header from '../components/Header.astro';
       }
     }
   });
+  // I18N DICTIONARY
+  const TRANSLATIONS: Record<string, Record<string, string>> = {
+    es: {
+      sub_success_title: "¡Propuesta Recibida!",
+      sub_back_home: "VOLVER AL INICIO",
+      sub_title: "Propón tu Evento",
+      sub_desc: "Completa los detalles para que la comunidad pueda descubrir tu evento. Será revisado por los maintainers.",
+      sub_label_name: "📌 Nombre del Evento *",
+      sub_label_desc: "📝 Descripción *",
+      sub_label_date: "🗓️ Fecha de Inicio *",
+      sub_label_end: "🗓️ Fecha de Fin (opcional)",
+      sub_label_time: "⏰ Hora",
+      sub_label_type: "🏷️ Tipo de evento *",
+      sub_label_location: "📍 Ubicación *",
+      sub_label_link: "🔗 Link de registro / más info",
+      sub_label_org: "👤 Organizador",
+      sub_label_tags: "🏷️ Tags",
+      sub_conf1: "El evento es real y tiene fecha confirmada.",
+      sub_conf2: "El evento está relacionado con Web3 / Ethereum / Blockchain.",
+      sub_conf3: "Acepto que los maintainers pueden editar o rechazar el evento.",
+      sub_submit: "ENVIAR PROPUESTA",
+      sub_submitting: "ENVIANDO..."
+    },
+    en: {
+      sub_success_title: "Proposal Received!",
+      sub_back_home: "BACK TO HOME",
+      sub_title: "Propose your Event",
+      sub_desc: "Fill in the details so the community can discover your event. It will be reviewed by the maintainers.",
+      sub_label_name: "📌 Event Name *",
+      sub_label_desc: "📝 Description *",
+      sub_label_date: "🗓️ Start Date *",
+      sub_label_end: "🗓️ End Date (optional)",
+      sub_label_time: "⏰ Time",
+      sub_label_type: "🏷️ Event Type *",
+      sub_label_location: "📍 Location *",
+      sub_label_link: "🔗 Registration Link / More Info",
+      sub_label_org: "👤 Organizer",
+      sub_label_tags: "🏷️ Tags",
+      sub_conf1: "The event is real and the date is confirmed.",
+      sub_conf2: "The event is related to Web3 / Ethereum / Blockchain.",
+      sub_conf3: "I agree that maintainers can edit or reject the event.",
+      sub_submit: "SUBMIT PROPOSAL",
+      sub_submitting: "SUBMITTING..."
+    }
+  };
+
+  let currentLang = localStorage.getItem('eth_events_lang') || 'es';
+
+  function applyI18n() {
+    const t = TRANSLATIONS[currentLang];
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (key && t[key]) {
+        el.innerHTML = t[key];
+      }
+    });
+  }
+
+  // Escuchar cambios de idioma del header
+  window.addEventListener('storage', (e) => {
+    if (e.key === 'eth_events_lang') {
+      currentLang = e.newValue || 'es';
+      applyI18n();
+    }
+  });
+
+  applyI18n();
 </script>
