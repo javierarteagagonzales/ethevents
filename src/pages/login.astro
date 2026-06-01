@@ -55,7 +55,7 @@ if (Astro.cookies.get('admin_session')?.value === expectedPass) {
         <div class="absolute bottom-0 inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-accent-2 to-transparent opacity-50"></div>
 
         <div class="flex flex-col items-center mb-8">
-          <img src="/EthLimalogo.svg" alt="ETH Lima" class="h-14 mb-4 drop-shadow-[0_0_15px_rgba(98,126,234,0.3)]" />
+          <img src="/EthLimalogo.svg" alt="ETH Lima" class="h-14 mb-4 drop-shadow-[0_0_15px_rgba(98,126,234,0.3)]" loading="lazy" decoding="async" />
           <h1 class="text-2xl font-extrabold text-white tracking-tight text-center">Admin Portal</h1>
           <p class="text-muted text-xs font-mono tracking-widest uppercase mt-2">Ethereum Lima</p>
         </div>

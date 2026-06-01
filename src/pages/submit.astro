@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
+import Toast from '../components/ui/Toast.astro';
 ---
 
 <Layout title="Proponer Evento — ETH Events" description="Comparte tu evento Web3 / Ethereum con la comunidad. Completa el formulario para enviarlo a revisión de los maintainers.">
@@ -38,85 +39,90 @@ import Header from '../components/Header.astro';
         <form id="event-form" class="space-y-6">
           
           <!-- INFO BÁSICA -->
-          <div class="space-y-2">
-            <label for="nombre" class="block font-mono text-[10px] text-muted tracking-wider uppercase font-bold" data-i18n="sub_label_name">
-              📌 Nombre del Evento *
-            </label>
+          <div class="relative group">
             <input
               type="text"
               id="nombre"
               name="nombre"
-              placeholder="Ej: ETHLima Meetup — Julio 2026"
+              placeholder=" "
               required
-              class="w-full bg-surface-2 border border-white/5 rounded-xl px-4 py-3 text-white placeholder-muted/50 focus:border-accent focus:bg-accent/5 focus:ring-1 focus:ring-accent outline-none transition-all"
+              class="block w-full bg-surface-2 border border-white/10 rounded-xl px-4 pb-2.5 pt-6 text-white focus:border-accent focus:bg-accent/5 focus:ring-1 focus:ring-accent outline-none transition-all peer"
             />
+            <label for="nombre" class="absolute text-muted duration-300 transform -translate-y-3 scale-75 top-4 z-10 origin-[0] left-4 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-3 peer-focus:text-accent" data-i18n="sub_label_name">
+              📌 Nombre del Evento *
+            </label>
+            <div class="validation-icon absolute right-4 top-4 hidden text-success">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+            </div>
           </div>
 
-          <div class="space-y-2">
-            <label for="descripcion" class="block font-mono text-[10px] text-muted tracking-wider uppercase font-bold" data-i18n="sub_label_desc">
-              📝 Descripción *
-            </label>
+          <div class="relative group">
             <textarea
               id="descripcion"
               name="descripcion"
-              placeholder="Describe el evento en 2-3 líneas..."
+              placeholder=" "
               required
-              class="w-full bg-surface-2 border border-white/5 rounded-xl px-4 py-3 text-white placeholder-muted/50 focus:border-accent focus:bg-accent/5 focus:ring-1 focus:ring-accent outline-none min-h-[100px] resize-y transition-all"
+              class="block w-full bg-surface-2 border border-white/10 rounded-xl px-4 pb-2.5 pt-6 text-white focus:border-accent focus:bg-accent/5 focus:ring-1 focus:ring-accent outline-none min-h-[100px] resize-y transition-all peer"
             ></textarea>
+            <label for="descripcion" class="absolute text-muted duration-300 transform -translate-y-3 scale-75 top-4 z-10 origin-[0] left-4 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-3 peer-focus:text-accent" data-i18n="sub_label_desc">
+              📝 Descripción *
+            </label>
+            <div class="validation-icon absolute right-4 top-4 hidden text-success">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+            </div>
           </div>
 
           <!-- FECHAS -->
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div class="space-y-2">
-              <label for="fecha" class="block font-mono text-[10px] text-muted tracking-wider uppercase font-bold" data-i18n="sub_label_date">
-                🗓️ Fecha de Inicio *
-              </label>
+            <div class="relative group">
               <input
                 type="date"
                 id="fecha"
                 name="fecha"
+                placeholder=" "
                 required
-                class="w-full bg-surface-2 border border-white/5 rounded-xl px-4 py-3 text-white focus:border-accent focus:bg-accent/5 focus:ring-1 focus:ring-accent outline-none transition-all"
+                class="block w-full bg-surface-2 border border-white/10 rounded-xl px-4 pb-2.5 pt-6 text-white focus:border-accent focus:bg-accent/5 focus:ring-1 focus:ring-accent outline-none transition-all peer"
               />
-            </div>
-            <div class="space-y-2">
-              <label for="fecha-fin" class="block font-mono text-[10px] text-muted tracking-wider uppercase font-bold" data-i18n="sub_label_end">
-                🗓️ Fecha de Fin (opcional)
+              <label for="fecha" class="absolute text-muted duration-300 transform -translate-y-3 scale-75 top-4 z-10 origin-[0] left-4 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-3 peer-focus:text-accent" data-i18n="sub_label_date">
+                🗓️ Fecha de Inicio *
               </label>
+            </div>
+            <div class="relative group">
               <input
                 type="date"
                 id="fecha-fin"
                 name="fecha-fin"
-                class="w-full bg-surface-2 border border-white/5 rounded-xl px-4 py-3 text-white focus:border-accent focus:bg-accent/5 focus:ring-1 focus:ring-accent outline-none transition-all"
+                placeholder=" "
+                class="block w-full bg-surface-2 border border-white/10 rounded-xl px-4 pb-2.5 pt-6 text-white focus:border-accent focus:bg-accent/5 focus:ring-1 focus:ring-accent outline-none transition-all peer"
               />
+              <label for="fecha-fin" class="absolute text-muted duration-300 transform -translate-y-3 scale-75 top-4 z-10 origin-[0] left-4 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-3 peer-focus:text-accent" data-i18n="sub_label_end">
+                🗓️ Fecha de Fin (opcional)
+              </label>
             </div>
           </div>
 
           <!-- TIME AND TYPE -->
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div class="space-y-2">
-              <label for="hora" class="block font-mono text-[10px] text-muted tracking-wider uppercase font-bold" data-i18n="sub_label_time">
-                ⏰ Hora
-              </label>
+            <div class="relative group">
               <input
                 type="text"
                 id="hora"
                 name="hora"
-                placeholder="Ej: 19:00 (UTC-5)"
-                class="w-full bg-surface-2 border border-white/5 rounded-xl px-4 py-3 text-white placeholder-muted/50 focus:border-accent focus:bg-accent/5 focus:ring-1 focus:ring-accent outline-none transition-all"
+                placeholder=" "
+                class="block w-full bg-surface-2 border border-white/10 rounded-xl px-4 pb-2.5 pt-6 text-white focus:border-accent focus:bg-accent/5 focus:ring-1 focus:ring-accent outline-none transition-all peer"
               />
-            </div>
-            <div class="space-y-2 relative">
-              <label for="tipo" class="block font-mono text-[10px] text-muted tracking-wider uppercase font-bold" data-i18n="sub_label_type">
-                🏷️ Tipo de evento *
+              <label for="hora" class="absolute text-muted duration-300 transform -translate-y-3 scale-75 top-4 z-10 origin-[0] left-4 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-3 peer-focus:text-accent" data-i18n="sub_label_time">
+                ⏰ Hora
               </label>
+            </div>
+            <div class="relative group">
               <select
                 id="tipo"
                 name="tipo"
                 required
-                class="w-full bg-surface-2 border border-white/5 rounded-xl px-4 py-3 pr-10 text-white focus:border-accent focus:bg-accent/5 focus:ring-1 focus:ring-accent outline-none transition-all appearance-none"
+                class="block w-full bg-surface-2 border border-white/10 rounded-xl px-4 pb-2.5 pt-6 text-white focus:border-accent focus:bg-accent/5 focus:ring-1 focus:ring-accent outline-none transition-all peer appearance-none"
               >
-                <option value="" disabled selected>Selecciona una categoría</option>
+                <option value="" disabled selected></option>
                 <option value="meetup">Meetup</option>
                 <option value="conference">Conference</option>
                 <option value="workshop">Workshop</option>
@@ -125,6 +131,9 @@ import Header from '../components/Header.astro';
                 <option value="buildathon">Buildathon</option>
                 <option value="cohorte">Cohorte</option>
               </select>
+              <label for="tipo" class="absolute text-muted duration-300 transform -translate-y-3 scale-75 top-4 z-10 origin-[0] left-4 peer-focus:scale-75 peer-focus:-translate-y-3 peer-focus:text-accent" data-i18n="sub_label_type">
+                🏷️ Tipo de evento *
+              </label>
               <div class="absolute right-3 bottom-3.5 pointer-events-none text-muted">
                 <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                   <polyline points="6 9 12 15 18 9" />
@@ -134,59 +143,61 @@ import Header from '../components/Header.astro';
           </div>
 
           <!-- UBICACIÓN Y LINK -->
-          <div class="space-y-2">
-            <label for="ubicacion" class="block font-mono text-[10px] text-muted tracking-wider uppercase font-bold" data-i18n="sub_label_location">
-              📍 Ubicación *
-            </label>
+          <div class="relative group">
             <input
               type="text"
               id="ubicacion"
               name="ubicacion"
-              placeholder="Ej: Lima, Perú o Online"
+              placeholder=" "
               required
-              class="w-full bg-surface-2 border border-white/5 rounded-xl px-4 py-3 text-white placeholder-muted/50 focus:border-accent focus:bg-accent/5 focus:ring-1 focus:ring-accent outline-none transition-all"
+              class="block w-full bg-surface-2 border border-white/10 rounded-xl px-4 pb-2.5 pt-6 text-white focus:border-accent focus:bg-accent/5 focus:ring-1 focus:ring-accent outline-none transition-all peer"
             />
+            <label for="ubicacion" class="absolute text-muted duration-300 transform -translate-y-3 scale-75 top-4 z-10 origin-[0] left-4 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-3 peer-focus:text-accent" data-i18n="sub_label_location">
+              📍 Ubicación *
+            </label>
+            <div class="validation-icon absolute right-4 top-4 hidden text-success">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+            </div>
           </div>
 
-          <div class="space-y-2">
-            <label for="link" class="block font-mono text-[10px] text-muted tracking-wider uppercase font-bold" data-i18n="sub_label_link">
-              🔗 Link de registro / más info
-            </label>
+          <div class="relative group">
             <input
               type="url"
               id="link"
               name="link"
-              placeholder="https://luma.com/..."
-              class="w-full bg-surface-2 border border-white/5 rounded-xl px-4 py-3 text-white placeholder-muted/50 focus:border-accent focus:bg-accent/5 focus:ring-1 focus:ring-accent outline-none transition-all"
+              placeholder=" "
+              class="block w-full bg-surface-2 border border-white/10 rounded-xl px-4 pb-2.5 pt-6 text-white focus:border-accent focus:bg-accent/5 focus:ring-1 focus:ring-accent outline-none transition-all peer"
             />
+            <label for="link" class="absolute text-muted duration-300 transform -translate-y-3 scale-75 top-4 z-10 origin-[0] left-4 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-3 peer-focus:text-accent" data-i18n="sub_label_link">
+              🔗 Link de registro / más info
+            </label>
           </div>
 
           <!-- METADATA -->
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div class="space-y-2">
-              <label for="organizador" class="block font-mono text-[10px] text-muted tracking-wider uppercase font-bold" data-i18n="sub_label_org">
-                👤 Organizador
-              </label>
+            <div class="relative group">
               <input
                 type="text"
                 id="organizador"
                 name="organizador"
-                placeholder="Nombre u organización"
-                class="w-full bg-surface-2 border border-white/5 rounded-xl px-4 py-3 text-white placeholder-muted/50 focus:border-accent focus:bg-accent/5 focus:ring-1 focus:ring-accent outline-none transition-all"
+                placeholder=" "
+                class="block w-full bg-surface-2 border border-white/10 rounded-xl px-4 pb-2.5 pt-6 text-white focus:border-accent focus:bg-accent/5 focus:ring-1 focus:ring-accent outline-none transition-all peer"
               />
-            </div>
-            <div class="space-y-2">
-              <label for="tags" class="block font-mono text-[10px] text-muted tracking-wider uppercase font-bold" data-i18n="sub_label_tags">
-                🏷️ Tags
+              <label for="organizador" class="absolute text-muted duration-300 transform -translate-y-3 scale-75 top-4 z-10 origin-[0] left-4 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-3 peer-focus:text-accent" data-i18n="sub_label_org">
+                👤 Organizador
               </label>
+            </div>
+            <div class="relative group">
               <input
                 type="text"
                 id="tags"
                 name="tags"
-                placeholder="ethereum, solidity, defi"
-                class="w-full bg-surface-2 border border-white/5 rounded-xl px-4 py-3 text-white placeholder-muted/50 focus:border-accent focus:bg-accent/5 focus:ring-1 focus:ring-accent outline-none transition-all"
+                placeholder=" "
+                class="block w-full bg-surface-2 border border-white/10 rounded-xl px-4 pb-2.5 pt-6 text-white focus:border-accent focus:bg-accent/5 focus:ring-1 focus:ring-accent outline-none transition-all peer"
               />
-              <p class="font-mono text-[10px] text-muted italic mt-1">// Separados por comas</p>
+              <label for="tags" class="absolute text-muted duration-300 transform -translate-y-3 scale-75 top-4 z-10 origin-[0] left-4 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-3 peer-focus:text-accent" data-i18n="sub_label_tags">
+                🏷️ Tags (ethereum, solidity)
+              </label>
             </div>
           </div>
 
@@ -222,12 +233,28 @@ import Header from '../components/Header.astro';
     </div>
 
   </main>
+  <Toast />
 </Layout>
 
 <script>
   const form = document.getElementById('event-form') as HTMLFormElement;
   const submitBtn = form?.querySelector('.btn-submit') as HTMLButtonElement;
   const btnText = submitBtn?.innerHTML || '';
+
+  // Realtime validation visual feedback
+  const inputs = form?.querySelectorAll('input[required], textarea[required]');
+  inputs?.forEach(input => {
+    input.addEventListener('input', () => {
+      const icon = input.parentElement?.querySelector('.validation-icon') as HTMLElement;
+      if (icon) {
+        if ((input as HTMLInputElement).checkValidity()) {
+          icon.classList.remove('hidden');
+        } else {
+          icon.classList.add('hidden');
+        }
+      }
+    });
+  });
 
   form?.addEventListener('submit', async function(e) {
     e.preventDefault();
@@ -272,7 +299,9 @@ import Header from '../components/Header.astro';
         throw new Error(result.error || 'Error al enviar');
       }
     } catch (error: any) {
-      alert('Hubo un problema al enviar tu propuesta: ' + error.message);
+      if ((window as any).showToast) {
+        (window as any).showToast('Error: ' + error.message, 'error', 6000);
+      }
       if (submitBtn) {
         submitBtn.disabled = false;
         submitBtn.innerHTML = btnText;

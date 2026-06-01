@@ -1,0 +1,61 @@
+---
+// src/components/ui/Toast.astro
+// Usage: import Toast from '../ui/Toast.astro'; then call window.showToast('msg', 'success'|'error'|'info')
+---
+<div id="toast-container" class="fixed bottom-6 right-6 z-[9999] flex flex-col gap-3 pointer-events-none"></div>
+
+<script>
+  type ToastType = 'success' | 'error' | 'info';
+
+  function showToast(message: string, type: ToastType = 'info', duration = 4000) {
+    const container = document.getElementById('toast-container');
+    if (!container) return;
+
+    const icons: Record<ToastType, string> = {
+      success: `<svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>`,
+      error: `<svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>`,
+      info: `<svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>`,
+    };
+
+    const colors: Record<ToastType, string> = {
+      success: 'border-l-4 border-success text-success bg-surface',
+      error: 'border-l-4 border-danger text-danger bg-surface',
+      info: 'border-l-4 border-accent text-accent-2 bg-surface',
+    };
+
+    const toast = document.createElement('div');
+    toast.className = `
+      pointer-events-auto flex items-center gap-3 px-5 py-4 rounded-2xl
+      border border-white/10 shadow-2xl backdrop-blur-xl font-mono text-sm font-bold
+      translate-y-4 opacity-0 transition-all duration-500 ease-out min-w-[280px] max-w-sm
+      ${colors[type]}
+    `.replace(/\s+/g, ' ').trim();
+
+    toast.innerHTML = `
+      ${icons[type]}
+      <span class="flex-1 leading-snug">${message}</span>
+      <button onclick="this.parentElement.remove()" class="opacity-50 hover:opacity-100 transition-opacity ml-2">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    `;
+
+    container.appendChild(toast);
+
+    // Animate in
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        toast.classList.remove('translate-y-4', 'opacity-0');
+        toast.classList.add('translate-y-0', 'opacity-100');
+      });
+    });
+
+    // Auto-remove
+    setTimeout(() => {
+      toast.classList.add('translate-y-4', 'opacity-0');
+      setTimeout(() => toast.remove(), 500);
+    }, duration);
+  }
+
+  // Expose globally
+  (window as any).showToast = showToast;
+</script>

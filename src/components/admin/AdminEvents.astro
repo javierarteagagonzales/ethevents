@@ -1,5 +1,6 @@
 ---
-// AdminEvents.astro
+import Button from '../ui/Button.astro';
+import { Search, Plus } from 'lucide-astro';
 ---
 
 <div
@@ -10,35 +11,22 @@
   <div
     class="flex flex-col sm:flex-row justify-between items-center gap-4"
   >
-    <div class="w-full sm:max-w-xs relative">
+    <div class="w-full sm:max-w-xs relative group">
       <input
         type="text"
         id="search-input"
         placeholder="Buscar por título, ubicación..."
-        class="w-full bg-surface-2 border border-white/5 rounded-xl pl-10 pr-4 py-2.5 text-xs text-white placeholder-muted/50 focus:border-accent focus:bg-accent/5 focus:ring-1 focus:ring-accent outline-none transition-all"
+        class="w-full bg-surface-2 border border-white/5 rounded-xl pl-10 pr-4 py-2.5 text-xs text-content-primary placeholder-muted/50 focus:border-accent focus:bg-accent/5 focus:ring-1 focus:ring-accent outline-none transition-all duration-300 shadow-glass"
       />
-      <div class="absolute left-3 top-3 text-muted">
-        <svg
-          class="w-4 h-4"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          viewBox="0 0 24 24"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-        </svg>
+      <div class="absolute left-3 top-3 text-muted/50 transition-colors duration-300 group-focus-within:text-accent">
+        <Search class="w-4 h-4" />
       </div>
     </div>
 
-    <button
-      id="btn-new-event"
-      class="w-full sm:w-auto px-6 py-2.5 bg-accent hover:bg-accent-2 text-white font-mono text-xs font-bold rounded-xl shadow-md transition-all flex items-center justify-center gap-2"
-    >
-      ➕ AGREGAR EVENTO
-    </button>
+    <Button id="btn-new-event" variant="primary" class="w-full sm:w-auto">
+      <Plus class="w-4 h-4" />
+      AGREGAR EVENTO
+    </Button>
   </div>
 
   <!-- TABLE -->
@@ -47,7 +35,7 @@
   >
     <table class="w-full border-collapse text-left text-xs text-muted">
       <thead
-        class="bg-surface-2 font-mono text-[10px] tracking-wider uppercase text-muted font-bold border-b border-white/5"
+        class="bg-surface-2 font-mono text-[10px] tracking-wider uppercase text-content-secondary font-bold border-b border-white/5"
       >
         <tr>
           <th class="p-4">ID</th>

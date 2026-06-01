@@ -1,5 +1,5 @@
 ---
-// AdminIssues.astro
+import { AlertCircle } from 'lucide-astro';
 ---
 
 <div
@@ -7,10 +7,9 @@
   class="dashboard-section hidden bg-surface border border-yellow-500/20 rounded-3xl p-6 md:p-8 backdrop-blur-xl flex flex-col gap-4"
 >
   <div class="flex items-center gap-3">
-    <span class="w-2.5 h-2.5 rounded-full bg-yellow-400 animate-pulse"
-    ></span>
+    <AlertCircle class="w-5 h-5 text-warning animate-pulse" />
     <h2
-      class="text-base font-extrabold text-white font-mono tracking-tight"
+      class="text-base font-extrabold text-content-primary font-mono tracking-tight"
     >
       Issues Pendientes de Aprobación
     </h2>
@@ -30,7 +29,7 @@
   >
     <table class="w-full border-collapse text-left text-xs text-muted">
       <thead
-        class="bg-surface-2 font-mono text-[10px] tracking-wider uppercase text-muted font-bold border-b border-white/5"
+        class="bg-surface-2 font-mono text-[10px] tracking-wider uppercase text-content-secondary font-bold border-b border-white/5"
       >
         <tr>
           <th class="p-4">#</th>

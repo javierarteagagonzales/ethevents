@@ -1,0 +1,24 @@
+---
+// src/components/ui/Badge.astro
+interface Props {
+  variant?: 'success' | 'warning' | 'danger' | 'info' | 'neutral';
+  class?: string;
+}
+
+const { variant = 'neutral', class: className = '' } = Astro.props;
+
+const variantClasses = {
+  success: "bg-success/10 border-success/25 text-success",
+  warning: "bg-warning/10 border-warning/25 text-warning",
+  danger: "bg-danger/10 border-danger/25 text-danger",
+  info: "bg-accent/10 border-accent/25 text-accent-2",
+  neutral: "bg-white/5 border-white/10 text-muted"
+};
+
+const classes = `inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full border font-mono text-[10px] font-bold tracking-wide ${variantClasses[variant]} ${className}`;
+---
+
+<span class={classes}>
+  <slot name="icon" />
+  <slot />
+</span>

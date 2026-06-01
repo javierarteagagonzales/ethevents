@@ -1,10 +1,10 @@
 ---
-// AdminSidebar.astro
+import { Home, AlertCircle, Calendar, Users, LogOut } from 'lucide-astro';
 ---
 
 <aside class="w-full md:w-64 flex-shrink-0 bg-surface border border-white/5 rounded-3xl p-6 backdrop-blur-xl flex flex-col gap-6 md:sticky md:top-6 min-h-[calc(100vh-3rem)]">
   <div class="flex items-center gap-3">
-    <img src="/EthLimalogo.svg" alt="Ethereum Lima Logo" class="h-8" />
+    <img src="/EthLimalogo.svg" alt="Ethereum Lima Logo" class="h-8" loading="lazy" decoding="async" />
     <div>
       <h2 class="text-lg font-extrabold text-white leading-tight">Admin Portal</h2>
       <p class="text-[9px] text-muted font-mono uppercase tracking-widest mt-1">Eth Lima</p>
@@ -12,29 +12,34 @@
   </div>
 
   <nav class="flex flex-col gap-2 flex-1 mt-4">
-    <button class="nav-btn active flex items-center gap-3 px-4 py-3 rounded-xl bg-white/5 text-white text-sm font-bold transition-all text-left border border-white/10" data-target="section-inicio">
-      🏠 Inicio
+    <button class="nav-btn active group flex items-center gap-3 px-4 py-3 rounded-xl bg-white/5 text-content-primary text-sm font-bold transition-all duration-300 text-left border border-white/10 hover:shadow-glass hover:bg-white/10" data-target="section-inicio">
+      <Home class="w-5 h-5 text-accent-2 transition-transform duration-300 group-hover:scale-110" />
+      Inicio
     </button>
-    <button class="nav-btn flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/5 text-muted hover:text-white text-sm font-bold transition-all text-left" data-target="pending-section">
+    <button class="nav-btn group flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/5 text-content-secondary hover:text-content-primary text-sm font-bold transition-all duration-300 text-left hover:shadow-glass border border-transparent hover:border-white/5" data-target="pending-section">
       <span class="relative">
-        📌 Issues
-        <span id="sidebar-pending-badge" class="absolute -top-1 -right-3 w-2 h-2 rounded-full bg-yellow-400 animate-pulse hidden"></span>
+        <AlertCircle class="w-5 h-5 transition-transform duration-300 group-hover:scale-110" />
+        <span id="sidebar-pending-badge" class="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-warning animate-pulse hidden border-2 border-[#030407]"></span>
       </span>
+      Issues
     </button>
-    <button class="nav-btn flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/5 text-muted hover:text-white text-sm font-bold transition-all text-left" data-target="events-section">
-      📅 Eventos
+    <button class="nav-btn group flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/5 text-content-secondary hover:text-content-primary text-sm font-bold transition-all duration-300 text-left hover:shadow-glass border border-transparent hover:border-white/5" data-target="events-section">
+      <Calendar class="w-5 h-5 transition-transform duration-300 group-hover:scale-110" />
+      Eventos
     </button>
-    <button class="nav-btn flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/5 text-muted hover:text-white text-sm font-bold transition-all text-left" data-target="members-section">
-      👥 Miembros
+    <button class="nav-btn group flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/5 text-content-secondary hover:text-content-primary text-sm font-bold transition-all duration-300 text-left hover:shadow-glass border border-transparent hover:border-white/5" data-target="members-section">
+      <Users class="w-5 h-5 transition-transform duration-300 group-hover:scale-110" />
+      Miembros
     </button>
   </nav>
 
   <div class="mt-auto pt-6 border-t border-white/5 flex flex-col gap-3">
     <button
       id="btn-logout"
-      class="w-full px-5 py-2.5 bg-danger/10 border border-danger/25 hover:bg-danger/20 text-danger font-mono text-xs font-bold rounded-xl transition-all"
+      class="group w-full flex items-center justify-center gap-2 px-5 py-3 bg-danger/10 border border-danger/25 hover:bg-danger/20 text-danger hover:text-red-400 font-mono text-xs font-bold rounded-xl transition-all duration-300 hover:shadow-[0_0_15px_rgba(239,68,68,0.2)]"
     >
-      🚪 CERRAR SESIÓN
+      <LogOut class="w-4 h-4 transition-transform duration-300 group-hover:-translate-x-1" />
+      CERRAR SESIÓN
     </button>
   </div>
 </aside>

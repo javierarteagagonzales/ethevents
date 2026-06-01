@@ -21,6 +21,15 @@ export default {
         muted: '#94a3b8',
         success: '#10b981',
         warning: '#f59e0b',
+        danger: '#ef4444',
+        content: {
+          primary: '#FFFFFF',
+          secondary: '#A1A1AA',
+        }
+      },
+      boxShadow: {
+        'neon': '0 0 20px var(--tw-shadow-color)',
+        'glass': 'inset 0 1px 0 0 rgba(255, 255, 255, 0.1)'
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],

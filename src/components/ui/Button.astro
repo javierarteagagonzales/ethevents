@@ -1,0 +1,41 @@
+---
+// src/components/ui/Button.astro
+interface Props {
+  variant?: 'primary' | 'secondary' | 'ghost' | 'danger';
+  size?: 'sm' | 'md' | 'lg';
+  type?: 'button' | 'submit' | 'reset';
+  class?: string;
+  id?: string;
+  title?: string;
+}
+
+const { 
+  variant = 'primary', 
+  size = 'md', 
+  type = 'button',
+  class: className = '',
+  id,
+  title
+} = Astro.props;
+
+const baseClasses = "inline-flex items-center justify-center gap-2 font-mono font-bold rounded-xl transition-all outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-[#030407]";
+
+const variantClasses = {
+  primary: "bg-accent hover:bg-accent-2 text-white shadow-[0_0_20px_rgba(98,126,234,0.15)] hover:shadow-[0_0_25px_rgba(98,126,234,0.3)] focus:ring-accent",
+  secondary: "bg-surface-2 border border-white/5 hover:border-white/15 text-[#8a9ff5] hover:text-white focus:ring-[#8a9ff5]",
+  ghost: "bg-transparent border border-transparent hover:bg-white/5 text-muted hover:text-white focus:ring-white/20",
+  danger: "bg-danger/10 border border-danger/25 hover:bg-danger/20 text-danger focus:ring-danger"
+};
+
+const sizeClasses = {
+  sm: "px-4 py-2 text-[10px]",
+  md: "px-5 py-2.5 text-xs",
+  lg: "px-6 py-3 text-sm"
+};
+
+const classes = `${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${className}`;
+---
+
+<button type={type} class={classes} id={id} title={title}>
+  <slot />
+</button>
