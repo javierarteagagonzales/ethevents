@@ -2,7 +2,7 @@
   {
     "id": 2,
     "name": "Yamille Celis",
-    "role": "Lead de Eth Lima",
+    "role": "Lead General Eth Lima",
     "area": "General",
     "photo": "https://raw.githubusercontent.com/javierarteagagonzales/ethevents/main/public/images/yami.webp",
     "social": {
@@ -72,7 +72,7 @@
   {
     "id": 3,
     "name": "Javier Arteaga",
-    "role": "Coordinador de Tecnología",
+    "role": "Lead de Tecnología",
     "area": "Tecnología",
     "photo": "https://raw.githubusercontent.com/javierarteagagonzales/ethevents/main/public/images/javier.webp",
     "social": {
@@ -146,7 +146,7 @@
   {
     "id": 14,
     "name": "Audi",
-    "role": "Coordinadora de Comunicaciones",
+    "role": "Lead de Comunicaciones",
     "area": "Comunicaciones",
     "photo": "https://raw.githubusercontent.com/javierarteagagonzales/ethevents/main/public/images/audi.webp",
     "social": {
@@ -212,7 +212,7 @@
   {
     "id": 10,
     "name": "Ángel Chavez",
-    "role": "Lead del Proyecto",
+    "role": "Lead de Logística",
     "area": "Logística",
     "photo": "",
     "social": {
@@ -514,6 +514,24 @@
     "events": [
       {
         "eventId": 12,
+        "role": "Voluntario"
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "name": "Hristo Vasquez",
+    "role": "Lead de Logística",
+    "area": "Logística",
+    "photo": "",
+    "social": {
+      "x": "",
+      "instagram": "",
+      "linkedin": ""
+    },
+    "events": [
+      {
+        "eventId": 13,
         "role": "Voluntario"
       }
     ]
