@@ -4,14 +4,18 @@
 <div
   class="modal-overlay fixed inset-0 bg-black/85 backdrop-blur-md z-[1000] hidden items-center justify-center p-6"
   id="modal-overlay"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="modal-title-label"
 >
   <div
     class="modal-content bg-bg border border-white/10 rounded-[24px] max-w-[650px] w-full relative shadow-[0_40px_100px_rgba(0,0,0,0.8),0_0_50px_rgba(98,126,234,0.1)] max-h-[90vh] overflow-y-auto animate-modal-fade"
     id="modal-content"
   >
     <button
-      class="modal-close absolute top-6 right-6 w-8 h-8 bg-surface border border-white/5 rounded-full text-muted flex items-center justify-center hover:bg-accent/15 hover:text-white transition-all z-10"
+      class="modal-close absolute top-6 right-6 w-8 h-8 bg-surface border border-white/5 rounded-full text-muted flex items-center justify-center hover:bg-accent/15 hover:text-white transition-all z-10 focus:outline-none focus:ring-2 focus:ring-accent"
       id="btn-close-modal"
+      aria-label="Cerrar modal"
     >
       <svg class="w-4.5 h-4.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <line x1="18" y1="6" x2="6" y2="18" />
@@ -25,30 +29,57 @@
 </div>
 
 <script>
-  // Add listeners to close modal
   const overlay = document.getElementById('modal-overlay');
   const closeBtn = document.getElementById('btn-close-modal');
   const content = document.getElementById('modal-content');
+  let previouslyFocused: HTMLElement | null = null;
 
   function closeModal() {
     if (overlay) {
       overlay.style.display = 'none';
+      overlay.classList.remove('flex');
       document.body.style.overflow = 'auto';
+      // Return focus to the element that opened the modal
+      if (previouslyFocused) previouslyFocused.focus();
     }
   }
 
-  if (overlay) {
-    overlay.addEventListener('click', closeModal);
+  function openModal() {
+    previouslyFocused = document.activeElement as HTMLElement;
+    if (overlay) {
+      overlay.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+    // Move focus to close button
+    setTimeout(() => closeBtn?.focus(), 50);
   }
-  if (closeBtn) {
-    closeBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      closeModal();
-    });
+
+  // Focus Trap
+  function trapFocus(e: KeyboardEvent) {
+    if (!overlay || overlay.style.display === 'none') return;
+
+    const focusable = overlay.querySelectorAll<HTMLElement>(
+      'a[href], button:not([disabled]), input, select, textarea, [tabindex]:not([tabindex="-1"])'
+    );
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+
+    if (e.key === 'Tab') {
+      if (e.shiftKey) {
+        if (document.activeElement === first) { e.preventDefault(); last?.focus(); }
+      } else {
+        if (document.activeElement === last) { e.preventDefault(); first?.focus(); }
+      }
+    }
+    if (e.key === 'Escape') closeModal();
   }
-  if (content) {
-    content.addEventListener('click', (e) => {
-      e.stopPropagation();
-    });
-  }
+
+  document.addEventListener('keydown', trapFocus);
+
+  if (overlay) overlay.addEventListener('click', closeModal);
+  if (closeBtn) closeBtn.addEventListener('click', (e) => { e.stopPropagation(); closeModal(); });
+  if (content) content.addEventListener('click', (e) => e.stopPropagation());
+
+  // Expose openModal for index.astro script
+  (window as any).__openEventModal = openModal;
 </script>

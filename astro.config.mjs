@@ -5,6 +5,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { SaveJsonPayloadSchema, formatZodErrors } from './src/lib/schemas.ts';
 
+import sitemap from '@astrojs/sitemap';
+
 function localFileApiPlugin() {
   return {
     name: 'local-file-api',
@@ -50,13 +52,12 @@ function localFileApiPlugin() {
 }
 
 export default defineConfig({
+  site: 'https://ethevents.vercel.app',
   output: 'static',
   adapter: vercel(),
-  integrations: [
-    tailwind({
-      applyBaseStyles: false,
-    }),
-  ],
+  integrations: [tailwind({
+    applyBaseStyles: false,
+  }), sitemap()],
   vite: {
     plugins: [localFileApiPlugin()]
   }

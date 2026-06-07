@@ -47,3 +47,10 @@ SISTEMA_ETH_LIMA.md
 AUDITORIA_MEJORAS.md
 PLAN_REDISEÑO_UX_UI.md
 api/submit.js.bak
+
+# Playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/playwright/.auth/

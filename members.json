@@ -1,26 +1,15 @@
 [
   {
-    "id": 1,
-    "name": "Miembro Ejemplo",
-    "role": "Lead de Eth Lima",
-    "photo": "",
-    "social": {
-      "x": "",
-      "instagram": "",
-      "linkedin": ""
-    }
-  },
-  {
     "id": 2,
     "name": "Yamille Celis",
     "role": "Lead de Eth Lima",
+    "area": "General",
     "photo": "https://raw.githubusercontent.com/javierarteagagonzales/ethevents/main/public/images/yami.webp",
     "social": {
       "x": "https://x.com/yamiyami_eth",
       "instagram": "",
       "linkedin": ""
     },
-    "area": "General",
     "events": [
       {
         "eventId": 12,
@@ -84,13 +73,13 @@
     "id": 3,
     "name": "Javier Arteaga",
     "role": "Coordinador de Tecnología",
+    "area": "Tecnología",
     "photo": "https://raw.githubusercontent.com/javierarteagagonzales/ethevents/main/public/images/javier.webp",
     "social": {
       "x": "https://x.com/home",
       "instagram": "",
       "linkedin": "https://www.linkedin.com/in/javierargo/"
     },
-    "area": "Tecnología",
     "events": [
       {
         "eventId": 12,
@@ -155,16 +144,100 @@
     ]
   },
   {
+    "id": 14,
+    "name": "Audi",
+    "role": "Coordinadora de Comunicaciones",
+    "area": "Comunicaciones",
+    "photo": "https://raw.githubusercontent.com/javierarteagagonzales/ethevents/main/public/images/audi.webp",
+    "social": {
+      "x": "https://x.com/casi_audi",
+      "instagram": "",
+      "linkedin": ""
+    },
+    "events": [
+      {
+        "eventId": 12,
+        "role": "Coordinadora de Comunicaciones"
+      },
+      {
+        "eventId": 13,
+        "role": "Coordinadora de Comunicaciones"
+      },
+      {
+        "eventId": 16,
+        "role": "Coordinadora de Comunicaciones"
+      },
+      {
+        "eventId": 14,
+        "role": "Coordinadora de Comunicaciones"
+      },
+      {
+        "eventId": 15,
+        "role": "Coordinadora de Comunicaciones"
+      },
+      {
+        "eventId": 20,
+        "role": "Coordinadora de Comunicaciones"
+      },
+      {
+        "eventId": 34,
+        "role": "Coordinadora de Comunicaciones"
+      },
+      {
+        "eventId": 31,
+        "role": "Coordinadora de Comunicaciones"
+      },
+      {
+        "eventId": 40,
+        "role": "Coordinadora de Comunicaciones"
+      },
+      {
+        "eventId": 41,
+        "role": "Coordinadora de Comunicaciones"
+      },
+      {
+        "eventId": 53,
+        "role": "Lead del Proyecto"
+      },
+      {
+        "eventId": 51,
+        "role": "Coordinadora de Comunicaciones"
+      },
+      {
+        "eventId": 38,
+        "role": "Coordinadora de Comunicaciones"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Ángel Chavez",
+    "role": "Lead del Proyecto",
+    "area": "Logística",
+    "photo": "",
+    "social": {
+      "x": "",
+      "instagram": "",
+      "linkedin": ""
+    },
+    "events": [
+      {
+        "eventId": 16,
+        "role": "Lead del Proyecto"
+      }
+    ]
+  },
+  {
     "id": 4,
     "name": "André Neyra",
     "role": "Voluntario",
+    "area": "Tecnología",
     "photo": "https://raw.githubusercontent.com/javierarteagagonzales/ethevents/main/public/images/andre.webp",
     "social": {
       "x": "https://x.com/AndrNeyra",
       "instagram": "",
       "linkedin": "https://www.linkedin.com/in/andreneyra/"
     },
-    "area": "Tecnología",
     "events": [
       {
         "eventId": 38,
@@ -176,13 +249,13 @@
     "id": 5,
     "name": "Miguel Jesús",
     "role": "Voluntario",
+    "area": "Tecnología",
     "photo": "https://raw.githubusercontent.com/javierarteagagonzales/ethevents/main/public/images/miguel.webp",
     "social": {
       "x": "https://x.com/midelacc",
       "instagram": "",
       "linkedin": "https://www.linkedin.com/in/miguel-de-la-cruz-chara-3a5a37332/"
     },
-    "area": "Tecnología",
     "events": [
       {
         "eventId": 12,
@@ -218,13 +291,13 @@
     "id": 6,
     "name": "Jenniffer Gabriela",
     "role": "Voluntario",
+    "area": "Tecnología",
     "photo": "https://raw.githubusercontent.com/javierarteagagonzales/ethevents/main/public/images/gabriela.webp",
     "social": {
       "x": "https://x.com/gabrululu",
       "instagram": "",
       "linkedin": ""
     },
-    "area": "Tecnología",
     "events": [
       {
         "eventId": 16,
@@ -256,13 +329,13 @@
     "id": 7,
     "name": "Sara Díaz",
     "role": "Voluntario",
+    "area": "Proyectos",
     "photo": "https://raw.githubusercontent.com/javierarteagagonzales/ethevents/main/public/images/sara.webp",
     "social": {
       "x": "https://x.com/holasari_",
       "instagram": "",
       "linkedin": ""
     },
-    "area": "Proyectos",
     "events": [
       {
         "eventId": 16,
@@ -278,6 +351,7 @@
     "id": 8,
     "name": "Javier Damiani",
     "role": "Voluntario",
+    "area": "Tecnología",
     "photo": "https://raw.githubusercontent.com/javierarteagagonzales/ethevents/main/public/images/damiani.webp",
     "social": {
       "x": "https://x.com/nerdcoder95",
@@ -309,20 +383,19 @@
         "eventId": 38,
         "role": "Voluntario"
       }
-    ],
-    "area": "Tecnología"
+    ]
   },
   {
     "id": 9,
     "name": "Mariana Linares",
     "role": "Voluntario",
+    "area": "Tecnología",
     "photo": "https://raw.githubusercontent.com/javierarteagagonzales/ethevents/main/public/images/mariana.webp",
     "social": {
       "x": "https://x.com/sochologa",
       "instagram": "",
       "linkedin": "https://www.linkedin.com/in/malinoliv/"
     },
-    "area": "Tecnología",
     "events": [
       {
         "eventId": 16,
@@ -345,24 +418,6 @@
         "role": "Lead del Proyecto"
       }
     ]
-  },
-  {
-    "id": 10,
-    "name": "Ángel Chavez",
-    "role": "Lead del Proyecto",
-    "photo": "",
-    "social": {
-      "x": "",
-      "instagram": "",
-      "linkedin": ""
-    },
-    "events": [
-      {
-        "eventId": 16,
-        "role": "Lead del Proyecto"
-      }
-    ],
-    "area": "Logística"
   },
   {
     "id": 11,
@@ -444,71 +499,5 @@
       "linkedin": ""
     },
     "events": []
-  },
-  {
-    "id": 14,
-    "name": "Audi",
-    "role": "Coordinadora de Comunicaciones",
-    "area": "Comunicaciones",
-    "photo": "https://raw.githubusercontent.com/javierarteagagonzales/ethevents/main/public/images/audi.webp",
-    "social": {
-      "x": "https://x.com/casi_audi",
-      "instagram": "",
-      "linkedin": ""
-    },
-    "events": [
-      {
-        "eventId": 12,
-        "role": "Coordinadora de Comunicaciones"
-      },
-      {
-        "eventId": 13,
-        "role": "Coordinadora de Comunicaciones"
-      },
-      {
-        "eventId": 16,
-        "role": "Coordinadora de Comunicaciones"
-      },
-      {
-        "eventId": 14,
-        "role": "Coordinadora de Comunicaciones"
-      },
-      {
-        "eventId": 15,
-        "role": "Coordinadora de Comunicaciones"
-      },
-      {
-        "eventId": 20,
-        "role": "Coordinadora de Comunicaciones"
-      },
-      {
-        "eventId": 34,
-        "role": "Coordinadora de Comunicaciones"
-      },
-      {
-        "eventId": 31,
-        "role": "Coordinadora de Comunicaciones"
-      },
-      {
-        "eventId": 40,
-        "role": "Coordinadora de Comunicaciones"
-      },
-      {
-        "eventId": 41,
-        "role": "Coordinadora de Comunicaciones"
-      },
-      {
-        "eventId": 53,
-        "role": "Lead del Proyecto"
-      },
-      {
-        "eventId": 51,
-        "role": "Coordinadora de Comunicaciones"
-      },
-      {
-        "eventId": 38,
-        "role": "Coordinadora de Comunicaciones"
-      }
-    ]
   }
 ]

@@ -1,0 +1,150 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import eventsRaw from '../../../events.json';
+import type { EventItem } from '../../types/event';
+
+export async function getStaticPaths() {
+  const events = eventsRaw as EventItem[];
+  return events.map((event) => {
+    // Generate a robust slug based on ID
+    const slug = event.id.toString(); 
+    return {
+      params: { id: slug },
+      props: { event, allEvents: events },
+    };
+  });
+}
+
+const { event, allEvents } = Astro.props;
+// Find subevents if this is a parent event
+const subEvents = allEvents.filter(e => e.parentId === event.id).sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+
+const typeClasses: Record<string, string> = {
+  conference: 'bg-accent/10 text-accent border border-accent/25',
+  workshop: 'bg-success/10 text-success border border-success/25',
+  hackathon: 'bg-warning/10 text-warning border border-warning/25',
+  meetup: 'bg-purple-500/10 text-purple-400 border border-purple-500/25',
+  bootcamp: 'bg-indigo-500/10 text-indigo-400 border border-indigo-500/25',
+  cohorte: 'bg-pink-500/10 text-pink-400 border border-pink-500/25',
+  buildathon: 'bg-teal-500/10 text-teal-400 border border-teal-500/25',
+};
+const typeClass = typeClasses[event.type.toLowerCase()] || 'bg-purple-500/10 text-purple-400 border border-purple-500/25';
+
+// Format Date
+const locale = 'es';
+const dateStr = new Date(event.date + 'T00:00').toLocaleDateString(locale, { day: 'numeric', month: 'long', year: 'numeric' });
+let fullDate = dateStr;
+if (event.endDate && event.date !== event.endDate) {
+  const endStr = new Date(event.endDate + 'T00:00').toLocaleDateString(locale, { day: 'numeric', month: 'long', year: 'numeric' });
+  fullDate = `${dateStr} — ${endStr}`;
+}
+
+const isEthLima = event.tags?.some(t => t.toLowerCase() === 'ethlima');
+// ETH Lima events use the dynamic OG image endpoint; others use their cover or the default logo
+const ogImage = isEthLima
+  ? `/api/og/${event.id}`
+  : (event.image || '/EthLimalogo.svg');
+---
+
+<Layout title={`${event.title} - ETH Events`} description={event.description} image={ogImage}>
+  <Header />
+  
+  <main class="max-w-4xl mx-auto px-6 py-12 md:py-20 relative z-10">
+    <a href="/#events" class="inline-flex items-center gap-2 text-muted hover:text-white font-mono text-xs mb-8 transition-colors group">
+      <svg class="w-4 h-4 group-hover:-translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+      VOLVER A EVENTOS
+    </a>
+
+    <article class="bg-surface border border-white/5 rounded-[2rem] p-6 md:p-12 shadow-2xl relative overflow-hidden">
+      <!-- Glow decoration -->
+      <div class="absolute top-0 right-0 w-64 h-64 bg-accent/5 rounded-full blur-[80px] pointer-events-none"></div>
+
+      {event.image && (
+        <div class="w-full aspect-[16/10] md:aspect-video rounded-2xl overflow-hidden mb-10 relative">
+          <img src={event.image} alt={event.title} class="w-full h-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-bg via-transparent to-transparent opacity-60"></div>
+        </div>
+      )}
+
+      <div class="mb-6 relative z-10">
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class={`font-mono text-[10px] tracking-wider font-bold uppercase px-3 py-1.5 rounded-full ${typeClass} inline-block`}>
+            {event.type}
+          </span>
+          {event.tags.map(tag => (
+            <span class="font-mono text-[10px] text-muted uppercase bg-white/5 border border-white/10 px-3 py-1.5 rounded-full">
+              #{tag}
+            </span>
+          ))}
+        </div>
+        <h1 class="text-3xl md:text-5xl font-extrabold text-white leading-tight mb-4">{event.title}</h1>
+      </div>
+
+      <div class="mb-10 relative z-10">
+        <p class="text-content-secondary leading-relaxed text-base md:text-lg whitespace-pre-line">{event.description || 'Sin descripción disponible.'}</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 p-6 bg-surface-2/50 border border-white/5 rounded-2xl mb-10 relative z-10">
+        <div class="flex flex-col gap-1.5">
+          <span class="font-mono text-[10px] text-muted uppercase tracking-wider">Fecha</span>
+          <span class="text-base text-white font-bold">{fullDate}</span>
+        </div>
+        <div class="flex flex-col gap-1.5">
+          <span class="font-mono text-[10px] text-muted uppercase tracking-wider">Hora</span>
+          <span class="text-base text-white font-bold">{event.time || 'Por confirmar'}</span>
+        </div>
+        <div class="flex flex-col gap-1.5">
+          <span class="font-mono text-[10px] text-muted uppercase tracking-wider">Ubicación</span>
+          <span class="text-base text-white font-bold">{event.location || 'Por confirmar'}</span>
+        </div>
+        <div class="flex flex-col gap-1.5">
+          <span class="font-mono text-[10px] text-muted uppercase tracking-wider">Organiza</span>
+          <span class="text-base text-white font-bold">{event.organizer || 'Comunidad'}</span>
+        </div>
+      </div>
+
+      {subEvents.length > 0 && (
+        <div class="mb-10 relative z-10">
+          <h3 class="font-mono text-xs text-accent-2 tracking-widest font-bold uppercase mb-6 flex items-center gap-2">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <rect x="3" y="4" width="18" height="18" rx="2" />
+              <path d="M9 2v4M15 2v4M3 10h18" />
+            </svg>
+            Cronograma de Sesiones
+          </h3>
+          <div class="space-y-3">
+            {subEvents.map(se => (
+              <div class="flex items-center justify-between gap-4 p-4 bg-surface-2/60 border border-white/5 rounded-xl hover:bg-surface-2 transition-all group/sub">
+                <div class="flex flex-col md:flex-row md:items-center gap-2 md:gap-4 w-full">
+                  <span class="font-mono text-[10px] px-2 py-1 border border-white/10 rounded bg-white/5 text-white/80 uppercase shrink-0 w-max">{se.type}</span>
+                  <div class="flex flex-col flex-1">
+                    <span class="text-sm md:text-base font-bold text-white group-hover/sub:text-accent-2 transition-colors">{se.title}</span>
+                    <span class="font-mono text-[10px] md:text-xs text-muted">{new Date(se.date + 'T00:00').toLocaleDateString(locale, { day: 'numeric', month: 'short' })} {se.time ? '· ' + se.time : ''}</span>
+                  </div>
+                </div>
+                {se.link && (
+                  <a href={se.link} target="_blank" class="shrink-0 flex items-center justify-center w-10 h-10 rounded-lg bg-white/5 hover:bg-accent/20 hover:text-white transition-all text-muted">
+                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3" />
+                    </svg>
+                  </a>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      <div class="flex justify-center pt-8 border-t border-white/5 relative z-10">
+        <a class="px-8 py-4 bg-accent hover:bg-accent-2 text-white font-mono text-sm font-bold rounded-xl shadow-[0_0_20px_rgba(98,126,234,0.3)] hover:-translate-y-1 transition-all duration-300 text-center tracking-wider w-full sm:w-auto flex justify-center items-center gap-2" href={event.link || event.issueUrl} target="_blank">
+          ACCEDER AL EVENTO
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      </div>
+    </article>
+  </main>
+</Layout>
