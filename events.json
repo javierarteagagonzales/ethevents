@@ -1054,6 +1054,27 @@
     "parentId": 38
   },
   {
+    "id": 56,
+    "title": "Hackathon Ethereum Lima 2026",
+    "description": "Hackathon con Tracks de Arbitrum, Arkiv y otros.",
+    "date": "2026-07-18",
+    "endDate": "",
+    "time": "",
+    "location": "Híbrido",
+    "type": "hackathon",
+    "link": "https://hackathon.ethlima.org/en/",
+    "tags": [
+      "ethlima"
+    ],
+    "image": "https://github.com/user-attachments/assets/8a8d5229-c813-4fa5-a5dc-c5a9a023c0ec",
+    "organizer": "Ethereum Lima",
+    "parentId": null,
+    "issueUrl": "https://github.com/javierarteagagonzales/ethevents/issues/8",
+    "issueNum": 8,
+    "state": "open",
+    "createdAt": "2026-06-07T06:03:16Z"
+  },
+  {
     "id": 50,
     "title": "DEVCON 8",
     "description": "An open door for explorers,\na common ground for builders",
