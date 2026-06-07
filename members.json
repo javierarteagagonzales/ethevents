@@ -70,6 +70,19 @@
     ]
   },
   {
+    "id": 17,
+    "name": "Criss Valladares",
+    "role": "Core Team",
+    "area": "General",
+    "photo": "https://raw.githubusercontent.com/javierarteagagonzales/ethevents/main/public/images/criss-valladares.webp",
+    "social": {
+      "x": "",
+      "instagram": "",
+      "linkedin": ""
+    },
+    "events": []
+  },
+  {
     "id": 3,
     "name": "Javier Arteaga",
     "role": "Lead de Tecnología",
@@ -144,6 +157,42 @@
     ]
   },
   {
+    "id": 10,
+    "name": "Ángel Chavez",
+    "role": "Lead de Logística",
+    "area": "Logística",
+    "photo": "",
+    "social": {
+      "x": "",
+      "instagram": "",
+      "linkedin": ""
+    },
+    "events": [
+      {
+        "eventId": 16,
+        "role": "Lead del Proyecto"
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "name": "Hristo Vasquez",
+    "role": "Lead de Logística",
+    "area": "Logística",
+    "photo": "",
+    "social": {
+      "x": "",
+      "instagram": "",
+      "linkedin": ""
+    },
+    "events": [
+      {
+        "eventId": 13,
+        "role": "Voluntario"
+      }
+    ]
+  },
+  {
     "id": 14,
     "name": "Audi",
     "role": "Lead de Comunicaciones",
@@ -206,24 +255,6 @@
       {
         "eventId": 38,
         "role": "Coordinadora de Comunicaciones"
-      }
-    ]
-  },
-  {
-    "id": 10,
-    "name": "Ángel Chavez",
-    "role": "Lead de Logística",
-    "area": "Logística",
-    "photo": "",
-    "social": {
-      "x": "",
-      "instagram": "",
-      "linkedin": ""
-    },
-    "events": [
-      {
-        "eventId": 16,
-        "role": "Lead del Proyecto"
       }
     ]
   },
@@ -503,7 +534,7 @@
   {
     "id": 15,
     "name": "Alexandra Jaime",
-    "role": "Voluntario",
+    "role": "Lead de Área Proyectos",
     "area": "Proyectos",
     "photo": "",
     "social": {
@@ -517,36 +548,5 @@
         "role": "Voluntario"
       }
     ]
-  },
-  {
-    "id": 16,
-    "name": "Hristo Vasquez",
-    "role": "Lead de Logística",
-    "area": "Logística",
-    "photo": "",
-    "social": {
-      "x": "",
-      "instagram": "",
-      "linkedin": ""
-    },
-    "events": [
-      {
-        "eventId": 13,
-        "role": "Voluntario"
-      }
-    ]
-  },
-  {
-    "id": 17,
-    "name": "Criss Valladares",
-    "role": "Core Team",
-    "area": "General",
-    "photo": "https://raw.githubusercontent.com/javierarteagagonzales/ethevents/main/public/images/criss-valladares.webp",
-    "social": {
-      "x": "",
-      "instagram": "",
-      "linkedin": ""
-    },
-    "events": []
   }
 ]
