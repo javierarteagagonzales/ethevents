@@ -55,7 +55,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://ethevent
       rel="stylesheet"
     />
   </head>
-  <body class="grid-bg glow-orb min-h-screen flex flex-col relative">
+  <body class="grid-bg glow-orb min-h-screen flex flex-col relative overflow-x-hidden">
     <slot />
   </body>
 </html>

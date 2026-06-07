@@ -8,7 +8,7 @@ interface Props {
 const { total = 0, upcoming = 0, categories = 0 } = Astro.props;
 ---
 
-<div class="stats flex justify-center gap-8 md:gap-16 py-10 px-6 max-w-4xl mx-auto border-y border-white/5 bg-white/[0.01] backdrop-blur-sm rounded-[32px] my-10" id="stats">
+<div class="stats flex flex-wrap sm:flex-nowrap justify-center gap-4 sm:gap-8 md:gap-16 py-8 sm:py-10 px-4 sm:px-6 w-full max-w-4xl mx-auto border-y border-white/5 bg-white/[0.01] backdrop-blur-sm rounded-[32px] my-10" id="stats">
   <div class="stat text-center flex-1">
     <span class="stat-value font-mono text-3xl md:text-4xl font-bold text-accent mb-1.5 block" id="stat-total">
       {total || '—'}

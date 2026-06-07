@@ -88,7 +88,7 @@ const allMembers = (membersRaw as MemberItem[]).sort((a, b) => {
         ORGANIZACIÓN ETHEREUM LIMA
       </div>
       
-      <h1 class="text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tight mb-8 leading-[1.1] text-content-primary max-w-4xl">
+      <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-extrabold tracking-tight mb-8 leading-[1.1] text-content-primary max-w-4xl px-2">
         <span data-i18n="hero_title_main">Súmate a la</span> <span class="bg-gradient-to-r from-accent via-purple-400 to-accent bg-[length:200%_auto] bg-clip-text text-transparent animate-shimmer" data-i18n="hero_title_span">Comunidad</span>
       </h1>
       <p class="text-lg md:text-xl text-content-secondary max-w-2xl mx-auto mb-12 leading-relaxed font-sans" data-i18n="hero_subtitle">
@@ -121,7 +121,7 @@ const allMembers = (membersRaw as MemberItem[]).sort((a, b) => {
           </h2>
         </div>
         
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="eth-lima-grid">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="eth-lima-grid">
           {ethLimaUpcoming.map(event => (
             <EventCard event={event} showImage={true} class="eth-lima-item-card" />
           ))}
@@ -129,9 +129,9 @@ const allMembers = (membersRaw as MemberItem[]).sort((a, b) => {
         
         {ethLimaUpcoming.length > 4 && (
           <div class="flex justify-center mt-10" id="eth-lima-more-container">
-            <button class="flex items-center gap-2 px-6 py-3 border border-white/10 hover:border-accent hover:bg-accent/15 text-muted hover:text-white font-mono text-xs font-bold rounded-full transition-all" id="btn-see-all-eth-lima" data-i18n="btn_see_all_eth">
+            <button class="flex flex-wrap justify-center items-center gap-2 px-4 sm:px-6 py-3 border border-white/10 hover:border-accent hover:bg-accent/15 text-muted hover:text-white font-mono text-[10px] sm:text-xs font-bold text-center rounded-3xl transition-all w-full max-w-sm sm:max-w-none sm:w-auto" id="btn-see-all-eth-lima" data-i18n="btn_see_all_eth">
               VER TODOS LOS EVENTOS ETH LIMA
-              <svg class="w-4.5 h-4.5 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+              <svg class="w-4 h-4 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
             </button>
           </div>
         )}
@@ -148,7 +148,7 @@ const allMembers = (membersRaw as MemberItem[]).sort((a, b) => {
       </div>
 
       <!-- List/Grid Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="events-grid">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="events-grid">
         {communityUpcoming.map(event => (
           <EventCard event={event} class="community-item-card" />
         ))}
@@ -157,9 +157,9 @@ const allMembers = (membersRaw as MemberItem[]).sort((a, b) => {
       <!-- See More Button -->
       {communityUpcoming.length > 16 && (
         <div class="flex justify-center mt-10" id="community-more-container">
-          <button class="flex items-center gap-2 px-6 py-3 border border-white/10 hover:border-accent hover:bg-accent/15 text-muted hover:text-white font-mono text-xs font-bold rounded-full transition-all" id="btn-see-all-community" data-i18n="btn_see_all">
+          <button class="flex flex-wrap justify-center items-center gap-2 px-4 sm:px-6 py-3 border border-white/10 hover:border-accent hover:bg-accent/15 text-muted hover:text-white font-mono text-[10px] sm:text-xs font-bold text-center rounded-3xl transition-all w-full max-w-sm sm:max-w-none sm:w-auto" id="btn-see-all-community" data-i18n="btn_see_all">
             VER TODOS LOS EVENTOS
-            <svg class="w-4.5 h-4.5 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            <svg class="w-4 h-4 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
           </button>
         </div>
       )}
@@ -273,10 +273,9 @@ const allMembers = (membersRaw as MemberItem[]).sort((a, b) => {
         </div>
       </div>
 
-      <!-- CTA -->
-      <div class="flex justify-center mt-12">
-        <a href="/proyectos" class="group flex items-center gap-3 px-8 py-4 bg-white/5 hover:bg-accent/10 border border-white/10 hover:border-accent/40 text-white font-mono text-sm font-bold rounded-xl transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_30px_rgba(98,126,234,0.2)]">
-          <svg class="w-5 h-5 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <div class="flex justify-center mt-12 px-4">
+        <a href="/proyectos" class="group flex flex-wrap justify-center items-center gap-3 px-6 sm:px-8 py-3 sm:py-4 bg-white/5 hover:bg-accent/10 border border-white/10 hover:border-accent/40 text-white font-mono text-[11px] sm:text-sm font-bold text-center rounded-xl transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_30px_rgba(98,126,234,0.2)] w-full max-w-sm sm:max-w-none sm:w-auto">
+          <svg class="w-4 sm:w-5 h-4 sm:h-5 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/>
             <rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/>
           </svg>
@@ -1032,10 +1031,10 @@ const allMembers = (membersRaw as MemberItem[]).sort((a, b) => {
           <span class="font-mono text-[10px] tracking-wider font-bold uppercase px-3 py-1.5 rounded-full ${typeClass} inline-block mb-4">
             ${type.toUpperCase()}
           </span>
-          <h2 class="text-3xl font-extrabold text-white leading-tight">${titleAttr}</h2>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-white leading-tight break-words">${titleAttr}</h2>
         </div>
         <div class="mb-8">
-          <p class="text-muted leading-relaxed text-base mb-6 whitespace-pre-line">${descriptionAttr || '// ' + t.confirm_date}</p>
+          <p class="text-muted leading-relaxed text-sm sm:text-base mb-6 whitespace-pre-line break-words">${descriptionAttr || '// ' + t.confirm_date}</p>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 p-5 bg-surface border border-white/5 rounded-2xl">
             <div class="flex flex-col gap-1">
               <span class="font-mono text-[9px] text-muted uppercase tracking-wider">${t.modal_date}</span>
@@ -1190,15 +1189,7 @@ const allMembers = (membersRaw as MemberItem[]).sort((a, b) => {
     });
   });
 
-  // Attach search input
-  const publicSearchInput = document.getElementById('public-search') as HTMLInputElement;
-  if (publicSearchInput) {
-    publicSearchInput.addEventListener('input', (e) => {
-      publicSearchQuery = (e.target as HTMLInputElement).value;
-      limitCommunity = 16;
-      applyVisibility();
-    });
-  }
+
 
   // See More buttons
   document.getElementById('btn-see-all-eth-lima')?.addEventListener('click', () => {

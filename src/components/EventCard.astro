@@ -59,7 +59,7 @@ const hasImage = showImage && event.image;
 ---
 
 <div
-  class={`event-card group flex flex-col h-full overflow-hidden rounded-[20px] border border-white/5 bg-gradient-to-b from-white/[0.04] to-white/[0.01] backdrop-blur-md transition-all duration-500 hover:-translate-y-2 hover:border-accent/40 hover:bg-white/[0.06] hover:shadow-[0_40px_80px_rgba(0,0,0,0.6),0_0_40px_rgba(98,126,234,0.15)] relative cursor-pointer ${isPast ? 'opacity-50 grayscale border-transparent bg-white/[0.01] hover:opacity-100 hover:grayscale-0 hover:border-white/10' : ''} ${isFeatured ? 'featured' : ''} ${isEthLima ? 'border-accent/25' : ''} ${className}`}
+  class={`event-card group flex flex-col h-full overflow-hidden rounded-[20px] border border-white/5 bg-gradient-to-b from-white/[0.04] to-white/[0.01] backdrop-blur-md transition-all duration-500 hover:-translate-y-2 hover:border-accent/40 hover:bg-white/[0.06] hover:shadow-[0_40px_80px_rgba(0,0,0,0.6),0_0_40px_rgba(98,126,234,0.15)] relative cursor-pointer max-w-[360px] sm:max-w-none mx-auto w-full ${isPast ? 'opacity-50 grayscale border-transparent bg-white/[0.01] hover:opacity-100 hover:grayscale-0 hover:border-white/10' : ''} ${isFeatured ? 'featured' : ''} ${isEthLima ? 'border-accent/25' : ''} ${className}`}
   data-event-id={event.id}
   data-event-type={event.type}
   data-event-past={isPast ? 'true' : 'false'}
@@ -78,7 +78,7 @@ const hasImage = showImage && event.image;
   data-event-subevent={event.parentId ? 'true' : 'false'}
 >
   {hasImage ? (
-    <div class="relative w-full aspect-[16/10] overflow-hidden bg-surface-2/80">
+    <div class="relative w-full h-48 sm:h-56 md:h-auto md:aspect-video overflow-hidden bg-surface-2/80">
       <img
         src={event.image}
         alt={event.title}
@@ -91,7 +91,7 @@ const hasImage = showImage && event.image;
       <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-gradient-to-r from-transparent via-white/5 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
     </div>
   ) : showImage && (
-    <div class="relative w-full aspect-[16/10] overflow-hidden" style={`background: ${fallbackGradient}`}>
+    <div class="relative w-full h-48 sm:h-56 md:h-auto md:aspect-video overflow-hidden" style={`background: ${fallbackGradient}`}>
       <!-- Generative gradient pattern -->
       <div class="absolute inset-0 flex items-center justify-center">
         <svg class="w-12 h-12 text-white/10" viewBox="0 0 32 32" fill="none">
@@ -118,11 +118,11 @@ const hasImage = showImage && event.image;
       <span class="font-mono text-xs text-muted">#{event.issueNum}</span>
     </div>
 
-    <div class="flex-1 flex flex-col">
-      <h3 class="font-sans font-bold text-lg text-white mb-2 leading-tight group-hover:text-accent-2 transition-colors">
+    <div class="flex-1 flex flex-col min-w-0">
+      <h3 class="font-sans font-bold text-lg text-white mb-2 leading-tight group-hover:text-accent-2 transition-colors break-words">
         {event.title}
       </h3>
-      <p class="font-sans text-sm text-muted leading-relaxed flex-1 mb-4">
+      <p class="font-sans text-sm text-muted leading-relaxed flex-1 mb-4 break-words">
         {shortDesc}
       </p>
 
