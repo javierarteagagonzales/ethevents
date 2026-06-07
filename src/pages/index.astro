@@ -850,21 +850,34 @@ const allMembers = (membersRaw as MemberItem[]).sort((a, b) => {
     // Current month days
     const now = new Date();
     
-    // Parse events from existing cards dynamically
-    const events = allCardNodes.map(card => ({
-      id: card.getAttribute('data-event-id') || '',
-      title: card.getAttribute('data-event-title') || '',
-      date: card.getAttribute('data-event-date') || '',
-      type: card.getAttribute('data-event-type') || 'meetup',
-      organizer: card.getAttribute('data-event-organizer') || '',
-      subevent: card.getAttribute('data-event-subevent') === 'true'
+    // Parse ALL events from embedded JSON (includes sub-events not in the grid)
+    const allEventsDataEl = document.getElementById('all-events-data');
+    const allEventsJSON: any[] = allEventsDataEl ? JSON.parse(allEventsDataEl.getAttribute('data-events') || '[]') : [];
+    
+    // Build a set of parent IDs (events that have children)
+    const parentIds = new Set(allEventsJSON.filter((e: any) => e.parentId).map((e: any) => String(e.parentId)));
+    
+    const calendarEvents = allEventsJSON.map((e: any) => ({
+      id: String(e.id),
+      title: e.title || '',
+      date: e.date || '',
+      type: (e.type || 'meetup').toLowerCase(),
+      organizer: e.organizer || '',
+      isSubevent: !!e.parentId,
+      isParent: parentIds.has(String(e.id)),
     }));
 
     for (let d = 1; d <= daysInMonth; d++) {
       const isToday = now.getDate() === d && now.getMonth() === month && now.getFullYear() === year;
       const dateStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(d).padStart(2, '0')}`;
       
-      const dayEvents = events.filter(e => e.date === dateStr);
+      // Sort: parents first, then regular, then sub-events
+      const dayEvents = calendarEvents
+        .filter(e => e.date === dateStr)
+        .sort((a, b) => {
+          const order = (ev: typeof a) => ev.isParent ? 0 : ev.isSubevent ? 2 : 1;
+          return order(a) - order(b);
+        });
       
       const eventItemsHTML = dayEvents.map(e => {
         const borderColors: Record<string, string> = {
@@ -880,13 +893,20 @@ const allMembers = (membersRaw as MemberItem[]).sort((a, b) => {
         
         const orgText = e.organizer ? e.organizer : 'Comunidad';
 
-        if (e.subevent) {
-          return `<div class="cal-event flex flex-col gap-0.5 text-[10px] px-2.5 py-1.5 rounded bg-surface-2/40 border-l-[3px] border-dashed ${styleClass.split(' ')[0]} text-white/70 italic cursor-pointer overflow-hidden hover:bg-white/10 hover:text-white hover:translate-x-0.5 transition-all shadow-sm shrink-0" data-cal-event-id="${e.id}" title="${e.title} - ${orgText}">
-            <span class="font-bold truncate leading-tight">↳ ${e.title}</span>
-            <span class="text-[9px] opacity-70 truncate leading-tight">${orgText}</span>
+        if (e.isSubevent) {
+          // Sub-event: dashed border, indented, italic, muted
+          return `<div class="cal-event cal-subevent flex flex-col gap-0.5 text-[9px] pl-3 pr-2 py-1 ml-2 rounded-sm bg-white/[0.02] border-l-2 border-dashed ${styleClass.split(' ')[0]} text-white/60 italic cursor-pointer overflow-hidden hover:bg-white/[0.06] hover:text-white/90 transition-all shrink-0" data-cal-event-id="${e.id}" title="${e.title} — ${orgText}">
+            <span class="truncate leading-tight">↳ ${e.title}</span>
+          </div>`;
+        } else if (e.isParent) {
+          // Parent event: bold highlight, gold accent, star icon
+          return `<div class="cal-event cal-parent flex flex-col gap-0.5 text-[10px] px-2.5 py-2 rounded-md bg-gradient-to-r from-amber-500/15 to-accent/10 border-l-[3px] border-amber-400 text-white cursor-pointer overflow-hidden hover:brightness-125 hover:-translate-y-0.5 transition-all shadow-md ring-1 ring-amber-400/20 shrink-0" data-cal-event-id="${e.id}" title="${e.title} — ${orgText}">
+            <span class="font-bold truncate leading-tight flex items-center gap-1"><svg class="w-3 h-3 text-amber-400 shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>${e.title}</span>
+            <span class="text-[9px] opacity-80 truncate leading-tight">${orgText}</span>
           </div>`;
         } else {
-          return `<div class="cal-event flex flex-col gap-0.5 text-[10px] px-2.5 py-1.5 rounded ${styleClass} border-l-[3px] text-white cursor-pointer overflow-hidden hover:brightness-125 hover:-translate-y-0.5 transition-all shadow-sm shrink-0" data-cal-event-id="${e.id}" title="${e.title} - ${orgText}">
+          // Regular event
+          return `<div class="cal-event flex flex-col gap-0.5 text-[10px] px-2.5 py-1.5 rounded ${styleClass} border-l-[3px] text-white cursor-pointer overflow-hidden hover:brightness-125 hover:-translate-y-0.5 transition-all shadow-sm shrink-0" data-cal-event-id="${e.id}" title="${e.title} — ${orgText}">
             <span class="font-bold truncate leading-tight">${e.title}</span>
             <span class="text-[9px] opacity-80 truncate leading-tight">${orgText}</span>
           </div>`;

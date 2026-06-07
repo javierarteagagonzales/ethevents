@@ -153,6 +153,10 @@
       {
         "eventId": 55,
         "role": "Coordinador de Tecnología"
+      },
+      {
+        "eventId": 56,
+        "role": "Lead del Proyecto"
       }
     ]
   },
@@ -255,6 +259,24 @@
       {
         "eventId": 38,
         "role": "Coordinadora de Comunicaciones"
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Alexandra Jaime",
+    "role": "Lead de Área Proyectos",
+    "area": "Proyectos",
+    "photo": "",
+    "social": {
+      "x": "",
+      "instagram": "",
+      "linkedin": ""
+    },
+    "events": [
+      {
+        "eventId": 12,
+        "role": "Voluntario"
       }
     ]
   },
@@ -530,23 +552,5 @@
       "linkedin": ""
     },
     "events": []
-  },
-  {
-    "id": 15,
-    "name": "Alexandra Jaime",
-    "role": "Lead de Área Proyectos",
-    "area": "Proyectos",
-    "photo": "",
-    "social": {
-      "x": "",
-      "instagram": "",
-      "linkedin": ""
-    },
-    "events": [
-      {
-        "eventId": 12,
-        "role": "Voluntario"
-      }
-    ]
   }
 ]
