@@ -83,9 +83,10 @@ const allMembers = (membersRaw as MemberItem[]).sort((a, b) => {
     
     <div class="relative z-10 flex flex-col items-center">
       <!-- Ethereum Lima Badge -->
-      <div class="hero-tag inline-flex items-center gap-3 font-mono text-[11px] text-accent-2 tracking-[0.25em] bg-surface-2 border border-accent/20 rounded-full px-5 py-2.5 mb-10 shadow-neon animate-modal-fade select-none backdrop-blur-md">
-        <span class="w-2.5 h-2.5 rounded-full bg-accent-2 animate-pulse shadow-[0_0_10px_#627eea]"></span>
-        ORGANIZACIÓN ETHEREUM LIMA
+      <div class="hero-tag inline-flex items-center gap-2 font-mono text-[10px] sm:text-[11px] text-accent-2 tracking-[0.1em] sm:tracking-[0.25em] bg-surface-2 border border-accent/20 rounded-full px-3 sm:px-5 py-2.5 mb-10 shadow-neon animate-modal-fade select-none backdrop-blur-md">
+        <span class="w-2 h-2 sm:w-2.5 sm:h-2.5 shrink-0 rounded-full bg-accent-2 animate-pulse shadow-[0_0_10px_#627eea]"></span>
+        <span class="hidden sm:inline">ORGANIZACIÓN ETHEREUM LIMA</span>
+        <span class="sm:hidden">ETH LIMA</span>
       </div>
       
       <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-extrabold tracking-tight mb-8 leading-[1.1] text-content-primary max-w-4xl px-2">
@@ -110,7 +111,7 @@ const allMembers = (membersRaw as MemberItem[]).sort((a, b) => {
   </div>
 
   <!-- MAIN EVENT LAYOUTS -->
-  <main class="max-w-[1400px] mx-auto px-6 md:px-10 pb-20 relative z-10" id="events">
+  <main class="max-w-[1400px] mx-auto px-4 sm:px-6 md:px-10 pb-20 relative z-10 w-full" id="events">
     
     <!-- ETH LIMA EVENTS SECTION -->
     {ethLimaUpcoming.length > 0 && (
@@ -179,7 +180,7 @@ const allMembers = (membersRaw as MemberItem[]).sort((a, b) => {
           </h2>
         </div>
         
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="past-events-grid">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6" id="past-events-grid">
           {past.map(event => (
             <EventCard event={event} isPast={true} class="past-item-card" />
           ))}
@@ -233,12 +234,12 @@ const allMembers = (membersRaw as MemberItem[]).sort((a, b) => {
       </div>
 
       <!-- Carousel wrapper -->
-      <div class="relative overflow-hidden" id="team-carousel-wrapper">
+      <div class="relative overflow-hidden w-full" id="team-carousel-wrapper">
         <!-- Fade edges -->
-        <div class="absolute left-0 top-0 h-full w-16 z-10 pointer-events-none bg-gradient-to-r from-bg to-transparent"></div>
-        <div class="absolute right-0 top-0 h-full w-16 z-10 pointer-events-none bg-gradient-to-l from-bg to-transparent"></div>
+        <div class="absolute left-0 top-0 h-full w-8 sm:w-16 z-10 pointer-events-none bg-gradient-to-r from-bg to-transparent"></div>
+        <div class="absolute right-0 top-0 h-full w-8 sm:w-16 z-10 pointer-events-none bg-gradient-to-l from-bg to-transparent"></div>
 
-        <div class="flex gap-6 cursor-grab active:cursor-grabbing select-none" id="team-track" style="width: max-content;">
+        <div class="flex gap-4 sm:gap-6 cursor-grab active:cursor-grabbing select-none" id="team-track" style="width: max-content; will-change: transform;">
           {[...allMembers, ...allMembers].map((m, i) => (
             <div class="team-card flex-shrink-0 w-52 group" key={i}>
               <div class="relative overflow-hidden rounded-2xl aspect-[3/4] mb-4 bg-surface border border-white/5 group-hover:border-accent/30 transition-all duration-500">
