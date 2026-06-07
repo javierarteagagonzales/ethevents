@@ -21,11 +21,13 @@
     </div>
   </div>
 
-  <div
-    class="calendar-grid grid grid-cols-7 gap-[1px] bg-border border border-border rounded-2xl overflow-hidden shadow-2xl"
-    id="calendar-grid"
-  >
-    <!-- Dynamic Days and Cells populated dynamically via javascript -->
+  <div class="w-full overflow-x-auto pb-4 custom-scrollbar">
+    <div
+      class="calendar-grid grid grid-cols-7 gap-[1px] bg-border border border-border rounded-2xl overflow-hidden shadow-2xl min-w-[768px]"
+      id="calendar-grid"
+    >
+      <!-- Dynamic Days and Cells populated dynamically via javascript -->
+    </div>
   </div>
 </div>
 
@@ -35,10 +37,25 @@
     background-image: none;
   }
   
-  /* Media query matching the original styles for mobile layout */
+  /* Scrollbar styles for calendar */
+  .custom-scrollbar::-webkit-scrollbar {
+    height: 8px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 4px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+  
   @media (max-width: 1024px) {
     .calendar-grid {
-      grid-template-columns: repeat(1, 1fr);
+      /* Remove single column override, we use horizontal scroll now */
     }
   }
 </style>

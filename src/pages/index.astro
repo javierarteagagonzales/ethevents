@@ -59,7 +59,7 @@ const organizerGradients = [
   <Header showViewToggle={true} />
 
   <!-- HERO SECTION WITH INTERACTIVE 3D MESH -->
-  <section class="hero text-center py-32 px-6 w-full relative overflow-hidden z-10 mb-10 group border-b border-white/5">
+  <section id="hero-section" class="hero text-center py-32 px-6 w-full relative overflow-hidden z-10 mb-10 group border-b border-white/5">
     <!-- Mesh Gradient Background (CSS Only) -->
     <div class="absolute inset-0 z-0 opacity-40">
       <div class="absolute top-[-20%] left-[-10%] w-[50%] h-[70%] bg-accent/30 blur-[100px] rounded-full mix-blend-screen animate-pulse"></div>
@@ -96,7 +96,9 @@ const organizerGradients = [
   </section>
 
   <!-- STATS BAR -->
-  <StatsBar total={totalCount} upcoming={upcomingCount} categories={categoriesCount} />
+  <div id="stats-bar-section">
+    <StatsBar total={totalCount} upcoming={upcomingCount} categories={categoriesCount} />
+  </div>
 
   <!-- MAIN EVENT LAYOUTS -->
   <main class="max-w-[1400px] mx-auto px-6 md:px-10 pb-20 relative z-10" id="events">
@@ -267,15 +269,8 @@ const organizerGradients = [
         <!-- Logo + tagline -->
         <div class="flex flex-col items-center md:items-start gap-3">
           <div class="flex items-center gap-3">
-            <svg class="w-8 h-8" viewBox="0 0 32 32" fill="none">
-              <polygon points="16,2 28,9 28,23 16,30 4,23 4,9" stroke="#627eea" stroke-width="1.5" fill="none" />
-              <circle cx="16" cy="16" r="4" fill="#627eea" />
-            </svg>
-            <span class="font-mono text-lg font-bold text-content-primary tracking-tight">ETH_EVENTS</span>
+            <img src="/EthLimalogo.svg" alt="Ethereum Lima Logo" class="h-10 w-auto" loading="lazy" />
           </div>
-          <p class="text-xs text-muted max-w-xs text-center md:text-left leading-relaxed">
-            La plataforma abierta para descubrir y publicar eventos Web3 en la comunidad de Perú.
-          </p>
         </div>
 
         <!-- Social links -->
@@ -733,6 +728,7 @@ const organizerGradients = [
       title: card.getAttribute('data-event-title') || '',
       date: card.getAttribute('data-event-date') || '',
       type: card.getAttribute('data-event-type') || 'meetup',
+      organizer: card.getAttribute('data-event-organizer') || '',
       subevent: card.getAttribute('data-event-subevent') === 'true'
     }));
 
@@ -744,25 +740,35 @@ const organizerGradients = [
       
       const eventItemsHTML = dayEvents.map(e => {
         const borderColors: Record<string, string> = {
-          conference: 'border-accent',
-          workshop: 'border-success',
-          hackathon: 'border-warning',
-          meetup: 'border-purple-500',
-          bootcamp: 'border-indigo-500',
+          conference: 'border-accent bg-accent/10',
+          workshop: 'border-success bg-success/10',
+          hackathon: 'border-warning bg-warning/10',
+          meetup: 'border-purple-500 bg-purple-500/10',
+          bootcamp: 'border-indigo-500 bg-indigo-500/10',
+          cohorte: 'border-pink-500 bg-pink-500/10',
+          buildathon: 'border-teal-500 bg-teal-500/10',
         };
-        const borderColor = borderColors[e.type] || 'border-purple-500';
+        const styleClass = borderColors[e.type] || 'border-purple-500 bg-purple-500/10';
+        
+        const orgText = e.organizer ? e.organizer : 'Comunidad';
 
         if (e.subevent) {
-          return `<div class="cal-event text-[9px] px-1.5 py-0.5 rounded bg-surface-2/40 border-l border-dashed ${borderColor} text-white/70 italic cursor-pointer truncate hover:bg-white/10 hover:text-white hover:translate-x-0.5 transition-all" data-cal-event-id="${e.id}">↳ ${e.title}</div>`;
+          return `<div class="cal-event flex flex-col gap-0.5 text-[10px] px-2.5 py-1.5 rounded bg-surface-2/40 border-l-[3px] border-dashed ${styleClass.split(' ')[0]} text-white/70 italic cursor-pointer overflow-hidden hover:bg-white/10 hover:text-white hover:translate-x-0.5 transition-all shadow-sm shrink-0" data-cal-event-id="${e.id}" title="${e.title} - ${orgText}">
+            <span class="font-bold truncate leading-tight">↳ ${e.title}</span>
+            <span class="text-[9px] opacity-70 truncate leading-tight">${orgText}</span>
+          </div>`;
         } else {
-          return `<div class="cal-event text-[9px] px-1.5 py-0.5 rounded bg-surface-2 border-l-2 ${borderColor} text-white cursor-pointer truncate hover:bg-white/10 hover:translate-x-0.5 transition-all" data-cal-event-id="${e.id}">${e.title}</div>`;
+          return `<div class="cal-event flex flex-col gap-0.5 text-[10px] px-2.5 py-1.5 rounded ${styleClass} border-l-[3px] text-white cursor-pointer overflow-hidden hover:brightness-125 hover:-translate-y-0.5 transition-all shadow-sm shrink-0" data-cal-event-id="${e.id}" title="${e.title} - ${orgText}">
+            <span class="font-bold truncate leading-tight">${e.title}</span>
+            <span class="text-[9px] opacity-80 truncate leading-tight">${orgText}</span>
+          </div>`;
         }
       }).join('');
 
       html += `
-        <div class="cal-day min-h-[75px] p-2 flex flex-col gap-1 bg-bg border border-white/5 ${isToday ? 'bg-accent/5 calendar-day-active' : ''}">
+        <div class="cal-day min-h-[120px] p-2 flex flex-col gap-2 bg-bg border border-white/5 ${isToday ? 'bg-accent/5 calendar-day-active' : ''}">
           <div class="cal-date font-mono text-[10px] text-muted flex justify-between items-center ${isToday ? 'text-accent font-bold' : ''}">${d}</div>
-          <div class="flex flex-col gap-1 overflow-y-auto max-h-[50px] no-scrollbar">${eventItemsHTML}</div>
+          <div class="flex flex-col gap-1.5">${eventItemsHTML}</div>
         </div>`;
     }
 
@@ -799,6 +805,14 @@ const organizerGradients = [
     const filterBar = document.getElementById('filter-bar');
     const monthSelectWrapper = document.getElementById('month-select-container');
     const communityMore = document.getElementById('community-more-container');
+    
+    // Additional sections to toggle
+    const heroSection = document.getElementById('hero-section');
+    const statsBarSection = document.getElementById('stats-bar-section');
+    const ethLimaContainer = document.getElementById('eth-lima-container');
+    const pastEvents = document.getElementById('past-events');
+    const organizersSection = document.getElementById('organizers-section');
+    const howSection = document.getElementById('how');
 
     if (mode === 'calendar') {
       if (listContainer) listContainer.style.display = 'none';
@@ -806,6 +820,15 @@ const organizerGradients = [
       if (filterBar) filterBar.style.display = 'none';
       if (monthSelectWrapper) monthSelectWrapper.style.display = 'flex';
       if (communityMore) communityMore.style.display = 'none';
+      
+      // Hide sections
+      if (heroSection) heroSection.style.display = 'none';
+      if (statsBarSection) statsBarSection.style.display = 'none';
+      if (ethLimaContainer) ethLimaContainer.style.display = 'none';
+      if (pastEvents) pastEvents.style.display = 'none';
+      if (organizersSection) organizersSection.style.display = 'none';
+      if (howSection) howSection.style.display = 'none';
+      
       populateMonthSelector();
       updateCalendarView();
     } else {
@@ -813,6 +836,15 @@ const organizerGradients = [
       if (calendarContainer) calendarContainer.style.display = 'none';
       if (filterBar) filterBar.style.display = 'flex';
       if (monthSelectWrapper) monthSelectWrapper.style.display = 'none';
+      
+      // Restore sections
+      if (heroSection) heroSection.style.display = 'block';
+      if (statsBarSection) statsBarSection.style.display = 'block';
+      if (ethLimaContainer) ethLimaContainer.style.display = 'block';
+      if (pastEvents) pastEvents.style.display = 'block';
+      if (organizersSection) organizersSection.style.display = 'block';
+      if (howSection) howSection.style.display = 'block';
+      
       applyVisibility();
     }
   }
