@@ -535,5 +535,18 @@
         "role": "Voluntario"
       }
     ]
+  },
+  {
+    "id": 17,
+    "name": "Criss Valladares",
+    "role": "Core Team",
+    "area": "General",
+    "photo": "https://raw.githubusercontent.com/javierarteagagonzales/ethevents/main/public/images/criss-valladares.webp",
+    "social": {
+      "x": "",
+      "instagram": "",
+      "linkedin": ""
+    },
+    "events": []
   }
 ]

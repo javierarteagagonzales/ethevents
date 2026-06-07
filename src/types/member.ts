@@ -27,7 +27,7 @@ export interface MemberItem {
 export const ROLE_ORDER: string[] = [
   'Lead General Eth Lima',
   'Core Team',
-  'Lead de Tecnología',
+  'Lead de Educación y tecnología',
   'Lead de Logística',
   'Lead de Alianzas',
   'Lead de Comunicaciones',
