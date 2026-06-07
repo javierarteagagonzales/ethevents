@@ -3,8 +3,8 @@ import satori from 'satori';
 import { Resvg } from '@resvg/resvg-js';
 import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
-import eventsRaw from '../../../events.json';
-import type { EventItem } from '../../types/event';
+import eventsRaw from '../../../../events.json';
+import type { EventItem } from '../../../types/event';
 
 export const prerender = false;
 
