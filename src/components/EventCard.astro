@@ -59,7 +59,7 @@ const hasImage = showImage && event.image;
 ---
 
 <div
-  class={`event-card group flex flex-col h-full overflow-hidden rounded-[20px] border border-white/5 bg-gradient-to-b from-white/[0.04] to-white/[0.01] backdrop-blur-md transition-all duration-500 hover:-translate-y-2 hover:border-accent/40 hover:bg-white/[0.06] hover:shadow-[0_40px_80px_rgba(0,0,0,0.6),0_0_40px_rgba(98,126,234,0.15)] relative cursor-pointer max-w-[360px] sm:max-w-none mx-auto w-full ${isPast ? 'opacity-50 grayscale border-transparent bg-white/[0.01] hover:opacity-100 hover:grayscale-0 hover:border-white/10' : ''} ${isFeatured ? 'featured' : ''} ${isEthLima ? 'border-accent/25' : ''} ${className}`}
+  class={`event-card group flex flex-col h-full overflow-hidden rounded-[20px] border border-white/5 bg-gradient-to-b from-white/[0.04] to-white/[0.01] backdrop-blur-md transition-all duration-500 hover:-translate-y-2 hover:border-accent/40 hover:bg-white/[0.06] hover:shadow-[0_40px_80px_rgba(0,0,0,0.6),0_0_40px_rgba(98,126,234,0.15)] relative cursor-pointer w-full ${isPast ? 'opacity-50 grayscale border-transparent bg-white/[0.01] hover:opacity-100 hover:grayscale-0 hover:border-white/10' : ''} ${isFeatured ? 'featured' : ''} ${isEthLima ? 'border-accent/25' : ''} ${className}`}
   data-event-id={event.id}
   data-event-type={event.type}
   data-event-past={isPast ? 'true' : 'false'}
@@ -104,8 +104,8 @@ const hasImage = showImage && event.image;
   )}
 
   <div class="p-5 flex-1 flex flex-col">
-    <div class="flex items-center justify-between gap-4 mb-4">
-      <div class="flex items-center gap-2 flex-wrap">
+    <div class="flex items-start sm:items-center justify-between gap-4 mb-4 w-full min-w-0">
+      <div class="flex items-center gap-2 flex-wrap min-w-0 flex-1">
         <span class={`font-mono text-[10px] tracking-wider font-bold uppercase px-2.5 py-1 rounded-full ${typeClass}`}>
           {event.type}
         </span>
