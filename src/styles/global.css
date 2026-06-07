@@ -40,10 +40,9 @@
   *::before,
   *::after {
     box-sizing: border-box;
-    max-width: 100%;
   }
 
-  img, svg, canvas {
+  img, video {
     max-width: 100%;
     height: auto;
   }

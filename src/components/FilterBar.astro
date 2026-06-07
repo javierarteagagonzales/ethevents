@@ -11,34 +11,33 @@ const categories = [
 ];
 ---
 
-<div class="filter-bar flex flex-col xl:flex-row items-start xl:items-center justify-between gap-4 py-4 w-full" id="filter-bar">
-  <div class="filter-categories flex gap-2 flex-wrap items-center justify-start flex-1">
-    {categories.map((cat, idx) => (
-      <button
-        class={`filter-btn font-mono text-[11px] px-4 py-2 border border-white/10 rounded-full text-muted tracking-wider hover:border-accent hover:text-accent hover:bg-accent/10 transition-all ${idx === 0 ? 'active border-accent text-accent bg-accent/15' : ''}`}
-        data-filter={cat.id}
-        data-i18n={cat.i18n}
-      >
-        {cat.label}
-      </button>
-    ))}
-  </div>
-  
-  <div class="flex flex-wrap items-center gap-3 w-full xl:w-auto">
-    <!-- Presencial/Virtual Toggle -->
-    <div class="flex items-center bg-white/5 border border-white/10 rounded-full p-1 shrink-0">
-      <button class="modality-btn active font-mono text-[10px] px-3 py-1.5 rounded-full transition-all text-accent bg-accent/20 font-bold" data-modality="all">
-        AMBOS
-      </button>
-      <button class="modality-btn font-mono text-[10px] px-3 py-1.5 rounded-full transition-all text-muted hover:text-white" data-modality="presencial">
-        PRESENCIAL
-      </button>
-      <button class="modality-btn font-mono text-[10px] px-3 py-1.5 rounded-full transition-all text-muted hover:text-white" data-modality="virtual">
-        VIRTUAL
-      </button>
+<div class="filter-bar flex flex-col gap-3 py-4 w-full min-w-0" id="filter-bar">
+  <!-- Category pills — horizontal scroll on mobile, wrap on larger screens -->
+  <div class="overflow-x-auto pb-1 no-scrollbar w-full">
+    <div class="filter-categories flex gap-2 items-center" style="width: max-content;">
+      {categories.map((cat, idx) => (
+        <button
+          class={`filter-btn font-mono text-[11px] whitespace-nowrap px-3 sm:px-4 py-1.5 sm:py-2 border border-white/10 rounded-full text-muted tracking-wider hover:border-accent hover:text-accent hover:bg-accent/10 transition-all shrink-0 ${idx === 0 ? 'active border-accent text-accent bg-accent/15' : ''}`}
+          data-filter={cat.id}
+          data-i18n={cat.i18n}
+        >
+          {cat.label}
+        </button>
+      ))}
     </div>
+  </div>
 
-
+  <!-- Presencial/Virtual Toggle -->
+  <div class="flex items-center bg-white/5 border border-white/10 rounded-full p-1 self-start shrink-0">
+    <button class="modality-btn active font-mono text-[10px] px-2 sm:px-3 py-1.5 rounded-full transition-all text-accent bg-accent/20 font-bold whitespace-nowrap" data-modality="all">
+      AMBOS
+    </button>
+    <button class="modality-btn font-mono text-[10px] px-2 sm:px-3 py-1.5 rounded-full transition-all text-muted hover:text-white whitespace-nowrap" data-modality="presencial">
+      PRESENCIAL
+    </button>
+    <button class="modality-btn font-mono text-[10px] px-2 sm:px-3 py-1.5 rounded-full transition-all text-muted hover:text-white whitespace-nowrap" data-modality="virtual">
+      VIRTUAL
+    </button>
   </div>
 </div>
 
@@ -53,4 +52,7 @@ const categories = [
     background-color: rgba(98, 126, 234, 0.2);
     font-weight: bold;
   }
+  /* Hide scrollbar visually but keep scroll functionality */
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 </style>
