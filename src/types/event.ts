@@ -9,6 +9,7 @@ export interface EventItem {
   location: string;
   type: string;
   link: string;
+  videoLink?: string;
   tags: string[];
   image: string;
   organizer: string;

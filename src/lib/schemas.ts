@@ -89,6 +89,7 @@ export const EventItemSchema = z.object({
   location: z.string(),
   type: z.string(),
   link: z.string().optional().or(z.literal('')),
+  videoLink: z.string().optional().or(z.literal('')),
   tags: z.array(z.string()).default([]),
   image: z.string().optional().or(z.literal('')),
   organizer: z.string().optional().or(z.literal('')),

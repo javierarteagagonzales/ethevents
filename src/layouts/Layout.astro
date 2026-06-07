@@ -59,5 +59,31 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://ethevent
     <div class="w-full overflow-x-hidden flex-1 flex flex-col">
       <slot />
     </div>
+    
+    <!-- Micro-interacciones Táctiles (Haptics) para móviles -->
+    <script>
+      function addHaptics() {
+        if (!('vibrate' in navigator)) return;
+        
+        // Vibrate on links, buttons, and cards
+        const interactables = document.querySelectorAll('a, button, .event-card, .cal-event');
+        interactables.forEach(el => {
+          // avoid adding multiple times
+          if (!el.hasAttribute('data-haptic')) {
+            el.setAttribute('data-haptic', 'true');
+            el.addEventListener('pointerdown', () => {
+              try {
+                navigator.vibrate(10); // Subtle tick
+              } catch(e) {}
+            }, { passive: true });
+          }
+        });
+      }
+
+      // Run on initial load and after view transitions
+      document.addEventListener('astro:page-load', addHaptics);
+      // Run once immediately in case astro:page-load is missed
+      addHaptics();
+    </script>
   </body>
 </html>
