@@ -499,5 +499,23 @@
       "linkedin": ""
     },
     "events": []
+  },
+  {
+    "id": 15,
+    "name": "Alexandra Jaime",
+    "role": "Voluntario",
+    "area": "Proyectos",
+    "photo": "",
+    "social": {
+      "x": "",
+      "instagram": "",
+      "linkedin": ""
+    },
+    "events": [
+      {
+        "eventId": 12,
+        "role": "Voluntario"
+      }
+    ]
   }
 ]
