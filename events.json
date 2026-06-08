@@ -1094,6 +1094,27 @@
     "createdAt": "2026-06-07T06:03:16Z"
   },
   {
+    "id": 58,
+    "title": "ETHOnline 2026",
+    "description": "$75,000 Available in prizes",
+    "date": "2026-09-04",
+    "endDate": "2026-09-16",
+    "time": "",
+    "location": "Online",
+    "type": "hackathon",
+    "link": "https://ethglobal.com/events/ethonline2026",
+    "tags": [
+      "ethglobal"
+    ],
+    "image": "",
+    "organizer": "ETH Global",
+    "parentId": null,
+    "issueUrl": "https://github.com/javierarteagagonzales/ethevents/issues/10",
+    "issueNum": 10,
+    "state": "open",
+    "createdAt": "2026-06-08T23:03:09Z"
+  },
+  {
     "id": 50,
     "title": "DEVCON 8",
     "description": "An open door for explorers,\na common ground for builders",
