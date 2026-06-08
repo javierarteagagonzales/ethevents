@@ -1115,6 +1115,25 @@
     "createdAt": "2026-06-08T23:03:09Z"
   },
   {
+    "id": 59,
+    "title": "ETHGlobal Tokyo",
+    "description": "Asia's largest ETHGlobal event",
+    "date": "2026-09-25",
+    "endDate": "2026-09-27",
+    "time": "",
+    "location": "Online",
+    "type": "hackathon",
+    "link": "https://ethglobal.com/events/tokyo2026",
+    "tags": [],
+    "image": "",
+    "organizer": "ETH Global",
+    "parentId": null,
+    "issueUrl": "https://github.com/javierarteagagonzales/ethevents/issues/11",
+    "issueNum": 11,
+    "state": "open",
+    "createdAt": "2026-06-08T23:08:20Z"
+  },
+  {
     "id": 50,
     "title": "DEVCON 8",
     "description": "An open door for explorers,\na common ground for builders",
