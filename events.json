@@ -880,6 +880,25 @@
     "createdAt": "2026-03-26T06:02:41Z"
   },
   {
+    "id": 61,
+    "title": "ETHGlobal New York 2026",
+    "description": "Ethereum's flagship hackathon in June.",
+    "date": "2026-06-12",
+    "endDate": "2026-06-14",
+    "time": "",
+    "location": "Online",
+    "type": "hackathon",
+    "link": "https://ethglobal.com/events/newyork2026",
+    "tags": [],
+    "image": "",
+    "organizer": "ETH Global",
+    "parentId": null,
+    "issueUrl": "https://github.com/javierarteagagonzales/ethevents/issues/13",
+    "issueNum": 13,
+    "state": "open",
+    "createdAt": "2026-06-08T23:16:23Z"
+  },
+  {
     "id": 107,
     "title": "Fundamentos de Rust (Módulo 3: Rust)",
     "description": "Temas avanzados y estructura de Rust.",
