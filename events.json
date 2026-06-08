@@ -969,6 +969,25 @@
     "parentId": 38
   },
   {
+    "id": 57,
+    "title": "ETHGlobal Lisbon",
+    "description": "For the first time ever, your project doesn't have to start at zero. Bring what you've already built — or don't.",
+    "date": "2026-06-24",
+    "endDate": "2026-06-26",
+    "time": "",
+    "location": "Online",
+    "type": "hackathon",
+    "link": "https://ethglobal.com/events/lisbon2026",
+    "tags": [],
+    "image": "",
+    "organizer": "Eth Global",
+    "parentId": null,
+    "issueUrl": "https://github.com/javierarteagagonzales/ethevents/issues/9",
+    "issueNum": 9,
+    "state": "open",
+    "createdAt": "2026-06-08T22:54:05Z"
+  },
+  {
     "id": 111,
     "title": "Intro al Ecosistema de Arbitrum, y Deployment de smart contracts en Arbitrium One (Módulo 4: Arbitrum Stylus)",
     "description": "Aprende el funcionamiento del ecosistema de Arbitrum y despliega tus primeros contratos inteligentes en Arbitrum One.",
