@@ -56,12 +56,21 @@ const organizerGradients = [
   'linear-gradient(135deg, #8b5cf6 0%, #a78bfa 100%)',
   'linear-gradient(135deg, #2dd4bf 0%, #5eead4 100%)'
 ];
-// All members for carousel — auto-syncs with members.json (sorted by role priority)
-const allMembers = (membersRaw as MemberItem[]).sort((a, b) => {
-  const ai = ROLE_ORDER.indexOf(a.role);
-  const bi = ROLE_ORDER.indexOf(b.role);
-  return (ai === -1 ? 99 : ai) - (bi === -1 ? 99 : bi);
-});
+// IDs de eventos ETH Lima (proyectos)
+const ethLimaEventIds = new Set(
+  processedEvents
+    .filter(e => e._isEthLima && !e.parentId)
+    .map(e => e.id)
+);
+
+// Solo miembros con al menos 1 proyecto — auto-syncs with members.json (sorted by role priority)
+const allMembers = (membersRaw as MemberItem[])
+  .filter(m => m.events && m.events.some(e => ethLimaEventIds.has(e.eventId)))
+  .sort((a, b) => {
+    const ai = ROLE_ORDER.indexOf(a.role);
+    const bi = ROLE_ORDER.indexOf(b.role);
+    return (ai === -1 ? 99 : ai) - (bi === -1 ? 99 : bi);
+  });
 ---
 
 <Layout title="ETH Events — Comunidad" description="Plataforma de eventos Web3 descentralizada y abierta. Suma tu evento a través de GitHub.">
