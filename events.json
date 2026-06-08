@@ -1153,5 +1153,24 @@
     "issueNum": 2,
     "state": "open",
     "createdAt": "2026-05-15T18:19:44Z"
+  },
+  {
+    "id": 60,
+    "title": "ETHGlobal Mumbai",
+    "description": "One of the fastest-growing Ethereum builder events",
+    "date": "2026-11-06",
+    "endDate": "2026-11-08",
+    "time": "",
+    "location": "Online",
+    "type": "hackathon",
+    "link": "https://ethglobal.com/events/mumbai",
+    "tags": [],
+    "image": "",
+    "organizer": "ETH Global",
+    "parentId": null,
+    "issueUrl": "https://github.com/javierarteagagonzales/ethevents/issues/12",
+    "issueNum": 12,
+    "state": "open",
+    "createdAt": "2026-06-08T23:10:35Z"
   }
 ]
