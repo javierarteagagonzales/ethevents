@@ -954,6 +954,27 @@
     "createdAt": "2026-05-22T03:42:40Z"
   },
   {
+    "id": 62,
+    "title": "¿Por qué Ronin vuelve a Ethereum?",
+    "description": "La tesis detrás de la migración a L2, y lo que significa para builders y gamers",
+    "date": "2026-06-16",
+    "endDate": "",
+    "time": "18:00",
+    "location": "Online",
+    "type": "conference",
+    "link": "https://luma.com/rovomi6n",
+    "tags": [
+      "ethlima"
+    ],
+    "image": "https://github.com/user-attachments/assets/e1731f1f-aa91-4208-89aa-d006c7e91db2",
+    "organizer": "Ethereum Lima",
+    "parentId": null,
+    "issueUrl": "https://github.com/javierarteagagonzales/ethevents/issues/14",
+    "issueNum": 14,
+    "state": "open",
+    "createdAt": "2026-06-13T04:31:15Z"
+  },
+  {
     "id": 109,
     "title": "Introducción a Blockchain y Layers 2 (Módulo 4: Arbitrum Stylus)",
     "description": "Entendiendo las segundas capas y la arquitectura de Arbitrum Stylus.",
