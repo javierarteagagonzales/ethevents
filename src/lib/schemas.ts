@@ -15,6 +15,7 @@ export const EventTypeEnum = z.enum([
   'bootcamp',
   'cohorte',
   'buildathon',
+  'grant',
 ]);
 
 /**
