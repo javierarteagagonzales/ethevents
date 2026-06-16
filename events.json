@@ -933,6 +933,25 @@
     "parentId": 38
   },
   {
+    "id": 64,
+    "title": "GrantFox",
+    "description": "$60,000 USDC available for developers ready to build the future through real projects and real technologies.",
+    "date": "2026-06-15",
+    "endDate": "",
+    "time": "",
+    "location": "Online",
+    "type": "grant",
+    "link": "https://x.com/itsgrantfox/status/2064923039419044177",
+    "tags": [],
+    "image": "",
+    "organizer": "",
+    "parentId": null,
+    "issueUrl": "https://github.com/javierarteagagonzales/ethevents/issues/16",
+    "issueNum": 16,
+    "state": "open",
+    "createdAt": "2026-06-16T13:03:00Z"
+  },
+  {
     "id": 63,
     "title": "Stellar Hacks: Real-World ZK",
     "description": "This hackathon is wide open: build anything you want with zero-knowledge on Stellar. Privacy pools, private payments, confidential tokens, identity and compliance proofs, provable computation, verifiable data — if it uses ZK and runs on Stellar, it counts. You can go anywhere on the spectrum from mild (a clean proof-of-concept verifier) to wild (a full shielded payment app).",
