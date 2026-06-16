@@ -610,7 +610,6 @@ const projectsJSON = JSON.stringify(
   // Init: limpiar skeletons y renderizar contenido real
   applyI18n();
   // Quita skeleton cards del panel izquierdo
-  const projectList = document.getElementById("project-list");
   if (projectList) projectList.innerHTML = "";
   // Oculta skeleton del panel derecho, muestra estado vacío
   const teamSkeleton = document.getElementById("team-skeleton");
