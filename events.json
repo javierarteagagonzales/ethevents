@@ -1102,6 +1102,27 @@
     "parentId": 38
   },
   {
+    "id": 65,
+    "title": "La Ruta de Puqi - USIL WIE",
+    "description": "Comunidad WIE USIL",
+    "date": "2026-06-27",
+    "endDate": "",
+    "time": "16:00",
+    "location": "Online",
+    "type": "workshop",
+    "link": "https://luma.com/wa5sbqmb",
+    "tags": [
+      "ethlima"
+    ],
+    "image": "https://github.com/user-attachments/assets/14c4c78e-4eb8-48f7-9bbf-97e8682af249",
+    "organizer": "Ethereum Lima",
+    "parentId": null,
+    "issueUrl": "https://github.com/javierarteagagonzales/ethevents/issues/17",
+    "issueNum": 17,
+    "state": "open",
+    "createdAt": "2026-06-27T14:43:11Z"
+  },
+  {
     "id": 113,
     "title": "Front end with Scaffold-stylus (Módulo 4: Arbitrum Stylus)",
     "description": "Desarrollo de interfaces de usuario (Frontend) y conexión con Scaffold-stylus.",
