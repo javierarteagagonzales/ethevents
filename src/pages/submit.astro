@@ -20,6 +20,51 @@ import Toast from '../components/ui/Toast.astro';
     
     <div class="w-full max-w-2xl bg-surface border border-white/5 rounded-3xl p-6 md:p-12 backdrop-blur-xl shadow-2xl relative overflow-hidden my-6">
       
+      <!-- PREVIEW OVERLAY -->
+      <div class="absolute inset-0 bg-[#030407]/95 hidden flex-col items-center justify-center p-6 z-[60] animate-modal-fade backdrop-blur-xl" id="preview-overlay">
+        <div class="w-full h-full overflow-y-auto px-2 py-4 pb-12" style="scrollbar-width: none;">
+          <h2 class="text-2xl font-extrabold text-white mb-6 text-center" data-i18n="sub_preview_title">Vista Previa de tu Evento</h2>
+          
+          <div class="bg-surface-2 border border-white/10 rounded-2xl p-6 mb-8 text-left shadow-2xl">
+            <h3 class="text-xl font-bold text-white mb-3" id="preview-nombre">Nombre del Evento</h3>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="px-2 py-1 bg-accent/20 text-accent border border-accent/30 rounded-md text-xs font-mono uppercase" id="preview-tipo">tipo</span>
+              <span class="px-2 py-1 bg-white/5 text-muted rounded-md text-xs font-mono" id="preview-fecha">fecha</span>
+              <span class="px-2 py-1 bg-white/5 text-muted rounded-md text-xs font-mono" id="preview-hora">hora</span>
+            </div>
+            <p class="text-white/80 text-sm mb-6 whitespace-pre-wrap leading-relaxed" id="preview-descripcion">Descripción</p>
+            
+            <div class="space-y-3 text-sm text-muted bg-black/20 p-4 rounded-xl border border-white/5">
+              <div class="flex items-start gap-3">
+                <span class="text-white shrink-0 w-24">📍 Ubicación:</span>
+                <span id="preview-ubicacion" class="text-white/70">Ubicación</span>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="text-white shrink-0 w-24">👤 Org:</span>
+                <span id="preview-organizador" class="text-white/70">Organizador</span>
+              </div>
+              <div class="flex items-start gap-3" id="preview-link-container">
+                <span class="text-white shrink-0 w-24">🔗 Link:</span>
+                <a id="preview-link" href="#" target="_blank" class="text-accent hover:text-accent-2 hover:underline break-all transition-colors">Link</a>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="text-white shrink-0 w-24">🏷️ Tags:</span>
+                <span id="preview-tags" class="text-white/70">Tags</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <button type="button" id="btn-cancel-preview" class="px-8 py-3 bg-surface border border-white/10 hover:bg-surface-2 hover:border-white/20 text-white font-mono text-sm font-bold rounded-xl transition-all" data-i18n="sub_preview_edit">
+              EDITAR DATOS
+            </button>
+            <button type="button" id="btn-confirm-submit" class="px-8 py-3 bg-accent hover:bg-accent-2 text-white font-mono text-sm font-bold rounded-xl shadow-[0_10px_30px_rgba(98,126,234,0.3)] hover:shadow-[0_15px_40px_rgba(98,126,234,0.4)] hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2">
+              <span data-i18n="sub_preview_confirm">CONFIRMAR Y ENVIAR</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
       <!-- SUCCESS OVERLAY -->
       <div class="absolute inset-0 bg-[#030407] hidden flex-col items-center justify-center text-center p-8 z-50 animate-modal-fade" id="success-overlay">
         <div class="w-20 h-20 bg-success/10 border border-success rounded-full flex items-center justify-center text-success mb-6 shadow-[0_0_30px_rgba(16,185,129,0.2)]">
@@ -266,17 +311,66 @@ import Toast from '../components/ui/Toast.astro';
     });
   });
 
-  form?.addEventListener('submit', async function(e) {
+  let currentFormData: FormData | null = null;
+  const previewOverlay = document.getElementById('preview-overlay');
+  const btnCancelPreview = document.getElementById('btn-cancel-preview');
+  const btnConfirmSubmit = document.getElementById('btn-confirm-submit');
+  const btnConfirmText = btnConfirmSubmit?.innerHTML || '';
+
+  form?.addEventListener('submit', function(e) {
     e.preventDefault();
     
+    currentFormData = new FormData(form);
+    
+    // Populate preview
+    const val = (name: string) => currentFormData?.get(name)?.toString() || '-';
+    
+    document.getElementById('preview-nombre')!.textContent = val('nombre');
+    document.getElementById('preview-tipo')!.textContent = val('tipo');
+    
+    let dates = val('fecha');
+    if (currentFormData?.get('fecha-fin')) {
+      dates += ` al ${val('fecha-fin')}`;
+    }
+    document.getElementById('preview-fecha')!.textContent = dates;
+    
+    document.getElementById('preview-hora')!.textContent = val('hora') || 'TBD';
+    document.getElementById('preview-descripcion')!.textContent = val('descripcion');
+    document.getElementById('preview-ubicacion')!.textContent = val('ubicacion');
+    document.getElementById('preview-organizador')!.textContent = val('organizador') || 'N/A';
+    document.getElementById('preview-tags')!.textContent = val('tags') || 'N/A';
+    
+    const linkEl = document.getElementById('preview-link') as HTMLAnchorElement;
+    const linkVal = val('link');
+    if (linkVal && linkVal !== '-') {
+      linkEl.href = linkVal;
+      linkEl.textContent = linkVal;
+      document.getElementById('preview-link-container')!.style.display = 'flex';
+    } else {
+      document.getElementById('preview-link-container')!.style.display = 'none';
+    }
+
+    if (previewOverlay) {
+      previewOverlay.style.display = 'flex';
+    }
+  });
+
+  btnCancelPreview?.addEventListener('click', () => {
+    if (previewOverlay) {
+      previewOverlay.style.display = 'none';
+    }
+  });
+
+  btnConfirmSubmit?.addEventListener('click', async () => {
+    if (!currentFormData) return;
+
     // Loading state
-    if (submitBtn) {
-      submitBtn.disabled = true;
-      submitBtn.innerHTML = `<svg class="w-4 h-4 animate-spin text-white" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg> <span data-i18n="sub_submitting">${TRANSLATIONS[currentLang]?.sub_submitting || 'ENVIANDO...'}</span>`;
+    if (btnConfirmSubmit) {
+      (btnConfirmSubmit as HTMLButtonElement).disabled = true;
+      btnConfirmSubmit.innerHTML = `<svg class="w-4 h-4 animate-spin text-white" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg> <span data-i18n="sub_submitting">${TRANSLATIONS[currentLang]?.sub_submitting || 'ENVIANDO...'}</span>`;
     }
     
-    const formData = new FormData(form);
-    const data = Object.fromEntries(formData.entries());
+    const data = Object.fromEntries(currentFormData.entries());
 
     try {
       const response = await fetch('/api/submit', {
@@ -288,6 +382,10 @@ import Toast from '../components/ui/Toast.astro';
       const result = await response.json();
 
       if (response.ok) {
+        if (previewOverlay) {
+          previewOverlay.style.display = 'none';
+        }
+
         // Success Overlay
         const overlay = document.getElementById('success-overlay');
         const content = document.getElementById('form-content');
@@ -312,9 +410,9 @@ import Toast from '../components/ui/Toast.astro';
       if ((window as any).showToast) {
         (window as any).showToast('Error: ' + error.message, 'error', 6000);
       }
-      if (submitBtn) {
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = btnText;
+      if (btnConfirmSubmit) {
+        (btnConfirmSubmit as HTMLButtonElement).disabled = false;
+        btnConfirmSubmit.innerHTML = btnConfirmText;
       }
     }
   });
@@ -339,7 +437,10 @@ import Toast from '../components/ui/Toast.astro';
       sub_conf2: "El evento está relacionado con Web3 / Ethereum / Blockchain.",
       sub_conf3: "Acepto que los maintainers pueden editar o rechazar el evento.",
       sub_submit: "ENVIAR PROPUESTA",
-      sub_submitting: "ENVIANDO..."
+      sub_submitting: "ENVIANDO...",
+      sub_preview_title: "Vista Previa de tu Evento",
+      sub_preview_edit: "EDITAR DATOS",
+      sub_preview_confirm: "CONFIRMAR Y ENVIAR"
     },
     en: {
       sub_success_title: "Proposal Received!",
@@ -360,7 +461,10 @@ import Toast from '../components/ui/Toast.astro';
       sub_conf2: "The event is related to Web3 / Ethereum / Blockchain.",
       sub_conf3: "I agree that maintainers can edit or reject the event.",
       sub_submit: "SUBMIT PROPOSAL",
-      sub_submitting: "SUBMITTING..."
+      sub_submitting: "SUBMITTING...",
+      sub_preview_title: "Event Preview",
+      sub_preview_edit: "EDIT DETAILS",
+      sub_preview_confirm: "CONFIRM AND SUBMIT"
     }
   };
 
