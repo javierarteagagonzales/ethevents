@@ -29,7 +29,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://ethevent
     <ClientRouter />
     <link rel="canonical" href={canonicalURL} />
     
-    <!-- Open Graph / Facebook -->
+    <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={title} />
@@ -43,7 +43,6 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://ethevent
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={new URL(image, canonicalURL)} />
 
-    
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/favicon.png" />
     
@@ -51,39 +50,193 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://ethevent
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
       rel="stylesheet"
     />
   </head>
   <body class="grid-bg glow-orb min-h-screen flex flex-col relative">
-    <div class="w-full overflow-x-hidden flex-1 flex flex-col">
+    
+    <!-- CANVAS PARTICLES (subtle) -->
+    <canvas id="particles-canvas" class="fixed inset-0 pointer-events-none z-0" aria-hidden="true"></canvas>
+
+    <!-- CURSOR GLOW -->
+    <div id="cursor-glow" class="fixed pointer-events-none z-[9998] rounded-full opacity-0 transition-opacity duration-300" style="width:400px;height:400px;margin-left:-200px;margin-top:-200px;background:radial-gradient(circle, rgba(98,126,234,0.06) 0%, transparent 70%);"></div>
+
+    <div class="w-full overflow-x-hidden flex-1 flex flex-col relative z-10">
       <slot />
     </div>
-    
-    <!-- Micro-interacciones Táctiles (Haptics) para móviles -->
+
+    <!-- FLOATING CTA BUTTON -->
+    <a id="floating-cta" href="/submit"
+      class="btn-glow btn-magnetic hidden fixed bottom-8 right-8 z-[100] flex items-center gap-2.5 px-5 py-3 bg-accent text-white font-mono text-xs font-bold rounded-2xl shadow-[0_8px_30px_rgba(98,126,234,0.45)] hover:shadow-[0_16px_50px_rgba(98,126,234,0.6)] hover:bg-accent-2 transition-all tracking-wider"
+      aria-label="Proponer nuevo evento"
+    >
+      <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+      </svg>
+      <span>NUEVO</span>
+    </a>
+
+    <!-- SCROLL TO TOP BUTTON -->
+    <button id="scroll-top" class="hidden fixed bottom-8 left-8 z-[100] w-10 h-10 flex items-center justify-center bg-surface border border-white/10 hover:border-accent/40 text-muted hover:text-accent rounded-xl transition-all hover:shadow-[0_0_20px_rgba(98,126,234,0.2)]" aria-label="Volver arriba">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <polyline points="18 15 12 9 6 15"/>
+      </svg>
+    </button>
+
     <script>
+      // ── Haptics on mobile ──
       function addHaptics() {
         if (!('vibrate' in navigator)) return;
-        
-        // Vibrate on links, buttons, and cards
         const interactables = document.querySelectorAll('a, button, .event-card, .cal-event');
         interactables.forEach(el => {
-          // avoid adding multiple times
           if (!el.hasAttribute('data-haptic')) {
             el.setAttribute('data-haptic', 'true');
             el.addEventListener('pointerdown', () => {
-              try {
-                navigator.vibrate(10); // Subtle tick
-              } catch(e) {}
+              try { navigator.vibrate(8); } catch(e) {}
             }, { passive: true });
           }
         });
       }
 
-      // Run on initial load and after view transitions
-      document.addEventListener('astro:page-load', addHaptics);
-      // Run once immediately in case astro:page-load is missed
-      addHaptics();
+      // ── Cursor glow ──
+      const cursorGlow = document.getElementById('cursor-glow');
+      let cx = 0, cy = 0;
+      let gx = 0, gy = 0;
+      
+      document.addEventListener('mousemove', (e) => {
+        cx = e.clientX;
+        cy = e.clientY;
+        if (cursorGlow) {
+          cursorGlow.style.opacity = '1';
+          cursorGlow.style.left = cx + 'px';
+          cursorGlow.style.top = cy + 'px';
+        }
+      }, { passive: true });
+
+      document.addEventListener('mouseleave', () => {
+        if (cursorGlow) cursorGlow.style.opacity = '0';
+      });
+
+      // ── Scroll-reveal for elements ──
+      function initReveal() {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(e => {
+            if (e.isIntersecting) {
+              e.target.classList.add('reveal-visible');
+              observer.unobserve(e.target);
+            }
+          });
+        }, { threshold: 0.08, rootMargin: '0px 0px -60px 0px' });
+        
+        document.querySelectorAll('.reveal-hidden').forEach(el => observer.observe(el));
+      }
+
+      // ── Floating CTA visibility ──
+      const floatingCta = document.getElementById('floating-cta');
+      const scrollTopBtn = document.getElementById('scroll-top');
+
+      window.addEventListener('scroll', () => {
+        const y = window.scrollY;
+        if (floatingCta) {
+          if (y > 300) floatingCta.classList.remove('hidden');
+          else floatingCta.classList.add('hidden');
+        }
+        if (scrollTopBtn) {
+          if (y > 600) scrollTopBtn.classList.remove('hidden');
+          else scrollTopBtn.classList.add('hidden');
+        }
+      }, { passive: true });
+
+      scrollTopBtn?.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      // ── Card mouse-tracking glow ──
+      function initCardGlow() {
+        document.querySelectorAll('.event-card').forEach(card => {
+          card.addEventListener('mousemove', (e: Event) => {
+            const ev = e as MouseEvent;
+            const rect = (card as HTMLElement).getBoundingClientRect();
+            const x = ((ev.clientX - rect.left) / rect.width * 100).toFixed(1);
+            const y = ((ev.clientY - rect.top) / rect.height * 100).toFixed(1);
+            (card as HTMLElement).style.setProperty('--mouse-x', x + '%');
+            (card as HTMLElement).style.setProperty('--mouse-y', y + '%');
+          });
+        });
+      }
+
+      // ── Particle canvas ──
+      function initParticles() {
+        const canvas = document.getElementById('particles-canvas') as HTMLCanvasElement;
+        if (!canvas) return;
+        const ctx = canvas.getContext('2d');
+        if (!ctx) return;
+
+        let W = canvas.width = window.innerWidth;
+        let H = canvas.height = window.innerHeight;
+
+        window.addEventListener('resize', () => {
+          W = canvas.width = window.innerWidth;
+          H = canvas.height = window.innerHeight;
+        });
+
+        const count = Math.min(60, Math.floor(W * H / 20000));
+        type P = { x: number; y: number; r: number; vx: number; vy: number; alpha: number; };
+        const particles: P[] = Array.from({ length: count }, () => ({
+          x: Math.random() * W,
+          y: Math.random() * H,
+          r: Math.random() * 1.5 + 0.3,
+          vx: (Math.random() - 0.5) * 0.3,
+          vy: (Math.random() - 0.5) * 0.3,
+          alpha: Math.random() * 0.4 + 0.05,
+        }));
+
+        function draw() {
+          ctx!.clearRect(0, 0, W, H);
+          particles.forEach(p => {
+            ctx!.beginPath();
+            ctx!.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+            ctx!.fillStyle = `rgba(98,126,234,${p.alpha})`;
+            ctx!.fill();
+            p.x += p.vx;
+            p.y += p.vy;
+            if (p.x < 0) p.x = W;
+            if (p.x > W) p.x = 0;
+            if (p.y < 0) p.y = H;
+            if (p.y > H) p.y = 0;
+          });
+          requestAnimationFrame(draw);
+        }
+        draw();
+      }
+
+      // ── Magnetic buttons global ──
+      function initMagnetic() {
+        document.querySelectorAll('.btn-magnetic').forEach(btn => {
+          btn.addEventListener('mousemove', (e: Event) => {
+            const ev = e as MouseEvent;
+            const rect = (btn as HTMLElement).getBoundingClientRect();
+            const x = ev.clientX - rect.left - rect.width / 2;
+            const y = ev.clientY - rect.top - rect.height / 2;
+            (btn as HTMLElement).style.transform = `translate(${x * 0.15}px, ${y * 0.25}px)`;
+          });
+          btn.addEventListener('mouseleave', () => {
+            (btn as HTMLElement).style.transform = '';
+          });
+        });
+      }
+
+      function boot() {
+        initReveal();
+        initCardGlow();
+        initParticles();
+        initMagnetic();
+        addHaptics();
+      }
+
+      document.addEventListener('astro:page-load', boot);
+      boot();
     </script>
   </body>
 </html>
