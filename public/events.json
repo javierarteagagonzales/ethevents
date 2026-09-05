@@ -307,7 +307,7 @@
   {
     "id": 10,
     "title": "Solana Latam Builders Program",
-    "description": "​El Solana LATAM Builders Program es un bootcamp intensivo, gratuito y guiado donde aprenderás a desarrollar Solana Programs desde cero, entender su arquitectura basada en cuentas y llevar tu primer proyecto funcional hasta despliegue.",
+    "description": "El Solana LATAM Builders Program es un bootcamp intensivo, gratuito y guiado donde aprenderás a desarrollar Solana Programs desde cero, entender su arquitectura basada en cuentas y llevar tu primer proyecto funcional hasta despliegue.",
     "date": "2026-04-13",
     "endDate": "2026-04-27",
     "time": "",
@@ -421,7 +421,7 @@
   {
     "id": 7,
     "title": "Zero to Agent: Lima - UNI",
-    "description": "​Zero to Agent es una semana de construcción global donde pasamos de una idea a un agente de IA real, desplegado y funcional usando v0 + Vercel. Pero tú y yo nos reuniremos el sábado 25 de abril en la Universidad Nacional de Ingeniería (UNI), en un solo espacio para crear, colaborar y, sobre todo, entregar.",
+    "description": "Zero to Agent es una semana de construcción global donde pasamos de una idea a un agente de IA real, desplegado y funcional usando v0 + Vercel. Pero tú y yo nos reuniremos el sábado 25 de abril en la Universidad Nacional de Ingeniería (UNI), en un solo espacio para crear, colaborar y, sobre todo, entregar.",
     "date": "2026-04-25",
     "endDate": "",
     "time": "",
@@ -638,6 +638,69 @@
     "createdAt": "2026-05-15T15:32:04Z"
   },
   {
+    "id": 53,
+    "title": "Resultados Ruta de Puqi -  Ideathon",
+    "description": "Lanzamos los ganadores por la red social X.",
+    "date": "2026-05-21",
+    "endDate": "",
+    "time": "12:00",
+    "location": "Online",
+    "type": "conference",
+    "link": "https://ethlima.org/",
+    "tags": [
+      "ethlima"
+    ],
+    "image": "https://github.com/user-attachments/assets/c7bc3746-e7c7-48a8-a5ed-16e5456df257",
+    "organizer": "Ethereum Lima",
+    "parentId": null,
+    "issueUrl": "https://github.com/javierarteagagonzales/ethevents/issues/5",
+    "issueNum": 5,
+    "state": "open",
+    "createdAt": "2026-05-17T06:26:23Z"
+  },
+  {
+    "id": 51,
+    "title": "NFT y propuestas artísticas híbridas en el crypto arte",
+    "description": "Una charla centrada en la intersección entre arte contemporáneo, tecnologías emergentes y ecosistemas Web3, abordando cómo los NFT han expandido las posibilidades de producción, circulación y conceptualización artística.",
+    "date": "2026-05-23",
+    "endDate": "",
+    "time": "17:00",
+    "location": "Online",
+    "type": "workshop",
+    "link": "https://luma.com/t6g6wa05",
+    "tags": [
+      "ethlima"
+    ],
+    "image": "https://github.com/user-attachments/assets/9d7367a2-4d15-400e-b358-93c0d0d4cc64",
+    "organizer": "Ethereum Lima",
+    "parentId": null,
+    "issueUrl": "https://github.com/javierarteagagonzales/ethevents/issues/3",
+    "issueNum": 3,
+    "state": "open",
+    "createdAt": "2026-05-17T04:02:47Z"
+  },
+  {
+    "id": 52,
+    "title": "ARBITRUM Open House",
+    "description": "Top teams get early access, real support, and the tools to launch fast.",
+    "date": "2026-05-25",
+    "endDate": "2026-06-14",
+    "time": "",
+    "location": "Online",
+    "type": "cohorte",
+    "link": "https://openhouse.arbitrum.io/",
+    "tags": [
+      "arbitrum"
+    ],
+    "image": "",
+    "organizer": "Arbitrum",
+    "parentId": null,
+    "issueUrl": "https://github.com/javierarteagagonzales/ethevents/issues/4",
+    "issueNum": 4,
+    "state": "open",
+    "createdAt": "2026-05-17T05:14:01Z"
+  },
+  {
     "id": 38,
     "title": "Bootcamp Ethereum Lima 2026",
     "description": "Gratuito. Aprende Proyectos en web3, Lenguajes de programación, Arbitrum y Arbitrum Stylus.",
@@ -658,6 +721,78 @@
     "createdAt": "2026-05-06T04:10:57Z"
   },
   {
+    "id": 101,
+    "title": "BOOTCAMP ETH LIMA Kick Off - Introducción a Blockchain (Módulo 1: Blockchain y Proyectos)",
+    "description": "Sesión inaugural del Bootcamp Ethereum Lima 2026. Introducción y bienvenida.",
+    "date": "2026-05-30",
+    "endDate": "",
+    "time": "19:00",
+    "location": "Online",
+    "type": "workshop",
+    "link": "https://bootcamp.ethlima.org/",
+    "tags": [
+      "ethlima"
+    ],
+    "image": "",
+    "organizer": "Ethereum Lima",
+    "parentId": 38
+  },
+  {
+    "id": 102,
+    "title": "Casos de Uso II (Módulo 1: Blockchain y Proyectos)",
+    "description": "Casos prácticos de uso y aplicaciones de tecnología Blockchain en el mundo real.",
+    "date": "2026-05-30",
+    "endDate": "",
+    "time": "20:00",
+    "location": "Online",
+    "type": "workshop",
+    "link": "https://bootcamp.ethlima.org/",
+    "tags": [
+      "ethlima"
+    ],
+    "image": "",
+    "organizer": "Ethereum Lima",
+    "parentId": 38
+  },
+  {
+    "id": 103,
+    "title": "Casos de Uso I (Módulo 1: Blockchain y Proyectos)",
+    "description": "Casos prácticos de uso y aplicaciones de tecnología Blockchain en el mundo real.",
+    "date": "2026-05-30",
+    "endDate": "",
+    "time": "21:00",
+    "location": "Online",
+    "type": "workshop",
+    "link": "https://bootcamp.ethlima.org/",
+    "tags": [
+      "ethlima"
+    ],
+    "image": "",
+    "organizer": "Ethereum Lima",
+    "parentId": 38
+  },
+  {
+    "id": 55,
+    "title": "Everything Tokenization: Blockchain es el nuevo internet de la confianza",
+    "description": "Builder Series",
+    "date": "2026-06-04",
+    "endDate": "",
+    "time": "19:00",
+    "location": "Online",
+    "type": "conference",
+    "link": "https://luma.com/hjgs60lh",
+    "tags": [
+      "ethlima"
+    ],
+    "image": "https://github.com/user-attachments/assets/3bc0cea1-a678-449c-abb8-06ccafad08bc",
+    "organizer": "Ethereum Lima",
+    "parentId": null,
+    "issueUrl": "https://github.com/javierarteagagonzales/ethevents/issues/7",
+    "issueNum": 7,
+    "state": "open",
+    "createdAt": "2026-05-31T04:52:38Z"
+  },
+  {
     "id": 39,
     "title": "GitHub Community Day",
     "description": "La comunidad de GitHub llega a la UTP para un evento único que reunirá a estudiantes, developers y apasionados por la tecnología en una experiencia diseñada para potenciar tu forma de crear y colaborar en proyectos.",
@@ -676,6 +811,57 @@
     "createdAt": "2026-05-08T23:05:07Z"
   },
   {
+    "id": 104,
+    "title": "UX en Blockchain (Módulo 1: Blockchain y Proyectos)",
+    "description": "Fundamentos y buenas prácticas del diseño de experiencia de usuario en aplicaciones descentralizadas (dApps).",
+    "date": "2026-06-06",
+    "endDate": "",
+    "time": "18:00",
+    "location": "Online",
+    "type": "workshop",
+    "link": "https://bootcamp.ethlima.org/",
+    "tags": [
+      "ethlima"
+    ],
+    "image": "",
+    "organizer": "Ethereum Lima",
+    "parentId": 38
+  },
+  {
+    "id": 105,
+    "title": "Fundamentos de Solidity (Módulo 2: Solidity)",
+    "description": "Conceptos fundamentales para programar contratos inteligentes con Solidity.",
+    "date": "2026-06-06",
+    "endDate": "",
+    "time": "19:00",
+    "location": "Online",
+    "type": "workshop",
+    "link": "https://bootcamp.ethlima.org/",
+    "tags": [
+      "ethlima"
+    ],
+    "image": "",
+    "organizer": "Ethereum Lima",
+    "parentId": 38
+  },
+  {
+    "id": 106,
+    "title": "Fundamentos de Rust (Módulo 3: Rust)",
+    "description": "Fundamentos básicos de la programación en Rust.",
+    "date": "2026-06-06",
+    "endDate": "",
+    "time": "20:00",
+    "location": "Online",
+    "type": "workshop",
+    "link": "https://bootcamp.ethlima.org/",
+    "tags": [
+      "ethlima"
+    ],
+    "image": "",
+    "organizer": "Ethereum Lima",
+    "parentId": 38
+  },
+  {
     "id": 4,
     "title": "Founder School",
     "description": "A 10-week, cohort-based, virtual, and equity-free program designed to help you go from zero to one.",
@@ -692,5 +878,400 @@
     "issueNum": 4,
     "state": "open",
     "createdAt": "2026-03-26T06:02:41Z"
+  },
+  {
+    "id": 61,
+    "title": "ETHGlobal New York 2026",
+    "description": "Ethereum's flagship hackathon in June.",
+    "date": "2026-06-12",
+    "endDate": "2026-06-14",
+    "time": "",
+    "location": "Online",
+    "type": "hackathon",
+    "link": "https://ethglobal.com/events/newyork2026",
+    "tags": [],
+    "image": "",
+    "organizer": "ETH Global",
+    "parentId": null,
+    "issueUrl": "https://github.com/javierarteagagonzales/ethevents/issues/13",
+    "issueNum": 13,
+    "state": "open",
+    "createdAt": "2026-06-08T23:16:23Z"
+  },
+  {
+    "id": 107,
+    "title": "Fundamentos de Rust (Módulo 3: Rust)",
+    "description": "Temas avanzados y estructura de Rust.",
+    "date": "2026-06-13",
+    "endDate": "",
+    "time": "18:00",
+    "location": "Online",
+    "type": "workshop",
+    "link": "https://bootcamp.ethlima.org/",
+    "tags": [
+      "ethlima"
+    ],
+    "image": "",
+    "organizer": "Ethereum Lima",
+    "parentId": 38
+  },
+  {
+    "id": 108,
+    "title": "Fundamentos de Solidity (Módulo 2: Solidity)",
+    "description": "Solidity desde cero y buenas prácticas.",
+    "date": "2026-06-13",
+    "endDate": "",
+    "time": "19:00",
+    "location": "Online",
+    "type": "workshop",
+    "link": "https://bootcamp.ethlima.org/",
+    "tags": [
+      "ethlima"
+    ],
+    "image": "",
+    "organizer": "Ethereum Lima",
+    "parentId": 38
+  },
+  {
+    "id": 64,
+    "title": "GrantFox",
+    "description": "$60,000 USDC available for developers ready to build the future through real projects and real technologies.",
+    "date": "2026-06-15",
+    "endDate": "",
+    "time": "",
+    "location": "Online",
+    "type": "grant",
+    "link": "https://x.com/itsgrantfox/status/2064923039419044177",
+    "tags": [],
+    "image": "",
+    "organizer": "",
+    "parentId": null,
+    "issueUrl": "https://github.com/javierarteagagonzales/ethevents/issues/16",
+    "issueNum": 16,
+    "state": "open",
+    "createdAt": "2026-06-16T13:03:00Z"
+  },
+  {
+    "id": 63,
+    "title": "Stellar Hacks: Real-World ZK",
+    "description": "This hackathon is wide open: build anything you want with zero-knowledge on Stellar. Privacy pools, private payments, confidential tokens, identity and compliance proofs, provable computation, verifiable data — if it uses ZK and runs on Stellar, it counts. You can go anywhere on the spectrum from mild (a clean proof-of-concept verifier) to wild (a full shielded payment app).",
+    "date": "2026-06-15",
+    "endDate": "2026-06-29",
+    "time": "",
+    "location": "Online",
+    "type": "hackathon",
+    "link": "https://dorahacks.io/hackathon/stellar-hacks-zk/detail",
+    "tags": [
+      "stellar"
+    ],
+    "image": "",
+    "organizer": "Stellar",
+    "parentId": null,
+    "issueUrl": "https://github.com/javierarteagagonzales/ethevents/issues/15",
+    "issueNum": 15,
+    "state": "open",
+    "createdAt": "2026-06-16T12:37:53Z"
+  },
+  {
+    "id": 54,
+    "title": "Solana Summer School",
+    "description": "​Welcome to Solana Summer School. Spend your summer getting smart on the greatest blockchain on earth.\n\nOpen to all current college students (must register with school email).",
+    "date": "2026-06-15",
+    "endDate": "",
+    "time": "",
+    "location": "Online",
+    "type": "cohorte",
+    "link": "https://luma.com/g8b5fy9s",
+    "tags": [
+      "solana"
+    ],
+    "image": "",
+    "organizer": "Solana",
+    "parentId": null,
+    "issueUrl": "https://github.com/javierarteagagonzales/ethevents/issues/6",
+    "issueNum": 6,
+    "state": "open",
+    "createdAt": "2026-05-22T03:42:40Z"
+  },
+  {
+    "id": 62,
+    "title": "¿Por qué Ronin vuelve a Ethereum?",
+    "description": "La tesis detrás de la migración a L2, y lo que significa para builders y gamers",
+    "date": "2026-06-16",
+    "endDate": "",
+    "time": "18:00",
+    "location": "Online",
+    "type": "conference",
+    "link": "https://luma.com/rovomi6n",
+    "tags": [
+      "ethlima"
+    ],
+    "image": "https://github.com/user-attachments/assets/e1731f1f-aa91-4208-89aa-d006c7e91db2",
+    "organizer": "Ethereum Lima",
+    "parentId": null,
+    "issueUrl": "https://github.com/javierarteagagonzales/ethevents/issues/14",
+    "issueNum": 14,
+    "state": "open",
+    "createdAt": "2026-06-13T04:31:15Z"
+  },
+  {
+    "id": 109,
+    "title": "Introducción a Blockchain y Layers 2 (Módulo 4: Arbitrum Stylus)",
+    "description": "Entendiendo las segundas capas y la arquitectura de Arbitrum Stylus.",
+    "date": "2026-06-20",
+    "endDate": "",
+    "time": "19:00",
+    "location": "Online",
+    "type": "workshop",
+    "link": "https://bootcamp.ethlima.org/",
+    "tags": [
+      "ethlima"
+    ],
+    "image": "",
+    "organizer": "Ethereum Lima",
+    "parentId": 38
+  },
+  {
+    "id": 110,
+    "title": "Scaffold-Eth: Solidity smart contracts y Deployment en Ethereum (Módulo 4: Arbitrum Stylus)",
+    "description": "Escritura de contratos inteligentes con Solidity usando Scaffold-Eth y su despliegue en Ethereum.",
+    "date": "2026-06-20",
+    "endDate": "",
+    "time": "20:00",
+    "location": "Online",
+    "type": "workshop",
+    "link": "https://bootcamp.ethlima.org/",
+    "tags": [
+      "ethlima"
+    ],
+    "image": "",
+    "organizer": "Ethereum Lima",
+    "parentId": 38
+  },
+  {
+    "id": 57,
+    "title": "ETHGlobal Lisbon",
+    "description": "For the first time ever, your project doesn't have to start at zero. Bring what you've already built — or don't.",
+    "date": "2026-06-24",
+    "endDate": "2026-06-26",
+    "time": "",
+    "location": "Online",
+    "type": "hackathon",
+    "link": "https://ethglobal.com/events/lisbon2026",
+    "tags": [],
+    "image": "",
+    "organizer": "Eth Global",
+    "parentId": null,
+    "issueUrl": "https://github.com/javierarteagagonzales/ethevents/issues/9",
+    "issueNum": 9,
+    "state": "open",
+    "createdAt": "2026-06-08T22:54:05Z"
+  },
+  {
+    "id": 111,
+    "title": "Intro al Ecosistema de Arbitrum, y Deployment de smart contracts en Arbitrium One (Módulo 4: Arbitrum Stylus)",
+    "description": "Aprende el funcionamiento del ecosistema de Arbitrum y despliega tus primeros contratos inteligentes en Arbitrum One.",
+    "date": "2026-06-27",
+    "endDate": "",
+    "time": "19:00",
+    "location": "Online",
+    "type": "workshop",
+    "link": "https://bootcamp.ethlima.org/",
+    "tags": [
+      "ethlima"
+    ],
+    "image": "",
+    "organizer": "Ethereum Lima",
+    "parentId": 38
+  },
+  {
+    "id": 112,
+    "title": "Stylus/Rust smart contracts y Deployment en Arbitrium One (Módulo 4: Arbitrum Stylus)",
+    "description": "Escribe contratos inteligentes ultrarrápidos usando Rust y Arbitrum Stylus, y despliégalos.",
+    "date": "2026-06-27",
+    "endDate": "",
+    "time": "20:00",
+    "location": "Online",
+    "type": "workshop",
+    "link": "https://bootcamp.ethlima.org/",
+    "tags": [
+      "ethlima"
+    ],
+    "image": "",
+    "organizer": "Ethereum Lima",
+    "parentId": 38
+  },
+  {
+    "id": 65,
+    "title": "La Ruta de Puqi - USIL WIE",
+    "description": "Comunidad WIE USIL",
+    "date": "2026-06-27",
+    "endDate": "",
+    "time": "16:00",
+    "location": "Online",
+    "type": "workshop",
+    "link": "https://luma.com/wa5sbqmb",
+    "tags": [
+      "ethlima"
+    ],
+    "image": "https://github.com/user-attachments/assets/14c4c78e-4eb8-48f7-9bbf-97e8682af249",
+    "organizer": "Ethereum Lima",
+    "parentId": null,
+    "issueUrl": "https://github.com/javierarteagagonzales/ethevents/issues/17",
+    "issueNum": 17,
+    "state": "open",
+    "createdAt": "2026-06-27T14:43:11Z"
+  },
+  {
+    "id": 113,
+    "title": "Front end with Scaffold-stylus (Módulo 4: Arbitrum Stylus)",
+    "description": "Desarrollo de interfaces de usuario (Frontend) y conexión con Scaffold-stylus.",
+    "date": "2026-07-04",
+    "endDate": "",
+    "time": "19:00",
+    "location": "Online",
+    "type": "workshop",
+    "link": "https://bootcamp.ethlima.org/",
+    "tags": [
+      "ethlima"
+    ],
+    "image": "",
+    "organizer": "Ethereum Lima",
+    "parentId": 38
+  },
+  {
+    "id": 114,
+    "title": "Construye Full Dapps con ARBuilder (Módulo 4: Arbitrum Stylus)",
+    "description": "Crea aplicaciones descentralizadas completas utilizando la herramienta ARBuilder.",
+    "date": "2026-07-04",
+    "endDate": "",
+    "time": "20:00",
+    "location": "Online",
+    "type": "workshop",
+    "link": "https://bootcamp.ethlima.org/",
+    "tags": [
+      "ethlima"
+    ],
+    "image": "",
+    "organizer": "Ethereum Lima",
+    "parentId": 38
+  },
+  {
+    "id": 115,
+    "title": "ENTREGA DE CERTIFICADOS (GENERAL)",
+    "description": "Clausura del Bootcamp Ethereum Lima 2026 y entrega oficial de certificados de participación.",
+    "date": "2026-07-05",
+    "endDate": "",
+    "time": "19:00",
+    "location": "Online",
+    "type": "conference",
+    "link": "https://bootcamp.ethlima.org/",
+    "tags": [
+      "ethlima"
+    ],
+    "image": "",
+    "organizer": "Ethereum Lima",
+    "parentId": 38
+  },
+  {
+    "id": 56,
+    "title": "Hackathon Ethereum Lima 2026",
+    "description": "Hackathon con Tracks de Arbitrum, Arkiv y otros.",
+    "date": "2026-07-18",
+    "endDate": "",
+    "time": "",
+    "location": "Híbrido",
+    "type": "hackathon",
+    "link": "https://hackathon.ethlima.org/en/",
+    "tags": [
+      "ethlima"
+    ],
+    "image": "https://github.com/user-attachments/assets/8a8d5229-c813-4fa5-a5dc-c5a9a023c0ec",
+    "organizer": "Ethereum Lima",
+    "parentId": null,
+    "issueUrl": "https://github.com/javierarteagagonzales/ethevents/issues/8",
+    "issueNum": 8,
+    "state": "open",
+    "createdAt": "2026-06-07T06:03:16Z"
+  },
+  {
+    "id": 58,
+    "title": "ETHOnline 2026",
+    "description": "$75,000 Available in prizes",
+    "date": "2026-09-04",
+    "endDate": "2026-09-16",
+    "time": "",
+    "location": "Online",
+    "type": "hackathon",
+    "link": "https://ethglobal.com/events/ethonline2026",
+    "tags": [
+      "ethglobal"
+    ],
+    "image": "",
+    "organizer": "ETH Global",
+    "parentId": null,
+    "issueUrl": "https://github.com/javierarteagagonzales/ethevents/issues/10",
+    "issueNum": 10,
+    "state": "open",
+    "createdAt": "2026-06-08T23:03:09Z"
+  },
+  {
+    "id": 59,
+    "title": "ETHGlobal Tokyo",
+    "description": "Asia's largest ETHGlobal event",
+    "date": "2026-09-25",
+    "endDate": "2026-09-27",
+    "time": "",
+    "location": "Online",
+    "type": "hackathon",
+    "link": "https://ethglobal.com/events/tokyo2026",
+    "tags": [],
+    "image": "",
+    "organizer": "ETH Global",
+    "parentId": null,
+    "issueUrl": "https://github.com/javierarteagagonzales/ethevents/issues/11",
+    "issueNum": 11,
+    "state": "open",
+    "createdAt": "2026-06-08T23:08:20Z"
+  },
+  {
+    "id": 50,
+    "title": "DEVCON 8",
+    "description": "An open door for explorers,\na common ground for builders",
+    "date": "2026-11-03",
+    "endDate": "2026-11-06",
+    "time": "",
+    "location": "India",
+    "type": "conference",
+    "link": "https://devcon.org/en/",
+    "tags": [
+      "ethereum"
+    ],
+    "image": "",
+    "organizer": "Ethereum",
+    "parentId": null,
+    "issueUrl": "https://github.com/javierarteagagonzales/ethevents/issues/2",
+    "issueNum": 2,
+    "state": "open",
+    "createdAt": "2026-05-15T18:19:44Z"
+  },
+  {
+    "id": 60,
+    "title": "ETHGlobal Mumbai",
+    "description": "One of the fastest-growing Ethereum builder events",
+    "date": "2026-11-06",
+    "endDate": "2026-11-08",
+    "time": "",
+    "location": "Online",
+    "type": "hackathon",
+    "link": "https://ethglobal.com/events/mumbai",
+    "tags": [],
+    "image": "",
+    "organizer": "ETH Global",
+    "parentId": null,
+    "issueUrl": "https://github.com/javierarteagagonzales/ethevents/issues/12",
+    "issueNum": 12,
+    "state": "open",
+    "createdAt": "2026-06-08T23:10:35Z"
   }
 ]

@@ -515,6 +515,7 @@ const allMembers = (membersRaw as MemberItem[])
       type_bootcamp: "BOOTCAMP",
       type_buildathon: "BUILDATHON",
       type_cohorte: "COHORTE",
+      type_grant: "GRANT",
       // Carrusel equipo
       team_label: "COMUNIDAD",
       team_title_main: "Personas que lo hacen",
@@ -572,6 +573,7 @@ const allMembers = (membersRaw as MemberItem[])
       type_bootcamp: "BOOTCAMP",
       type_buildathon: "BUILDATHON",
       type_cohorte: "COHORTE",
+      type_grant: "GRANT",
       // Team carousel
       team_label: "COMMUNITY",
       team_title_main: "People who make it",
@@ -903,6 +905,7 @@ const allMembers = (membersRaw as MemberItem[])
           bootcamp: 'border-indigo-500 bg-indigo-500/10',
           cohorte: 'border-pink-500 bg-pink-500/10',
           buildathon: 'border-teal-500 bg-teal-500/10',
+          grant: 'border-yellow-500 bg-yellow-500/10',
         };
         const styleClass = borderColors[e.type] || 'border-purple-500 bg-purple-500/10';
         
@@ -1034,6 +1037,7 @@ const allMembers = (membersRaw as MemberItem[])
       bootcamp: 'bg-indigo-500/10 text-indigo-400 border border-indigo-500/25',
       cohorte: 'bg-pink-500/10 text-pink-400 border border-pink-500/25',
       buildathon: 'bg-teal-500/10 text-teal-400 border border-teal-500/25',
+      grant: 'bg-yellow-500/10 text-yellow-400 border border-yellow-500/25 shadow-[0_0_12px_rgba(234,179,8,0.15)]',
     };
     const typeClass = typeClasses[type.toLowerCase()] || 'bg-purple-500/10 text-purple-400 border border-purple-500/25';
 

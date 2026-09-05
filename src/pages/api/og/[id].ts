@@ -43,6 +43,7 @@ export const GET: APIRoute = async ({ params }) => {
     bootcamp: '#6366f1',
     cohorte: '#ec4899',
     buildathon: '#2dd4bf',
+    grant: '#eab308',
   };
 
   const accentColor = typeColors[event.type?.toLowerCase()] || '#627eea';
