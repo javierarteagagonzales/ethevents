@@ -82,6 +82,7 @@ body:
         - bootcamp
         - buildathon
         - cohorte
+        - grant
     validations:
       required: true
 
